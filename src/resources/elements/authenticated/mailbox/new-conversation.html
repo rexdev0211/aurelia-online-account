@@ -1,0 +1,43 @@
+<template>
+    <ul class="list-group">
+        <li class="mb-1 list-group-item d-flex justify-content-between align-items-center list-group-item-action active-gold">
+            <div>
+                <i class="clickable pr-2 fas fa-times" click.trigger="clearConversation()"></i>New correspondence
+            </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+            <kendo-drop-down-list
+                class="w-100"
+                view-model.ref="kddl"
+                items.bind="systemMailboxes"
+                place-holder="Select Department"
+                text-field="owner.name"
+                value-field="ern"
+                value.bind="model.to">
+            </kendo-drop-down-list>
+        </li>
+
+        <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action"
+            if.bind="model.to">
+            <form-group class="w-100">
+                <input class="w-100 form-control" placeholder="Subject" value.bind="model.subject & validate" focus.one-time="true"/>
+            </form-group>
+        </li>
+
+        <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action"
+            if.bind="model.to">
+            <div class="col-12">
+                <div class="row">
+                    <form-group class="w-100">
+                    <textarea class="form-control" placeholder="Message" rows="4" style="width: 100%"
+                              value.bind="model.message & validate"></textarea>
+                    </form-group>
+                </div>
+                <div class="row float-right">
+                    <button class="btn" click.trigger="save()">Save</button>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+</template>

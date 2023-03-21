@@ -1,0 +1,143 @@
+<template>
+    <page-content>
+        <content-container
+            button-click.call="saveRiskConfig()"
+            button-icon="icon-check"
+            button-text="Save Changes"
+            back-button-click.call="back()"
+            back-button-text="Back"
+            back-button-disabled.bind="false"
+            header="Risk Configuration">
+
+            <!-- <kendo-drop-down-list
+                if.bind="businessRecords.length > 1"
+                header="Select Business:"
+                items.bind="businessRecords"
+                place-holder="Select Business"
+                text-field="businessName"
+                value-field="code"
+                value.two-way="selectedBusiness">
+            </kendo-drop-down-list> -->
+
+            <div class="row">
+                <!-- <div class="col-xl-4 col-lg-5 col-md-6 col-sm-7 col-xs-8" if.bind="selectedBusiness">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Risk Template Count: <span class="badge bg-dark rounded-pill">${riskTemplates.length}</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Owner Code: <span class="badge bg-dark rounded-pill">${riskConfig.owners[0]}</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Risk Matrix Size: <span class="badge bg-dark rounded-pill">${riskConfig.riskMatrix}</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Residual Risk Method: <span class="badge bg-dark rounded-pill">${riskConfig.residualRiskMethod}</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center ${auditTrailTotal?'clickable':''}" title="${auditTrailTotal?'Click to toggle':''}" click.trigger="toggleAudit()">Audit Trail Count: ${auditTrailTotal?'(click for last 5)':''}<span class="badge bg-dark rounded-pill">${auditTrailTotal}</span></li>
+                        <li if.bind="showAudit" class="list-group-item p-0">
+                            <ul class="list-group list-group-flush">
+                                <li repeat.for="atr of auditTrailRecords" class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div class="container">
+                                        <span class="badge bg-light rounded-pill">${atr.userAuthId}</span>
+                                        <span class="badge bg-light rounded-pill" title="${atr.principalERN}">${atr.type} ${atr.principalERN.split(':')[0]}:<small>${atr.principalERN.split(':')[1]}</small></span><br/>
+                                        <span class="badge bg-light rounded-pill" title="${atr.eventDate|dateFormat:'iso'}">${atr.eventDate|dateFormat:'ago'}</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Risk Industry Count: <span class="badge bg-dark rounded-pill">${riskIndustries.length}</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Risk Country Count: <span class="badge bg-dark rounded-pill">${riskCountries.length}</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Risk Model Count: <span class="badge bg-dark rounded-pill">${riskProfiles.length}</span></li>
+                        <li if.bind="riskTemplates.length>0 && riskProfiles.length ===0" class="list-group-item d-flex justify-content-between align-items-center"><button click.trigger="createProfileFromTemplate()">Create Profile(s) from Template(s)</button></li>
+                    </ul>
+                </div> -->
+
+                <!-- <button class="mt-2" click.trigger="patchAnswerKey()">Test Risk Answer Key (remove when no longer needed)</button> -->
+
+                <div class="col-xl-2 col-lg-1 col-md-1">
+                    
+                </div>
+                <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 col-xs-12" if.bind="riskConfig">
+                    <div class="row align-items-center mb-3">
+                        <label class="col-sm-4 mb-0">Control Method Label:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control-sm w-100" value.bind="(riskConfig.controlMethodLabel[0])">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control-sm w-100" value.bind="(riskConfig.controlMethodLabel[1])">
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-3">
+                        <label class="col-sm-4 mb-0">Risk Matrix Size:</label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control-sm w-100" max="10" min="1" value.bind="riskConfig.riskMatrix[0]" change.delegate="changeImpactLabels($event.target.value * 1)">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control-sm w-100" max="10" min="1" value.bind="riskConfig.riskMatrix[1]" change.delegate="changeProbabilityLabels($event.target.value * 1)">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-4 mb-0">Risk Matrix Labels:</label>
+                        <div class="col-sm-4">
+                            <div repeat.for="index of riskMatrixImpact">
+                                <input type="text" class="form-control-sm w-100 mb-3" value.bind="riskConfig.riskImpactLabel[$index]">
+                            </div>
+                            <!-- <div if.bind="riskMatrixImpact == 5" repeat.for="label of defaultLabelsForFiveMatrix">
+                                <input type="text" class="form-control-sm w-100 mb-3" value.bind="label">
+                            </div>
+                            <div if.bind="riskMatrixImpact == 3" repeat.for="label of defaultLabelsForThreeMatrix">
+                                <input type="text" class="form-control-sm w-100 mb-3" value.bind="label">
+                            </div>
+                            <div if.bind="riskMatrixImpact != 5 && riskMatrixImpact != 3" repeat.for="index of getArrayOfIntegersFromZeroToNumber(riskMatrixImpact)">
+                                <input type="text" class="form-control-sm w-100 mb-3" value.bind="riskConfig.riskImpactLabel[$index]">
+                            </div> -->
+                        </div>
+                        <div class="col-sm-4">
+                            <div repeat.for="index of riskMatrixProbability">
+                                <input type="text" class="form-control-sm w-100 mb-3" value.bind="riskConfig.riskProbabilityLabel[$index]">
+                            </div>
+                            <!-- <div if.bind="riskMatrixProbability == 5" repeat.for="label of defaultLabelsForFiveMatrix">
+                                <input type="text" class="form-control-sm w-100 mb-3" value.bind="label">
+                            </div>
+                            <div if.bind="riskMatrixProbability == 3" repeat.for="label of defaultLabelsForThreeMatrix">
+                                <input type="text" class="form-control-sm w-100 mb-3" value.bind="label">
+                            </div>
+                            <div if.bind="riskMatrixProbability != 5 && riskMatrixProbability != 3" repeat.for="index of getArrayOfIntegersFromZeroToNumber(riskMatrixProbability)">
+                                <input type="text" class="form-control-sm w-100 mb-3" value.bind="riskConfig.riskProbabilityLabel[$index]">
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-3">
+                        <label class="col-sm-4 mb-0">Maximum Weight Adjustment:</label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control-sm w-100" min="0" value.bind="riskConfig.maximumWeightAdjustment[0]">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control-sm w-100" min="0" value.bind="riskConfig.maximumWeightAdjustment[1]">
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-3">
+                        <label class="col-sm-4 mb-0">Risk Reduction Floor:</label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control-sm w-100" min="0" value.bind="riskConfig.riskReductionFloor[0]">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control-sm w-100" min="0" value.bind="riskConfig.riskReductionFloor[1]">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-4 mb-0">Residual Risk Method:</label>
+                        <div class="col-sm-8">
+                            <div class="form-check" repeat.for="methodType of riskResidualMethodTypes">
+                                <label class="form-check-label" for="residualRiskMethod-${$index}">
+                                <input 
+                                    type="radio" 
+                                    class="form-check-input" 
+                                    id="residualRiskMethod-${$index}" 
+                                    name="residualRiskMethod" 
+                                    value.bind="methodType.value"
+                                    checked.bind="riskConfig.residualRiskMethod"
+                                >
+                                    ${methodType.value | humanize: true}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </content-container>
+    </page-content>
+</template>

@@ -1,0 +1,445 @@
+/* Controller CSS for Intelligent Media */
+
+/*------------- color definitions -------------
+
+$theme: dark;
+$primary: #3f3f3f
+$secondary: #ffcb4b
+
+primary (darker): 3f3f3f
+primary hover: 333333
+primary rgb: 63, 63, 63
+
+secondary (lighter): ffcb4b
+secondary hover: f8bd2d
+secondary rgb: 255, 203, 75
+
+------------- color definitions -------------*/
+
+.box-primary {
+	color: #ffffff;
+	background-color: #3f3f3f;
+}
+.box-secondary {
+	color: #242424;
+	background-color: #ffcb4b;
+}
+.box-default {
+	color: #333333;
+	background-color: #fafafa;
+}
+/* theme links */
+.client-link {
+  color: #ffcb4b;
+}
+.client-link:hover {
+  color: #f8bd2d;
+}
+
+/* client custom css */
+
+/*------------- navigation controls -------------*/
+/* menu navigation bar */
+.client-navmenu .navbar-brand {
+	color: #fff;
+}
+.client-navmenu .navbar-brand:hover, .client-navmenu .navbar-brand:focus {
+	color: #fff;
+}
+.client-navmenu .navbar-nav .nav-link {
+	color: rgba(255, 255, 255, 0.8);
+}
+.client-navmenu .navbar-nav .nav-link:hover, .client-navmenu .navbar-nav .nav-link:focus {
+	color: #fff;
+}
+.client-navmenu .navbar-nav .nav-link.disabled {
+	color: rgba(255, 255, 255, 0.5);
+}
+.client-navmenu .navbar-nav .show > .nav-link, .client-navmenu .navbar-nav .active > .nav-link, .client-navmenu .navbar-nav .nav-link.show, .client-navmenu .navbar-nav .nav-link.active {
+	color: #fff;
+}
+.client-navmenu .navbar-nav-highlight .navbar-nav-link.active:before {
+    background-color: #fff;
+}
+.client-navmenu .navbar-toggler {
+	color: rgba(255, 255, 255, 0.8);
+	border-color: rgba(255, 255, 255, 0.1);
+}
+.client-navmenu .navbar-toggler-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.client-navmenu .navbar-text {
+	color: rgba(255, 255, 255, 0.8);
+}
+.client-navmenu .navbar-text a {
+	color: #fff;
+}
+.client-navmenu .navbar-text a:hover, .client-navmenu .navbar-text a:focus {
+	color: #fff;
+}
+.page-header-content + .client-navmenu, .content + .client-navmenu, .page-content + .client-navmenu, .fixed-bottom > .client-navmenu:first-child {
+	border-top-color: rgba(255, 255, 255, 0.1);
+}
+.client-navmenu .navbar-nav .nav-link {
+	color: #333;
+}
+.client-navmenu .navbar-nav .nav-link:hover, .client-navmenu .navbar-nav .nav-link:focus {
+	color: #333;
+}
+.client-navmenu .navbar-nav .nav-link.disabled {
+	color: #999;
+}
+.client-navmenu .navbar-nav .show > .nav-link, .client-navmenu .navbar-nav .active > .nav-link, .client-navmenu .navbar-nav .nav-link.show, .client-navmenu .navbar-nav .nav-link.active {
+	color: #333;
+}
+.client-navmenu .navbar-nav-link {
+	color: rgba(255, 255, 255, 0.8);
+}
+.client-navmenu .navbar-nav-link:hover, .client-navmenu .navbar-nav-link:focus {
+	color: #fff;
+	background-color: transparent;
+}
+.client-navmenu .navbar-nav-link.disabled {
+	color: rgba(255, 255, 255, 0.5);
+	background-color: transparent;
+}
+.client-navmenu .show > .navbar-nav-link, .client-navmenu .active > .navbar-nav-link, .client-navmenu .navbar-nav-link.show, .client-navmenu .navbar-nav-link.active {
+	color: #fff;
+	background-color: transparent;
+}
+/* color over */
+.client-navmenu {
+	color: rgba(255, 255, 255, 0.8);
+	background-color: #3f3f3f;
+	border-top: 0 !important;
+}
+.client-navmenu .navbar-text a {
+	color: #ffcb4b;
+}
+.client-navmenu .navbar-text a:hover, .client-navmenu .navbar-text a:focus {
+	color: #f8bd2d;
+}
+
+
+/* brand navigation bar */
+.client-navbrand .navbar-brand {
+	color: #242424;
+}
+.client-navbrand .navbar-brand:hover, .client-navbrand .navbar-brand:focus {
+	color: #242424;
+}
+.client-navbrand .navbar-nav .nav-link {
+	color: rgba(36, 36, 36, 0.85);
+}
+.client-navbrand .navbar-nav .nav-link:hover, .client-navbrand .navbar-nav .nav-link:focus {
+	color: #242424;
+}
+.client-navbrand .navbar-nav .nav-link.disabled {
+	color: rgba(0, 0, 0, 0.5);
+}
+.client-navbrand .navbar-nav .show > .nav-link, .client-navbrand .navbar-nav .active > .nav-link, .client-navbrand .navbar-nav .nav-link.show, .client-navbrand .navbar-nav .nav-link.active {
+	color: #242424;
+}
+.client-navbrand .navbar-toggler {
+	color: rgba(36, 36, 36, 0.85);
+	border-color: rgba(0, 0, 0, 0.1);
+}
+.client-navbrand .navbar-toggler-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(36, 36, 36, 0.85)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.client-navbrand .navbar-text {
+	color: rgba(36, 36, 36, 0.85);
+}
+.client-navbrand .navbar-text a {
+	color: #242424;
+}
+.client-navbrand .navbar-text a:hover, .client-navbrand .navbar-text a:focus {
+	color: #333;
+}
+.page-header-content + .client-navbrand, .content + .client-navbrand, .page-content + .client-navbrand, .fixed-bottom > .client-navbrand:first-child {
+	border-top-color: rgba(0, 0, 0, 0.125);
+}
+.client-navbrand .navbar-nav .nav-link {
+	color: #242424;
+}
+.client-navbrand .navbar-nav .nav-link:hover, .client-navbrand .navbar-nav .nav-link:focus {
+	color: #242424;
+}
+.client-navbrand .navbar-nav .nav-link.disabled {
+	color: #999;
+}
+.client-navbrand .navbar-nav .show > .nav-link, .client-navbrand .navbar-nav .active > .nav-link, .client-navbrand .navbar-nav .nav-link.show, .client-navbrand .navbar-nav .nav-link.active {
+	color: #242424;
+}
+.client-navbrand .navbar-nav-link {
+	color: rgba(36, 36, 36, 0.85);
+}
+.client-navbrand .navbar-nav-link:hover, .client-navbrand .navbar-nav-link:focus {
+	color: #242424;
+	background-color: transparent;
+}
+.client-navbrand .navbar-nav-link.disabled {
+	color: rgba(0, 0, 0, 0.5);
+	background-color: transparent;
+}
+.client-navbrand .show > .navbar-nav-link, .client-navbrand .active > .navbar-nav-link, .client-navbrand .navbar-nav-link.show, .client-navbrand .navbar-nav-link.active {
+	color: #242424;
+	background-color: transparent;
+}
+/* color over */
+.client-navbrand {
+	color: rgba(36, 36, 36, 0.85);
+	background-color: #fff;
+	border-color: transparent !important;
+}
+.client-navbrand .navbar-text a {
+	color: #f8bd2d;
+}
+.client-navbrand .navbar-text a:hover, .client-navbrand .navbar-text a:focus {
+	color: #ffcb4b;
+}
+
+/* footer navigation bar */
+.client-footer .navbar-brand {
+	color: #242424;
+}
+.client-footer .navbar-brand:hover, .client-footer .navbar-brand:focus {
+	color: #242424;
+}
+.client-footer .navbar-nav .nav-link {
+	color: rgba(36, 36, 36, 0.85);
+}
+.client-footer .navbar-nav .nav-link:hover, .client-footer .navbar-nav .nav-link:focus {
+	color: #242424;
+}
+.client-footer .navbar-nav .nav-link.disabled {
+	color: rgba(0, 0, 0, 0.5);
+}
+.client-footer .navbar-nav .show > .nav-link, .client-footer .navbar-nav .active > .nav-link, .client-footer .navbar-nav .nav-link.show, .client-footer .navbar-nav .nav-link.active {
+	color: #242424;
+}
+.client-footer .navbar-toggler {
+	color: rgba(36, 36, 36, 0.85);
+	border-color: rgba(0, 0, 0, 0.1);
+}
+.client-footer .navbar-toggler-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(36, 36, 36, 0.85)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.client-footer .navbar-text {
+	color: rgba(36, 36, 36, 0.85);
+}
+.client-footer .navbar-text a {
+	color: #242424;
+}
+.client-footer .navbar-text a:hover, .client-footer .navbar-text a:focus {
+	color: #333;
+}
+.page-header-content + .client-footer, .content + .client-footer, .page-content + .client-footer, .fixed-bottom > .client-footer:first-child {
+	border-top-color: rgba(0, 0, 0, 0.125);
+}
+.client-footer .navbar-nav .nav-link {
+	color: #242424;
+}
+.client-footer .navbar-nav .nav-link:hover, .client-footer .navbar-nav .nav-link:focus {
+	color: #242424;
+}
+.client-footer .navbar-nav .nav-link.disabled {
+	color: #999;
+}
+.client-footer .navbar-nav .show > .nav-link, .client-footer .navbar-nav .active > .nav-link, .client-footer .navbar-nav .nav-link.show, .client-footer .navbar-nav .nav-link.active {
+	color: #242424;
+}
+.client-footer .navbar-nav-link {
+	color: rgba(36, 36, 36, 0.85);
+}
+.client-footer .navbar-nav-link:hover, .client-footer .navbar-nav-link:focus {
+	color: #242424;
+	background-color: transparent;
+}
+.client-footer .navbar-nav-link.disabled {
+	color: rgba(0, 0, 0, 0.5);
+	background-color: transparent;
+}
+.client-footer .show > .navbar-nav-link, .client-footer .active > .navbar-nav-link, .client-footer .navbar-nav-link.show, .client-footer .navbar-nav-link.active {
+	color: #242424;
+	background-color: transparent;
+}
+/* color over */
+.client-footer {
+	color: rgba(36, 36, 36, 0.85);
+	background-color: #fff;
+	border-bottom-color: transparent;
+	border-top-color: rgba(0, 0, 0, 0.125);
+}
+.client-footer .navbar-text a {
+	color: #f8bd2d;
+}
+.client-footer .navbar-text a:hover, .client-footer .navbar-text a:focus {
+	color: #ffcb4b;
+}
+
+/*------------- card header controls -------------*/
+.client-cardhead {
+	color: #333333 !important;
+	background-color: #fafafa !important;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.125) !important;
+}
+
+/*------------- button controls -------------*/
+.client-button {
+	color: #242424 !important;
+	background-color: #ffcb4b;
+	border-color: #f8bd2d;
+}
+.client-button:hover, .client-button:focus, .client-button.focus, .client-button:not([disabled]):not(.disabled):active, .client-button:not([disabled]):not(.disabled).active,  .show > .client-button.dropdown-toggle {
+	background-color: #f8bd2d;
+	border-color: #f8bd2d;
+}
+.client-button.disabled, .client-button:disabled {
+	background-color: #ffcb4b;
+	border-color: #f8bd2d;
+}
+.client-button {
+	background-color: #ffcb4b;
+}
+.client-button:hover {
+	background-color: #f8bd2d;
+}
+/* card tile buttons */
+a.client-tile-button {
+	display: inline-block;
+	margin: 0;
+	padding: 1.25rem;
+	width: 100%;
+	border-radius: 0.1875rem;
+	background-color: #fafafa;
+	color: #999999;
+	border: 1px solid #cccccc;
+	border-left: 10px solid #cccccc;
+}
+a.client-tile-button.selected {
+	background-color: #ffffff !important;
+	color: #242424 !important;
+	border: 1px solid #ffcb4b !important;
+	border-left: 10px solid #ffcb4b !important;
+}
+@media only screen and (max-width: 600px) {
+
+  .client-tile-button-account {
+    font-size: .8em
+  }
+
+  .client-tile-button-balance {
+    font-size: .8em
+  }
+}
+/* media radio buttons */
+a.media-radio-link {
+	display: inline-block;
+	margin: 0;
+	width: 100%;
+	border-radius: 0.1875rem;
+	background-color: #ffffff;
+	color: #242424;
+	border: 1px solid #cccccc;
+	border-left: 10px solid #cccccc;
+}
+a.media-radio-link.selected {
+	background-color: #ffffff !important;
+	color: #242424 !important;
+	border: 1px solid #ffcb4b !important;
+	border-left: 10px solid #ffcb4b !important;
+}
+.media-radio-wrapper {
+	align-items: center !important;
+}
+.media-radio-wrapper .media-body {
+	padding-left: 1.875rem !important;
+}
+.media-radio-select {
+	padding: 3.75rem!important;
+	background-color: #fafafa;
+  border-left: 1px solid #cccccc;
+  margin-left: 1.875rem !important;
+}
+/* pagination button */
+.pagination-flat .page-item.active .page-link {
+	color: #242424;
+	background-color: #ffcb4b;
+	border-color: #ffcb4b;
+}
+/* date range selected */
+.ranges ul li.active {
+    color: #fff;
+    background-color: #ffcb4b;
+}
+.daterangepicker td.active, .daterangepicker td.active:focus, .daterangepicker td.active:hover {
+    color: #fff;
+    background-color: #3f3f3f;
+    border-radius: .1875rem;
+}
+/* date picker buttons */
+.btn-date-picker-primary {
+	color: #ffffff !important;
+	background-color: #3f3f3f;
+	border-color: #333333;
+}
+.btn-date-picker-primary:hover, .btn-date-picker-primary:focus, .btn-date-picker-primary.focus, .btn-date-picker-primary:not([disabled]):not(.disabled):active, .btn-date-picker-primary:not([disabled]):not(.disabled).active,  .show > .btn-date-picker-primary.dropdown-toggle {
+	background-color: #333333;
+	border-color: #333333;
+}
+.btn-date-picker-primary.disabled, .btn-date-picker-primary:disabled {
+	background-color: #3f3f3f;
+	border-color: #333333;
+}
+.btn-date-picker-primary {
+	background-color: #3f3f3f;
+}
+.btn-date-picker-primary:hover {
+	background-color: #333333;
+}
+.btn-date-picker-secondary {
+	color: #242424 !important;
+	background-color: #ffcb4b;
+	border-color: #f8bd2d;
+}
+.btn-date-picker-secondary:hover, .btn-date-picker-secondary:focus, .btn-date-picker-secondary.focus, .btn-date-picker-secondary:not([disabled]):not(.disabled):active, .btn-date-picker-secondary:not([disabled]):not(.disabled).active,  .show > .btn-date-picker-secondary.dropdown-toggle {
+	background-color: #f8bd2d;
+	border-color: #f8bd2d;
+}
+.btn-date-picker-secondary.disabled, .btn-date-picker-secondary:disabled {
+	background-color: #ffcb4b;
+	border-color: #f8bd2d;
+}
+.btn-date-picker-secondary {
+	background-color: #ffcb4b;
+}
+.btn-date-picker-secondary:hover {
+	background-color: #f8bd2d;
+}
+/*------------- table header controls -------------*/
+.client-tablehead {
+	color: #ffffff !important;
+	background-color: rgba(63, 63, 63, 0.5);
+}
+/*------------- svg image controls -------------*/
+.svg-contain {
+  max-width:500px;
+  position:relative;
+  display: inline-block;
+}
+/*------------- checkbox visible -------------
+.uniform-checker input[type=checkbox], .uniform-choice input[type=checkbox] {
+  border: 0;
+  background: 0 0;
+  display: inline-block;
+  margin: 0;
+  cursor: pointer;
+  position: absolute;
+  top: -.125rem;
+  left: -.125rem;
+  visibility: visible;
+  opacity: inherit;
+  z-index: 2
+}
+*/

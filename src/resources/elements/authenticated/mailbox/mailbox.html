@@ -1,0 +1,52 @@
+<template>
+
+    <page-content>
+
+        <content-container
+            form-buttons-show.bind="false">
+            <div class="justify-content-between w-100" slot="header">
+                <!--                <span class="card-title" style="font-size: 2em;">Secure Messaging</span>-->
+
+                <div class="input-group">
+                     <span class="card-title w-75" on-hover.bind="showRefresh" style="font-size: 2em;">Secure Messaging
+                    <i class="fas fa-sync-alt clickable" click.trigger="mailboxService.reloadMailbox()" show.bind="showRefresh"></i>
+                    </span>
+
+                    <div class="input-group-append w-25">
+                        <input class="form-control" placeholder="Search" type="text"
+                               value.bind="searchValue & debounce">
+                        <span class="input-group-text" click.trigger="clearFilter()"
+                              if.bind="state.messaging.mailboxFilter"
+                              title="Clear Search"><i class="fas fa-ban fa-fw"></i></span>
+                        <button aria-expanded="false" aria-haspopup="true"
+                                class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown"
+                                type="button">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item ${(state.messaging.mailboxCutoff === milliSecondsPerMonth*2?'active-gold':'')}"
+                               click.trigger="setCutoff(2)" href="javascript:void(0)">2 months</a>
+                            <a class="dropdown-item ${(state.messaging.mailboxCutoff === milliSecondsPerMonth*6?'active-gold':'')}"
+                               click.trigger="setCutoff(6)" href="javascript:void(0)">6 months</a>
+                            <a class="dropdown-item ${(state.messaging.mailboxCutoff === milliSecondsPerMonth*12?'active-gold':'')}"
+                               click.trigger="setCutoff(12)" href="javascript:void(0)">12 months</a>
+                            <div class="dropdown-divider" role="separator"></div>
+                            <a class="dropdown-item ${(state.messaging.mailboxCutoff === 0?'active-gold':'')}"
+                               click.trigger="setCutoff(0)" href="javascript:void(0)">All Messages</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <conversations if.bind="state.messaging.mailboxView === 'Conversations'"></conversations>
+            <subjects if.bind="state.messaging.mailboxView === 'Subjects'"></subjects>
+            <messages if.bind="state.messaging.mailboxView === 'Messages'"></messages>
+            <new-conversation if.bind="state.messaging.mailboxView === 'Create'"></new-conversation>
+
+        </content-container>
+    </page-content>
+
+</template>

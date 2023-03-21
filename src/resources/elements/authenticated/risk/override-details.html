@@ -1,0 +1,71 @@
+<template>
+    <require from="aurelia-kendoui-bridge/grid/grid"></require>
+    <require from="aurelia-kendoui-bridge/grid/col"></require>
+    <require from="aurelia-kendoui-bridge/grid/grid-command"></require>
+    <require from="aurelia-kendoui-bridge/grid/grid-toolbar"></require>
+    <require from="aurelia-kendoui-bridge/common/template"></require>
+    <require from="aurelia-kendoui-bridge/button/button"></require>
+    
+    <ak-grid 
+        k-data-source.bind="datasource" 
+        k-pageable.bind="pageable" 
+        k-toolbar.bind="['create']" 
+        k-editable="inline"
+        k-scrollable.bind="false"
+        k-on-cancel.delegate="cancelRow($event.detail)"
+        k-on-ready.delegate="onReady($event.detail)"
+    >
+        <ak-grid-toolbar>
+            <ak-template>
+                <span class="k-grid-add k-button" ak-button="k-icon: add">Add new term</span>
+            </ak-template>
+        </ak-grid-toolbar>
+        <ak-col k-field="operator" k-title="Operator" k-width="100px" k-editor.bind="opeatorsDropDownEditor">
+            <ak-template>
+                <span>${typeof operator === 'object' ? operator.key : operator}</span>
+            </ak-template>
+        </ak-col>
+        <ak-col k-field="categoryERN" k-title="Category" k-width="150px" k-editor.bind="categoriesDropDownEditor">
+            <ak-template>
+                <span>${typeof categoryERN === 'object' ? getRiskCategoryByCategoryERN(categoryERN.ern) : getRiskCategoryByCategoryERN(categoryERN)}</span>
+            </ak-template>
+        </ak-col>
+        <ak-col k-field="componentERN" k-title="Component" k-width="150px" k-editor.bind="componentsDropDownEditor">
+            <ak-template>
+                <span>${typeof componentERN === 'object' ? getRiskComponentByComponentERN(factorERN.ern) : getRiskComponentByComponentERN(componentERN)}</span>
+            </ak-template>
+        </ak-col>
+        <ak-col k-field="factorERN" k-title="Question" k-width="600px" k-editor.bind="factorsDropDownEditor">
+            <ak-template>
+                <span>${typeof factorERN === 'object' ? getRiskFactorByFactorERN(factorERN.ern) : getRiskFactorByFactorERN(factorERN)}</span>
+            </ak-template>
+        </ak-col>
+        <ak-col k-field="compareSymbol" k-title="Compare" k-width="100px" k-editor.bind="compareSymbolsDropDownEditor">
+            <ak-template>
+                <span>${typeof compareSymbol === 'object' ? getCompareOperatorByCompareSymbol(compareSymbol.key) : getCompareOperatorByCompareSymbol(compareSymbol)}</span>
+            </ak-template>
+        </ak-col>
+        <ak-col k-field="riskValue" k-title="Value" k-width="100px" k-format="{n}">
+            <ak-template>
+                <span>${riskValue}</span>
+            </ak-template>
+        </ak-col>
+        <ak-col k-command.bind="['edit', 'destroy']" k-title="Actions" k-width="220px"></ak-col>
+        <ak-template for="detailTemplate">
+            <override-details 
+                if.bind="additionalTerms && overrideTermsGrid"
+                parent-element.bind="parentElement"
+                parent-grid.bind="overrideTermsGrid" 
+                data-item.bind="$this"
+                ern.bind="ern"
+                override-terms.bind="additionalTerms" 
+                risk-categories.bind="riskCategories"
+                risk-components-all.bind="riskComponentsAll"
+                risk-factors-all.bind="riskFactorsAll"
+                save-override.bind="saveOverride"
+                index.bind="(`${index}-${id}`)"
+                risk-matrix.bind="riskMatrix"
+            ></override-details>
+        </ak-template>
+    </ak-grid>
+</template>

@@ -1,0 +1,59 @@
+<template>
+  <require from="aurelia-kendoui-bridge/treeview/treeview"></require>
+  <require from="aurelia-kendoui-bridge/common/template"></require>
+
+  <style>
+    .document-viewer .k-sprite {
+      background-image: url("https://demos.telerik.com/kendo-ui/content/web/treeview/coloricons-sprite.png");
+    }
+
+    .document-viewer .rootfolder {
+      background-position: 0 0;
+    }
+
+    .document-viewer .folder {
+      background-position: 0 -16px;
+    }
+
+    .document-viewer .pdf {
+      background-position: 0 -32px;
+    }
+
+    .document-viewer .html {
+      background-position: 0 -48px;
+    }
+
+    .document-viewer .image {
+      background-position: 0 -64px;
+    }
+
+    .document-viewer .fa-file-download {
+      cursor: pointer;
+    }
+
+    .document-viewer .fa-file-download:hover {
+      color: #e5af2a;
+    }
+  </style>
+
+
+  <form-group bold-header.bind="boldHeader" header.bind="header" show.bind="hasDocuments">
+    <div class="dropzone needsclick">
+      <div class="document-viewer">
+        <ak-treeview
+            k-data-source.bind="beneficiaryDocuments"
+            k-data-text-field="text"
+            k-on-ready.delegate="onReady($event.detail)"
+            k-on-select.delegate="select($event.detail)"
+        >
+          <ak-template>
+            <!--            <button class="btn-xs" click.delegate="download($event)" if.bind="spriteCssClass !== 'folder'">-->
+            <i class="fas fa-file-download" click.delegate="download($event)" if.bind="spriteCssClass !== 'folder'"></i>
+            <!--            </button>-->
+            <div style="padding-left: 4px; padding-right: 4px; display: inline-block">${text}</div>
+          </ak-template>
+        </ak-treeview>
+      </div>
+    </div>
+  </form-group>
+</template>

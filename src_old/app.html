@@ -1,0 +1,17 @@
+<template>
+  <nav class="navbar navbar-expand-sm bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="./logo.png" height="30">
+      </a>
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li repeat.for="nav of router.navigation" class="nav-item">
+          <a class="nav-link ${nav.isActive ? 'active' : ''}" href.bind="nav.href">${nav.title}</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <router-view></router-view>
+</template>

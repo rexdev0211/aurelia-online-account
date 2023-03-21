@@ -1,0 +1,80 @@
+<template>
+    <style>
+        ux-dialog-header strong {
+            font-size: larger;
+        }
+
+        ux-dialog-overlay.active {
+            background-color: black;
+            opacity: .5;
+        }
+
+        ux-dialog {
+            width: 100% !important;
+            max-width: 1000px;
+        }
+
+        ux-dialog > ux-dialog-body {
+            min-height: 290px;
+            overflow-y: scroll;
+        }
+
+        ux-dialog > ux-dialog-header {
+            border: none;
+        }
+
+        .ux-dialog-footer-button {
+            width: 150px !important;
+        }
+
+        .form-control-value {
+            word-break: break-all;
+        }
+
+        .form-group-value {
+            word-break: break-all;
+        }
+
+        .text-capitalize {
+            text-transform: capitalize !important;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        @media screen and (min-width: 1200px) {
+            ux-dialog {
+                width: 1150px !important;
+            }
+        }
+
+        @media screen and (min-width: 992px) and (max-width: 1199px) {
+            ux-dialog {
+                width: 950 !important;
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+            ux-dialog {
+                width: 100% !important;
+            }
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+    </style>
+
+    <ux-dialog>
+
+        <ux-dialog-body css="max-height: ${innerHeight}px;">
+            <job-viewer style="width:100%" disable-page-content.bind="true" override-submit.call="dialogController.ok()"></job-viewer>
+        </ux-dialog-body>
+
+    </ux-dialog>
+</template>

@@ -1,0 +1,39 @@
+<template bindable="countries, industries, riskFactor, selectedIndex, debugMode" containerless>
+  <p># RiskFactor ${selectedIndex} (${riskFactor.answerType})</p>
+  <h4>${riskFactor.question}</h4>
+  <br />
+  <div if.bind="riskFactor.answerType === 'Answer'" class="form-check" repeat.for="answer of riskFactor.answers">
+    <label class="form-check-label" for="answer-${selectedIndex}-${$index}">
+      <input 
+        type="radio" 
+        class="form-check-input" 
+        id="answer-${selectedIndex}-${$index}" 
+        name="answer-${selectedIndex}" 
+        model.bind="$index" 
+        checked.bind="riskFactor.answerIndex"
+      >
+      ${answer.value} ${debugMode ? `- ${answer.confidenceScore}` : ''}
+    </label>
+  </div>
+  <div if.bind="riskFactor.answerType === 'Country'">
+    <select value.bind="riskFactor.answerIndex" class="form-select" style="width: 500px;">
+      <option model.bind="null">Choose...</option>
+      <option repeat.for="country of countries"
+              model.bind="$index">
+        ${country.Value} ${debugMode ? `- ${country.ConfidenceScore}` : ''}
+      </option>
+    </select>
+  </div>
+  <div if.bind="riskFactor.answerType === 'Industry'">
+    <select value.bind="riskFactor.answerIndex" class="form-select" style="width: 500px;">
+      <option model.bind="null">Choose...</option>
+      <option repeat.for="industry of industries"
+              model.bind="$index">
+        ${industry.Value} ${debugMode ? `- ${industry.ConfidenceScore}` : ''}
+      </option>
+    </select>
+  </div>
+  <div if.bind="riskFactor.answerType === 'Date'">
+    <input class="form-control" type="date" format="dd-mm-yyyy" value.bind="riskFactor.SelectedAnswer.value" style="width: 200px;"/>
+  </div>
+</template>

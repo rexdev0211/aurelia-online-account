@@ -1,0 +1,388 @@
+<template>
+    <require from="./styles/risk-profile-manager.css"></require>
+    <require from="aurelia-kendoui-bridge/grid/grid"></require>
+    <require from="aurelia-kendoui-bridge/grid/col"></require>
+    <require from="aurelia-kendoui-bridge/grid/grid-command"></require>
+    <require from="aurelia-kendoui-bridge/grid/grid-toolbar"></require>
+    <require from="aurelia-kendoui-bridge/common/template"></require>
+    <require from="aurelia-kendoui-bridge/button/button"></require>
+    <require from="aurelia-kendoui-bridge/slider/slider"></require>
+    <require from="aurelia-kendoui-bridge/sortable/sortable"></require>
+    <require from="aurelia-kendoui-bridge/dialog/dialog"></require>
+    <require from="./override-details"></require>
+    
+    <page-content>
+        <content-container button-click.call="back()" button-icon="icon-loop3" button-text="Back"
+                           header="Risk Model Builder">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li repeat.for="level of levels" class="breadcrumb-item ${$index === $last ? 'active' : ''}" aria-current="page">
+                        <a href="#" role="button" click.trigger="moveToLevel($index + 1)">
+                            ${level.title}
+                        </a>
+                        <i if.bind="level.invalid" class="fa-solid fa-triangle-exclamation text-danger"></i>
+                    </li>
+                </ol>
+            </nav>
+
+            <!-- Profiles Grid -->
+            <ak-grid 
+                if.bind="isLoadedOfRiskProfiles && activeLevelIndex === 1" 
+                k-data-source.bind="getKendoGridDataSource()" 
+                k-pageable.bind="pageable" 
+                k-toolbar.bind="['create']" 
+                k-editable="inline"
+                k-widget.bind="profilesGrid"
+            >
+                <ak-grid-toolbar>
+                    <ak-template>
+                        <button ak-button class="k-button cra-button ${isCRAEnabled ? 'k-primary' : ''}" click.trigger="filterModelType('CRA')">CRA</button>
+                        <button ak-button class="k-button bwra-button ${isBWRAEnabled ? 'k-primary' : ''}" click.trigger="filterModelType('BWRA')">BWRA</button>
+                        <span class="k-grid-add k-button" ak-button="k-icon: add">Add new profile</span>
+                    </ak-template>
+                </ak-grid-toolbar>  
+                <ak-col k-field="name" k-title="Name" k-editable.bind="isRiskProfileNameEditable">
+                    <ak-template>
+                        <span>${name}</span>
+                        <i if.bind="!isModelValid && state === 'Draft'" class="fa-solid fa-triangle-exclamation text-danger"></i>
+                    </ak-template>
+                </ak-col>
+                <ak-col k-field="type" k-title="Type" k-width="120px" k-editable.bind="isRiskProfileTypeEditable" k-editor.bind="typeDropDownEditor"></ak-col>
+                <ak-col k-field="version" k-title="Version" k-width="100px"></ak-col>
+                <ak-col k-field="state" k-title="Status" k-width="120px" k-editable.bind="isRiskProfileStateEditable" k-editor.bind="stateDropDownEditor"></ak-col>
+                <ak-col k-field="ern" k-title="Configure" k-width="125px">
+                    <ak-template>
+                        <span ak-button="k-icon: gear; k-enable.bind: getDesignEnabled(state)" k-on-click.trigger="goToLevelDown(ern, name, type)">Design</span>
+                    </ak-template>
+                </ak-col>
+                <!-- <ak-col k-command.bind="['edit', 'destroy']" k-title="Actions" k-width="220px"></ak-col> -->
+                <ak-col k-title="Actions" k-width="220px">
+                    <ak-grid-command k-name="edit" k-text="Edit" k-visible.bind="visibleForEditModel"></ak-grid-command>
+                    <ak-grid-command k-name="Delete" k-text="Delete" k-icon-class="k-icon k-i-close" k-visible.bind="visibleForNotApproved" k-click.bind="removeRecord"></ak-grid-command>
+                </ak-col>
+            </ak-grid>
+
+            <!-- Filtered Profiles Grid -->
+            <ak-grid 
+                if.bind="isLoadedOfRiskProfiles && activeLevelIndex === 2" 
+                k-data-source.bind="getKendoGridDataSource()" 
+                k-pageable.bind="pageable" 
+                k-toolbar.bind="['create']" 
+                k-editable="inline"
+                k-widget.bind="profilesFilterGrid"
+            >
+                <ak-grid-toolbar>
+                    <ak-template>
+                        <button ak-button class="k-button cra-button ${isCRAEnabled ? 'k-primary' : ''}" click.trigger="filterModelType('CRA')">CRA</button>
+                        <button ak-button class="k-button bwra-button ${isBWRAEnabled ? 'k-primary' : ''}" click.trigger="filterModelType('BWRA')">BWRA</button>
+                        <span class="k-grid-add k-button" ak-button="k-icon: add">Add new profile</span>
+                    </ak-template>
+                </ak-grid-toolbar>  
+                <ak-col k-field="name" k-title="Name" k-editable.bind="isRiskProfileNameEditable">
+                    <ak-template>
+                        <span>${name}</span>
+                        <i if.bind="!isModelValid && state === 'Draft'" class="fa-solid fa-triangle-exclamation text-danger"></i>
+                    </ak-template>
+                </ak-col>
+                <ak-col k-field="type" k-title="Type" k-width="120px" k-editable.bind="isRiskProfileTypeEditable" k-editor.bind="typeDropDownEditor"></ak-col>
+                <ak-col k-field="version" k-title="Version" k-width="100px"></ak-col>
+                <ak-col k-field="state" k-title="Status" k-width="120px" k-editable.bind="isRiskProfileStateEditable" k-editor.bind="stateDropDownEditor"></ak-col>
+                <ak-col k-field="ern" k-title="Configure" k-width="125px">
+                    <ak-template>
+                        <span ak-button="k-icon: gear; k-enable.bind: getDesignEnabled(state)" k-on-click.trigger="goToLevelDown(ern, name)">Design</span>
+                    </ak-template>
+                </ak-col>
+                <!-- <ak-col k-command.bind="['edit', 'destroy']" k-title="Actions" k-width="220px"></ak-col> -->
+                <ak-col k-title="Actions" k-width="220px">
+                    <ak-grid-command k-name="edit" k-text="Edit" k-visible.bind="visibleForEditModel"></ak-grid-command>
+                    <!-- <ak-grid-command k-name="destroy" k-text="Delete" k-visible.bind="visibleForNotApproved"></ak-grid-command> -->
+                    <ak-grid-command k-name="Delete" k-text="Delete" k-icon-class="k-icon k-i-close" k-visible.bind="visibleForNotApproved" k-click.bind="removeRecord"></ak-grid-command>
+                </ak-col>
+            </ak-grid>
+
+            <!-- Categories Grid -->
+            <ak-grid 
+                if.bind="isLoadedOfRiskCategories && activeLevelIndex === 3" 
+                k-data-source.bind="getKendoGridDataSource()" 
+                k-pageable.bind="pageable" 
+                k-toolbar.bind="['create']" 
+                k-editable="inline"
+                k-widget.bind="categoriesGrid"
+            >
+                <ak-grid-toolbar>
+                    <ak-template>
+                        <button if.bind="riskCategories.length > 1" class="k-button" click.delegate="openDialog()"><i class="fa-solid fa-sort"></i> &nbsp;&nbsp;Sort</button>
+                        <span class="k-grid-add k-button" ak-button="k-icon: add">Add new category</span>
+                    </ak-template>
+                </ak-grid-toolbar>  
+                <ak-col k-field="name" k-title="Category">
+                    <ak-template>
+                        <a href="#" role="button" click.trigger="goToLevelDown(ern, name)">
+                            ${name}
+                        </a>
+                        <i if.bind="!isValidCategory(ern)" class="fa-solid fa-triangle-exclamation text-danger"></i>
+                    </ak-template>
+                </ak-col>
+                <ak-col k-field="overrideWeight" k-title="Weight" k-width="200px" k-editor.bind="categoryWeightEditor">
+                    <ak-template>
+                        <span if.bind="!overrideWeight || isNaN(overrideWeight)">${getCalculatedWeight()}%</span>
+                        <span else class="text-bold">${overrideWeight}%</span>
+                    </ak-template>
+                </ak-col>
+                <ak-col k-title="Actions" k-width="220px">
+                    <ak-grid-command k-name="edit" k-text="Edit"></ak-grid-command>
+                    <!-- <ak-grid-command k-name="destroy" k-text="Delete"></ak-grid-command> -->
+                    <ak-grid-command k-name="Delete" k-text="Delete" k-icon-class="k-icon k-i-close" k-click.bind="removeRecord"></ak-grid-command>
+                </ak-col>
+            </ak-grid>
+
+            <!-- Components Grid -->
+            <ak-grid 
+                if.bind="isLoadedOfRiskComponents && activeLevelIndex === 4" 
+                k-data-source.bind="getKendoGridDataSource()" 
+                k-pageable.bind="pageable" 
+                k-toolbar.bind="['create']" 
+                k-editable="inline"
+                k-widget.bind="componentsGrid"
+            >
+                <ak-grid-toolbar>
+                    <ak-template>
+                        <button if.bind="riskComponents.length > 1" class="k-button" click.delegate="openDialog()"><i class="fa-solid fa-sort"></i> &nbsp;&nbsp;Sort</button>
+                        <span class="k-grid-add k-button" ak-button="k-icon: add">Add new component</span>
+                    </ak-template>
+                </ak-grid-toolbar>  
+                <ak-col k-field="name" k-title="Component">
+                    <ak-template>
+                        <a href="#" role="button" click.trigger="goToLevelDown(ern, name)">
+                            ${name}
+                        </a>
+                        <i if.bind="!isValidComponent(ern)" class="fa-solid fa-triangle-exclamation text-danger"></i>
+                    </ak-template>
+                </ak-col>
+                <ak-col k-field="overrideWeight" k-title="Weight" k-width="200px" k-editor.bind="componentWeightEditor">
+                    <ak-template>
+                        <span if.bind="!overrideWeight || isNaN(overrideWeight)">${getCalculatedWeight()}%</span>
+                        <span else class="text-bold">${overrideWeight}%</span>
+                    </ak-template>
+                </ak-col>
+                <ak-col k-title="Actions" k-width="220px">
+                    <ak-grid-command k-name="edit" k-text="Edit"></ak-grid-command>
+                    <!-- <ak-grid-command k-name="destroy" k-text="Delete"></ak-grid-command> -->
+                    <ak-grid-command k-name="Delete" k-text="Delete" k-icon-class="k-icon k-i-close" k-click.bind="removeRecord"></ak-grid-command>
+                </ak-col>
+            </ak-grid>
+
+            <!-- RiskFactors Grid -->
+            <ak-grid 
+                if.bind="isLoadedOfRiskFactors && activeLevelIndex === 5" 
+                k-data-source.bind="getKendoGridDataSource()" 
+                k-pageable.bind="pageable" 
+                k-toolbar.bind="['create']" 
+                k-editable="inline"
+                k-widget.bind="factorsGrid"
+            >
+                <ak-grid-toolbar>
+                    <ak-template>
+                        <button if.bind="riskFactors.length > 1" class="k-button" click.delegate="openDialog()"><i class="fa-solid fa-sort"></i> &nbsp;&nbsp;Sort</button>
+                        <span class="k-grid-add k-button" ak-button="k-icon: add">Add new question</span>
+                    </ak-template>
+                </ak-grid-toolbar>  
+                <ak-col k-field="question" k-title="Question" k-editor.bind="textareaEditor">
+                    <ak-template>
+                        <span if.bind="activeRiskModelType === 'CRA' && answerType === 'Answer'">
+                            <a href="#" role="button" click.trigger="goToLevelDown(ern, question)">
+                                ${question}
+                            </a>
+                            <i if.bind="!isValidRiskFactor(ern)" class="fa-solid fa-triangle-exclamation text-danger"></i>
+                        </span>
+                        <span else>${question}</span>
+                    </ak-template>
+                </ak-col>
+                <ak-col if.bind="activeRiskModelType === 'CRA'" k-field="answerType" k-title="Answer Type" k-width="120px" k-editor.bind="answerTypeDropDownEditor"></ak-col>
+                <ak-col k-field="ern" k-title="Configure" k-width="125px">
+                    <ak-template>
+                        <span ak-button="k-icon: gear" k-on-click.trigger="goToOverride(ern, question)">Override</span>
+                    </ak-template>
+                </ak-col>
+                <ak-col k-title="Actions" k-width="220px">
+                    <ak-grid-command k-name="edit" k-text="Edit"></ak-grid-command>
+                    <!-- <ak-grid-command k-name="destroy" k-text="Delete"></ak-grid-command> -->
+                    <ak-grid-command k-name="Delete" k-text="Delete" k-icon-class="k-icon k-i-close" k-click.bind="removeRecord"></ak-grid-command>
+                </ak-col>
+            </ak-grid>
+
+            <!-- RiskAnswers Grid -->
+            <ak-grid 
+                if.bind="isLoadedOfRiskAnswers && activeLevelIndex === 6" 
+                k-data-source.bind="getKendoGridDataSource()" 
+                k-pageable.bind="pageable" 
+                k-toolbar.bind="['create']" 
+                k-editable="inline"
+                k-widget.bind="answersGrid"
+            >
+                <ak-grid-toolbar>
+                    <ak-template>
+                        <button if.bind="riskAnswers.length > 1" class="k-button" click.delegate="openDialog()"><i class="fa-solid fa-sort"></i> &nbsp;&nbsp;Sort</button>
+                        <span class="k-grid-add k-button" ak-button="k-icon: add">Add new answer</span>
+                    </ak-template>
+                </ak-grid-toolbar>  
+                <ak-col k-field="answer" k-title="Answer" k-editor.bind="textareaEditor"></ak-col>
+                <ak-col k-field="riskScore" k-title="Risk" k-width="120px" k-format="{n}">
+                    <ak-template>
+                        <span>${riskScore}</span>
+                    </ak-template>
+                </ak-col>
+                <ak-col k-field="overrideScore" k-title="Override Score" k-width="150px" k-format="{n}">
+                    <ak-template>
+                        <span>${overrideScore}</span>
+                    </ak-template>
+                </ak-col>
+                <!-- <ak-col k-field="ern" k-title="Override Weight" k-width="150px">
+                    <ak-template>
+                        <span ak-button="k-icon: gear" k-on-click.trigger="goToOverrideFromAnswersGrid()">Override</span>
+                    </ak-template>
+                </ak-col> -->
+                <ak-col k-title="Actions" k-width="220px">
+                    <ak-grid-command k-name="edit" k-text="Edit"></ak-grid-command>
+                    <!-- <ak-grid-command k-name="destroy" k-text="Delete"></ak-grid-command> -->
+                    <ak-grid-command k-name="Delete" k-text="Delete" k-icon-class="k-icon k-i-close" k-click.bind="removeRecord"></ak-grid-command>
+                </ak-col>
+            </ak-grid>
+
+            <!-- RiskOverrides Grid -->
+            <ak-grid 
+                if.bind="isLoadedOfRiskOverrides && activeLevelIndex === 7" 
+                k-data-source.bind="getKendoGridDataSource()" 
+                k-pageable.bind="pageable" 
+                k-toolbar.bind="['create']" 
+                k-editable="inline"
+                k-on-ready.delegate="onOverridesGridReady($event.detail)"
+                >
+                <ak-grid-toolbar>
+                    <ak-template>
+                        <button if.bind="riskOverrides.length > 1" class="k-button" click.delegate="openDialog()"><i class="fa-solid fa-sort"></i> &nbsp;&nbsp;Sort</button>
+                        <span class="k-grid-add k-button" ak-button="k-icon: add">Add new override</span>
+                    </ak-template>
+                </ak-grid-toolbar>  
+                <ak-col k-field="description" k-title="Description" k-editor.bind="textareaEditor"></ak-col>
+                <ak-col k-field="overrideScore" k-title="Override Score" k-width="150px" k-format="{n}">
+                    <ak-template>
+                        <span>${overrideScore}</span>
+                    </ak-template>
+                </ak-col>
+                <ak-col k-field="overrideWeight" k-title="Override Weight" k-width="150px">
+                    <ak-template>
+                        <span>${overrideWeight}</span>
+                    </ak-template>
+                </ak-col>
+                <ak-col k-title="Actions" k-width="220px">
+                    <ak-grid-command k-name="edit" k-text="Edit"></ak-grid-command>
+                    <!-- <ak-grid-command k-name="destroy" k-text="Delete"></ak-grid-command> -->
+                    <ak-grid-command k-name="Delete" k-text="Delete" k-icon-class="k-icon k-i-close" k-click.bind="removeRecord"></ak-grid-command>
+                </ak-col>
+                <ak-template for="detailTemplate">
+                    <override-details 
+                        if.bind="overridesGrid"
+                        parent-element.bind="that"
+                        parent-grid.bind="overridesGrid" 
+                        data-item.bind="$this"
+                        ern.bind="ern"
+                        override-terms.bind="(ern ? query : [])" 
+                        risk-categories.bind="riskCategories"
+                        risk-components-all.bind="riskComponentsAll"
+                        risk-factors-all.bind="riskFactorsAll"
+                        save-override.bind="saveOverride"
+                        index.bind="overrideScore"
+                        risk-matrix.bind="riskConfig.riskMatrix[0]"
+                    ></override-details>
+                 </ak-template>
+            </ak-grid>
+            
+            <div  
+                id="sortCategoriesDialog" 
+                ak-dialog="k-widget.bind: sortCategoriesDialog; 
+                            k-width: 400px; 
+                            k-title: Sort Categories; 
+                            k-closable.bind: false;
+                            k-visible.bind: false; 
+                            k-modal.bind: false; 
+                            k-actions.bind: sortingActions">
+                <ul 
+                    class="sortable-basic" 
+                    ak-sortable="k-cursor-offset.bind: {top: -10, left: -230}; k-hint.call: hint($event); k-placeholder.call: placeholder($event);"
+                    k-on-end.delegate="onSortingEnd($event.detail)">
+                    <li repeat.for="category of riskCategories" class="sortable">${category.name}</li>
+                </ul>
+            </div>
+
+            <div 
+                id="sortComponentsDialog" 
+                ak-dialog="k-widget.bind: sortComponentsDialog; 
+                            k-width: 400px; 
+                            k-title: Sort Components; 
+                            k-closable.bind: false;
+                            k-visible.bind: false; 
+                            k-modal.bind: false; 
+                            k-actions.bind: sortingActions">
+                <ul 
+                    class="sortable-basic" 
+                    ak-sortable="k-cursor-offset.bind: {top: -10, left: -230}; k-hint.call: hint($event); k-placeholder.call: placeholder($event);"
+                    k-on-end.delegate="onSortingEnd($event.detail)">
+                    <li repeat.for="component of riskComponents" class="sortable">${component.name}</li>
+                </ul>
+            </div>
+
+            <div 
+                id="sortFactorsDialog" 
+                ak-dialog="k-widget.bind: sortFactorsDialog; 
+                            k-width: 400px; 
+                            k-title: Sort Questions; 
+                            k-closable.bind: false;
+                            k-visible.bind: false; 
+                            k-modal.bind: false; 
+                            k-actions.bind: sortingActions">
+                <ul 
+                    class="sortable-basic" 
+                    ak-sortable="k-cursor-offset.bind: {top: -10, left: -230}; k-hint.call: hint($event); k-placeholder.call: placeholder($event);"
+                    k-on-end.delegate="onSortingEnd($event.detail)">
+                    <li repeat.for="factor of riskFactors" class="sortable">${factor.question}</li>
+                </ul>
+            </div>
+
+            <div 
+                id="sortAnswersDialog" 
+                ak-dialog="k-widget.bind: sortAnswersDialog; 
+                            k-width: 400px; 
+                            k-title: Sort Questions; 
+                            k-closable.bind: false;
+                            k-visible.bind: false; 
+                            k-modal.bind: false; 
+                            k-actions.bind: sortingActions">
+                <ul 
+                    class="sortable-basic" 
+                    ak-sortable="k-cursor-offset.bind: {top: -10, left: -230}; k-hint.call: hint($event); k-placeholder.call: placeholder($event);"
+                    k-on-end.delegate="onSortingEnd($event.detail)">
+                    <li repeat.for="answer of riskAnswers" class="sortable">${answer.answer}</li>
+                </ul>
+            </div>
+
+            <div 
+                id="sortOverridesDialog" 
+                ak-dialog="k-widget.bind: sortOverridesDialog; 
+                            k-width: 400px; 
+                            k-title: Sort Overrides; 
+                            k-closable.bind: false;
+                            k-visible.bind: false; 
+                            k-modal.bind: false; 
+                            k-actions.bind: sortingActions">
+                <ul 
+                    class="sortable-basic" 
+                    ak-sortable="k-cursor-offset.bind: {top: -10, left: -230}; k-hint.call: hint($event); k-placeholder.call: placeholder($event);"
+                    k-on-end.delegate="onSortingEnd($event.detail)">
+                    <li repeat.for="override of riskOverrides" class="sortable">${override.description}</li>
+                </ul>
+            </div>
+
+        </content-container>
+    </page-content>
+</template>

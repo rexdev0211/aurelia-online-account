@@ -1,0 +1,6 @@
+<template>
+  <form-group header.bind="header">
+    <document-dropzone types.bind="types" success-callback.call="uploadComplete(response)" view-model.ref="documentDropZone"></document-dropzone>
+    <slot></slot>
+  </form-group>
+</template>

@@ -1,0 +1,56 @@
+<template>
+  <require from="aurelia-kendoui-bridge/grid/grid"></require>
+  <require from="aurelia-kendoui-bridge/grid/col"></require>
+  <require from="aurelia-kendoui-bridge/common/template"></require>
+
+  <page-content>
+    <content-container
+        continue-button-show.bind="false"
+        form-buttons-show.bind="true"
+        header="Pending Requests">
+
+      <kendo-drop-down-list
+          header="Select Business:"
+          if.bind="state.customerSummary.businesses.length > 1"
+          items.bind="state.customerSummary.businesses"
+          on-change.call="businessChanged($event)"
+          place-holder="Source Business"
+          text-field="businessName"
+          value-field="ern"
+          value.one-time="state.requests.selectedBusiness.ern">
+      </kendo-drop-down-list>
+
+      <template if.bind="state.requests.selectedBusiness.ern">
+
+        <ak-grid k-data-source.bind="dataSource"
+                 k-on-ready.delegate="onReady($event.detail)"
+                 k-pageable.bind="pageable">
+
+          <ak-col k-field="createdDate" k-title="Created" k-width="120px">
+            <ak-template>
+              ${createdDate|dateFormat}
+            </ak-template>
+          </ak-col>
+
+          <ak-col k-field="state" k-title="State" k-width="85px"></ak-col>
+
+          <ak-col k-field="type" k-title="Type">
+            <ak-template>
+              ${type}
+            </ak-template>
+          </ak-col>
+
+          <ak-col k-field="requestedBy.userAuthEmail" k-title="Requested By"></ak-col>
+
+          <ak-template for="detailTemplate">
+            <request-detail job.bind="$this"></request-detail>
+          </ak-template>
+
+        </ak-grid>
+
+      </template>
+
+
+    </content-container>
+  </page-content>
+</template>

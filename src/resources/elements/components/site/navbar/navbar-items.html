@@ -1,0 +1,5 @@
+<template>
+  <template repeat.for="item of items">
+    <navbar-item icon="${item.settings.icon}" text="${item.title}" href="#/${item.route}" is-active.bind="item.isActive"></navbar-item>
+  </template>
+</template>

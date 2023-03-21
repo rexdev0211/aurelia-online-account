@@ -1,0 +1,26 @@
+<template>
+  <!-- start brand nav -->
+  <div class="navbar navbar-expand-md client-navbrand">
+    <div class="navbar-brand wmin-0 mr-5">
+      <a class="d-inline-block" click.delegate="reload()" href="javascript:void(0)">
+        <img alt="Enumis Limited" class="header-logo-image w-75 h-75" src="../../../../../assets/img/logo-nav-dark.png" style.bind="!state.mfaSetup && state.isAuthenticated && !state.websocketOnline ? 'filter: grayscale(100%);':''">
+      </a>
+    </div>
+    <div class="navbar-collapse g-hidden-sm-down">
+      <ul class="navbar-nav ml-md-auto">
+        <li class="nav-item text-right" if.bind="state.isAuthenticated">
+          <div show.bind="showUsername" style="font-size: small; display: inline-block">${state.authentication.user.userName}</div>
+          <div on-hover.bind="showUsername" style="display: inline-block">
+            <a class="navbar-nav-link" click.delegate="logout()" style="padding: 0">
+              <i class="icon-lock5"></i> Logout
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- stop brand nav -->
+  <navbar class="navbar navbar-expand-md navbar-lg client-navmenu" if.bind="state.showNavbar"></navbar>
+  <!-- stop header -->
+</template>

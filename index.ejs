@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><%- htmlWebpackPlugin.options.metadata.title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="<%- htmlWebpackPlugin.options.metadata.baseUrl %>">
+    <!-- imported CSS are concatenated and added automatically -->
+    <script src="https://kit.fontawesome.com/668afc6705.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.js"></script>
+    <script type="text/javascript">
+
+        let w = window;
+        let l = w.location;
+        let h = l.hostname;
+
+        if (h.endsWith('.enumis.co.uk') === false) {
+            let linkElement = document.createElement("link");
+
+            linkElement.rel = "stylesheet";
+            linkElement.type = "text/css";
+            linkElement.href = `https://clients.enumis.co.uk/onlineaccount/${h}/override.css?t=${new Date().getTime()}`;
+
+            document.head.appendChild(linkElement);
+        }
+
+    </script>
+    <style>
+        body {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="navbar-bottom" aurelia-app="main">
+<style>
+    body {
+        opacity: 0;
+    }
+</style>
+
+</body>
+
+</html>

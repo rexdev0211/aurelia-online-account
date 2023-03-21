@@ -1,0 +1,22 @@
+<template>
+  <require from="aurelia-kendoui-bridge/dropdownlist/dropdownlist"></require>
+  <require from="aurelia-kendoui-bridge/common/template"></require>
+
+  <form-group header.bind="header">
+    <ak-drop-down-list
+        k-data-source.bind="items"
+        k-data-text-field.bind="textField"
+        k-data-value-field.bind="valueField"
+        k-filter.bind="filter"
+        k-on-change.delegate="onChange($event.detail)"
+        k-option-label.bind="placeHolder"
+        k-value.two-way="value"
+        k-widget.two-way="widget"
+        k-on-ready.delegate="onReady($event.detail)"
+        style="width: 100%;">
+    </ak-drop-down-list>
+    <slot></slot>
+  </form-group>
+</template>
+
+

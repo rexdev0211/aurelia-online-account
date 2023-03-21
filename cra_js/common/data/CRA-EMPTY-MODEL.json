@@ -1,0 +1,1807 @@
+{
+    "CalculatedScore": 0,
+    "Name": "Customer Risk Assessment #1",
+    "Categories": [
+      {
+        "Name": "CUSTOMER",
+        "Weight": 0.3,
+        "OverrideWeight": null,
+        "Components": [
+          {
+            "NonZeroFactorAnswers": 0,
+            "CalcFactorOverrideCount": 0,
+            "CalcFactorOverrideWeight": 0,
+            "CalcFactorWeight": 0.125,
+            "CalcRawScore": 0,
+            "CalculatedScore": 0,
+            "CalcOverrideScore": null,
+            "Name": "IDENTIFICATION",
+            "RiskFactors": [
+              {
+                "Name": null,
+                "Question": "Is the customer/UBO/Directors/Controllers Politically Exposed persons?",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Customer (including individuals) background check shows adverse media",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Is the adverse media material?",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "NA",
+                    "ConfidenceScore": 0,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Identified and verified the customer, directors and beneficial owner(s)",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Has the customer been cooperative during the account opening process",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Did a director/partner submit and manage the application process?",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Incorporation Date",
+                "Answers": [],
+                "AnswerIndex": null,
+                "AnswerType": "Date",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Is this an existing client? If yes, enter how long the relationship has existed, in years",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes-Less than 1 year",
+                    "ConfidenceScore": 0.49,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes-Between 1-3 years",
+                    "ConfidenceScore": 0.75,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes-More than 5 years",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              }
+            ],
+            "Weight": 0.25,
+            "OverrideWeight": null
+          },
+          {
+            "NonZeroFactorAnswers": 0,
+            "CalcFactorOverrideCount": 0,
+            "CalcFactorOverrideWeight": 0,
+            "CalcFactorWeight": 0.3333,
+            "CalcRawScore": 0,
+            "CalculatedScore": 0,
+            "CalcOverrideScore": null,
+            "Name": "STRUCTURE/OWNERSHIP",
+            "RiskFactors": [
+              {
+                "Name": null,
+                "Question": "Describe the corporate structure of the customer. Is it unusual or excessively complex?",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Simple",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "MultiLayered",
+                    "ConfidenceScore": 0.49,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Overly Complex",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": 0.3
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Is the customer a company that has nominee shareholders or shares in bearer form",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Is the customer listed on any public stock exchange or is it a public body?",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.49,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              }
+            ],
+            "Weight": 0.2,
+            "OverrideWeight": null
+          },
+          {
+            "NonZeroFactorAnswers": 0,
+            "CalcFactorOverrideCount": 0,
+            "CalcFactorOverrideWeight": 0,
+            "CalcFactorWeight": 0.1667,
+            "CalcRawScore": 0,
+            "CalculatedScore": 0,
+            "CalcOverrideScore": null,
+            "Name": "INDUSTRY RISK",
+            "RiskFactors": [
+              {
+                "Name": null,
+                "Question": "If the customer subject to MLR regulations - have AML Policies & Procedures been reviewed & acceptable? (select NA if not subject to MLR)",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "NA-Customer not subject to MLR",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes and acceptable",
+                    "ConfidenceScore": 0.75,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes not acceptable",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Not Reviewed",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "If the customer subject to MLR regulations - do they have an MLRO Appointed? (select NA if  not subject to MLR)",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "NA-Customer not subject to MLR",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes they have an MLRO",
+                    "ConfidenceScore": 0.75,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No they do not have an MLRO",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Main business activities e.g. Crypto, Adult, MSB, Financial Services",
+                "Answers": [],
+                "AnswerIndex": null,
+                "AnswerType": "Industry",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Does the business have a valid and verifiable website that accurately details their business?",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Are innovative/ new products/ services evident in business?",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Does the customer deal with high-risk sectors, jurisdictions or businesses",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              }
+            ],
+            "Weight": 0.3,
+            "OverrideWeight": null
+          },
+          {
+            "NonZeroFactorAnswers": 0,
+            "CalcFactorOverrideCount": 0,
+            "CalcFactorOverrideWeight": 0,
+            "CalcFactorWeight": 0.5,
+            "CalcRawScore": 0,
+            "CalculatedScore": 0,
+            "CalcOverrideScore": null,
+            "Name": "SOURCE OF FUNDS",
+            "RiskFactors": [
+              {
+                "Name": null,
+                "Question": "Source of funds provided (where required)",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Employment income",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Inheritance",
+                    "ConfidenceScore": 0.49,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Savings or pension",
+                    "ConfidenceScore": 0.75,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Investment income",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Rental income",
+                    "ConfidenceScore": 0.49,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Government payments",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Loan",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Grants or gifts",
+                    "ConfidenceScore": 0.25,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Trading Income (from Customers)",
+                    "ConfidenceScore": 0.49,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Not Provided",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Not Required",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Source of wealth provided (where required)",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Inheritance",
+                    "ConfidenceScore": 0.75,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Investments",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Ownership of a business",
+                    "ConfidenceScore": 0.49,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Employment",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Not Provided",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Not Required",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              }
+            ],
+            "Weight": 0.25,
+            "OverrideWeight": null
+          }
+        ],
+        "CalcOverrideScore": null,
+        "CalculatedScore": 0
+      },
+      {
+        "Name": "CHANNEL",
+        "Weight": 0.2,
+        "OverrideWeight": null,
+        "Components": [
+          {
+            "NonZeroFactorAnswers": 0,
+            "CalcFactorOverrideCount": 0,
+            "CalcFactorOverrideWeight": 0,
+            "CalcFactorWeight": 0.5,
+            "CalcRawScore": 0,
+            "CalculatedScore": 0,
+            "CalcOverrideScore": null,
+            "Name": "ORIGINATION",
+            "RiskFactors": [
+              {
+                "Name": null,
+                "Question": "Have we met with this client face to face?",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Was the customer introduced by a third party?",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              }
+            ],
+            "Weight": 0.3,
+            "OverrideWeight": null
+          },
+          {
+            "NonZeroFactorAnswers": 0,
+            "CalcFactorOverrideCount": 0,
+            "CalcFactorOverrideWeight": 0,
+            "CalcFactorWeight": 1,
+            "CalcRawScore": 0,
+            "CalculatedScore": 0,
+            "CalcOverrideScore": null,
+            "Name": "ANONYMITY",
+            "RiskFactors": [
+              {
+                "Name": null,
+                "Question": "Anonymity requested, involved in transactions or feature of the product",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              }
+            ],
+            "Weight": 0.5,
+            "OverrideWeight": null
+          },
+          {
+            "NonZeroFactorAnswers": 0,
+            "CalcFactorOverrideCount": 0,
+            "CalcFactorOverrideWeight": 0,
+            "CalcFactorWeight": 0.5,
+            "CalcRawScore": 0,
+            "CalculatedScore": 0,
+            "CalcOverrideScore": null,
+            "Name": "CASH",
+            "RiskFactors": [
+              {
+                "Name": null,
+                "Question": "Will the customer have access to cash deposits/loads and if so what is the monthly limit?",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes-upto �3500 per month",
+                    "ConfidenceScore": 0.75,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes-between �3500 and �6000 per month",
+                    "ConfidenceScore": 0.25,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes-over �6000 per month",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Will the customer have access to cash withdrawals and if so what is the monthly limit?",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes-upto �3500 per month",
+                    "ConfidenceScore": 0.75,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes-between �3500 and �6000 per month",
+                    "ConfidenceScore": 0.25,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes-over �6000 per month",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              }
+            ],
+            "Weight": 0.2,
+            "OverrideWeight": null
+          }
+        ],
+        "CalcOverrideScore": null,
+        "CalculatedScore": 0
+      },
+      {
+        "Name": "GEOGRAPHIC",
+        "Weight": 0.2,
+        "OverrideWeight": null,
+        "Components": [
+          {
+            "NonZeroFactorAnswers": 0,
+            "CalcFactorOverrideCount": 0,
+            "CalcFactorOverrideWeight": 0,
+            "CalcFactorWeight": 0.2,
+            "CalcRawScore": 0,
+            "CalculatedScore": 0,
+            "CalcOverrideScore": null,
+            "Name": "LOCALITY",
+            "RiskFactors": [
+              {
+                "Name": null,
+                "Question": "Geographical location of customer (if more than one select most prominent or relevant)",
+                "Answers": [],
+                "AnswerIndex": null,
+                "AnswerType": "Country",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Customer Country of Incorporation",
+                "Answers": [],
+                "AnswerIndex": null,
+                "AnswerType": "Country",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Country of main controllers or the board-this will be the location of the directors or other significant controllers or UBO",
+                "Answers": [],
+                "AnswerIndex": null,
+                "AnswerType": "Country",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Does the customer have multiple office locations in more than one country?",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Does the customer have other accounts in multiple countries?",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              }
+            ],
+            "Weight": 0.3,
+            "OverrideWeight": null
+          },
+          {
+            "NonZeroFactorAnswers": 0,
+            "CalcFactorOverrideCount": 0,
+            "CalcFactorOverrideWeight": 0,
+            "CalcFactorWeight": 0.3333,
+            "CalcRawScore": 0,
+            "CalculatedScore": 0,
+            "CalcOverrideScore": null,
+            "Name": "HIGH RISK COUNTRIES",
+            "RiskFactors": [
+              {
+                "Name": null,
+                "Question": "Links to High risk countries (e.g corruption; countries subject to sanctions, embargos, or similar measures)",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Is there an expectation (or evidence) of high volume or value of international transactions to/from high risk locations",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Evidence of operating in or working with Countries with no/little AML regulations�(FATF)",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              }
+            ],
+            "Weight": 0.35,
+            "OverrideWeight": null
+          },
+          {
+            "NonZeroFactorAnswers": 0,
+            "CalcFactorOverrideCount": 0,
+            "CalcFactorOverrideWeight": 0,
+            "CalcFactorWeight": 1,
+            "CalcRawScore": 0,
+            "CalculatedScore": 0,
+            "CalcOverrideScore": null,
+            "Name": "PROHIBITED COUNTRIES",
+            "RiskFactors": [
+              {
+                "Name": null,
+                "Question": "Evidence of operating in or working with Countries providing funding or support for terrorism",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              }
+            ],
+            "Weight": 0.35,
+            "OverrideWeight": null
+          }
+        ],
+        "CalcOverrideScore": null,
+        "CalculatedScore": 0
+      },
+      {
+        "Name": "PRODUCT & TRANSACTION",
+        "Weight": 0.3,
+        "OverrideWeight": null,
+        "Components": [
+          {
+            "NonZeroFactorAnswers": 0,
+            "CalcFactorOverrideCount": 0,
+            "CalcFactorOverrideWeight": 0,
+            "CalcFactorWeight": 0.125,
+            "CalcRawScore": 0,
+            "CalculatedScore": 0,
+            "CalcOverrideScore": null,
+            "Name": "TRANSACTION",
+            "RiskFactors": [
+              {
+                "Name": null,
+                "Question": "If they will group funds: will MSB plausibly be able to (or have they) provide(d) counterparty details and values per payment?",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "NA",
+                    "ConfidenceScore": 0,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes they do",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No they do n ot",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Has the customer received fraud claims against them? (select NA if no information - review CRA must select yes/no)",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "NA",
+                    "ConfidenceScore": 0,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes-less than 0.5% of total value/volume",
+                    "ConfidenceScore": 0.75,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes-between 0.5% and 1% of total value/volume",
+                    "ConfidenceScore": 0.75,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes-between 1% and 3% of total value/volume",
+                    "ConfidenceScore": 0.49,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes-between 3% and 5% of total value/volume",
+                    "ConfidenceScore": 0.25,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes-between 5% and 10% of total value/volume",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes-greater than 10% of total value/volume",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Complex or inconsistent transaction activity (select NA if no information - review CRA must select yes/no)",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "NA",
+                    "ConfidenceScore": 0,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "High volume of transactions (select NA if no information - review CRA must select yes/no)",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "NA",
+                    "ConfidenceScore": 0,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": 0.3
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "High value transactions (select NA if no information - review CRA must select yes/no)",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "NA",
+                    "ConfidenceScore": 0,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": 0.3
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Accepting high charges and/or penalties",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "High proportion of cash transactions (actual or anticipated)",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Does customer intend/expect to make and receive international payments",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              }
+            ],
+            "Weight": 0.5,
+            "OverrideWeight": null
+          },
+          {
+            "NonZeroFactorAnswers": 0,
+            "CalcFactorOverrideCount": 0,
+            "CalcFactorOverrideWeight": 0,
+            "CalcFactorWeight": 0.5,
+            "CalcRawScore": 0,
+            "CalculatedScore": 0,
+            "CalcOverrideScore": null,
+            "Name": "SOURCE OF FUNDS",
+            "RiskFactors": [
+              {
+                "Name": null,
+                "Question": "Is initial investment coming from a recognised financial/credit institution?",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              },
+              {
+                "Name": null,
+                "Question": "Customer will provide Source of Funds for underlying customers where required",
+                "Answers": [
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "NA",
+                    "ConfidenceScore": 0,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "Yes",
+                    "ConfidenceScore": 0.94,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": null
+                  },
+                  {
+                    "Name": null,
+                    "Tag": null,
+                    "Value": "No",
+                    "ConfidenceScore": 0.6,
+                    "RiskWeight": 1,
+                    "OverrideScore": null,
+                    "OverrideWeight": 0.3
+                  }
+                ],
+                "AnswerIndex": null,
+                "AnswerType": "Answer",
+                "AnswerProbability": null,
+                "SelectedAnswer": null,
+                "Weight": null,
+                "ConfidenceScore": 0,
+                "OverrideScore": null,
+                "OverrideWeight": null
+              }
+            ],
+            "Weight": 0.25,
+            "OverrideWeight": null
+          }
+        ],
+        "CalcOverrideScore": null,
+        "CalculatedScore": 0
+      }
+    ],
+    "CalcOverrideScore": null
+  }

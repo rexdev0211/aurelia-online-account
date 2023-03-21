@@ -1,0 +1,34 @@
+<template>
+  <content-container
+      action-button-disabled.bind="!showSendTestButton"
+      action-button-size="165px"
+      action-button-text="Send Test Webhook"
+      action-button-click.call="sendTestWebhook()"
+      back-button-click.call="back()"
+      back-button-disabled.bind="false"
+      button-click.call="submit()"
+      button-icon="icon-loop3"
+      button-text="Continue"
+      header="Create ${event} Webhook">
+
+    <form-group header="Account:">
+      <h5>
+        ${state.webhooks.sourceAccount.code}
+      </h5>
+    </form-group>
+
+    <form-group header="Name:">
+      <input class="form-control form-control-lg" placeholder="My Webhook" type="text" value.bind="model.name & validate">
+    </form-group>
+
+    <form-group header="Url:">
+      <input class="form-control form-control-lg" placeholder="https://myserver/api/incoming" type="text" value.bind="model.url & validateOnBlur">
+    </form-group>
+
+    <form-group header="Secret:">
+      <input class="form-control form-control-lg" placeholder="ASUPERSECRETKEY" type="text" value.bind="model.secret & validate">
+    </form-group>
+
+
+  </content-container>
+</template>

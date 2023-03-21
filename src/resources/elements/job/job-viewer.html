@@ -1,0 +1,110 @@
+<template>
+    <style>
+        #sbd::-webkit-scrollbar {
+            width: 12px; /* width of the entire scrollbar */
+        }
+    </style>
+    <template if.bind="disablePageContent">
+
+        <content-container button-click.call="submit()" button-disabled.bind="currentState<2"
+                           button-icon="icon-loop3"
+                           button-text="Continue"
+                           header.bind="statusType">
+            <div>
+                <i class="${getJobCss(job)}"></i>
+                Your instructions received
+                <span if.bind="currentIndex > 0">
+                        <i class="ml-1">(completing ${currentIndex} of ${job.tasks.length})</i>
+                    </span>
+            </div>
+
+            <div id="sbd1" ref="scrollBoxDiv" style="overflow-x: auto; max-height: 300px;">
+
+                <div repeat.for="task of job.tasks">
+                    <i class="${getTaskCss(task)}"></i>
+
+                    <span if.bind="task.type !== 'ExecuteOutgoingTransactionMonitoringPipeline'">
+                        <span if.bind="task.cleanup">Finalizing your ${humanize(task.type, 'lowerCase')} request</span>
+                        <span else>Attempting your ${humanize(task.type, 'lowerCase')} request</span>
+                    </span>
+                    <span else>We are performing some checks on this payment</span>
+
+                    <div if.bind="task.meta.OutboundHeldTransaction">
+                        <br>
+                        <p><strong>* This transaction is currently experiencing a delay by our upstream provider. We
+                            thank-you your patience.</strong></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-4">
+                <i class="small">
+                    Please note: Your instructions were successfully received and you may click 'continue' to continue
+                    on with your banking at any time.
+                </i>
+            </div>
+
+            <div if.bind="job.state === 'Failed' || job.state === 'HasExceptions'">
+                <br>
+                <p> * <span if.bind="job.meta.Exception">${job.meta.Exception} </span>Please check your payment
+                    details
+                    and try again.</p>
+            </div>
+        </content-container>
+
+    </template>
+    <template else>
+
+        <page-content>
+            <content-container button-click.call="submit()" button-disabled.bind="currentState<2"
+                               button-icon="icon-loop3"
+                               button-text="Continue"
+                               header.bind="statusType">
+                <div>
+                    <i class="${getJobCss(job)}"></i>
+                    Your instructions received
+                    <span if.bind="currentIndex > 0">
+                        <i class="ml-1">(completing ${currentIndex} of ${job.tasks.length})</i>
+                    </span>
+                </div>
+
+                <div id="sbd" ref="scrollBoxDiv" style="overflow-x: auto; max-height: 300px;">
+
+                    <div repeat.for="task of job.tasks">
+                        <i class="${getTaskCss(task)}"></i>
+
+                        <span if.bind="task.type !== 'ExecuteOutgoingTransactionMonitoringPipeline'">
+                        <span if.bind="task.cleanup">Finalizing your ${humanize(task.type, 'lowerCase')} request</span>
+                        <span else>Attempting your ${humanize(task.type, 'lowerCase')} request</span>
+                    </span>
+                        <span else>We are performing some checks on this payment</span>
+
+                        <div if.bind="task.meta.OutboundHeldTransaction">
+                            <br>
+                            <p><strong>* This transaction is currently experiencing a delay by our upstream provider. We
+                                thank-you your patience.</strong></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-4">
+                    <i class="small">
+                        Please note: Your instructions were successfully received and you may click 'continue' to
+                        continue on with your banking at any time.
+                    </i>
+                </div>
+
+                <div if.bind="job.state === 'Failed' || job.state === 'HasExceptions'">
+                    <br>
+                    <p> * <span if.bind="job.meta.Exception">${job.meta.Exception} </span>Please check your payment
+                        details
+                        and try again.</p>
+                </div>
+            </content-container>
+        </page-content>
+
+    </template>
+
+</template>

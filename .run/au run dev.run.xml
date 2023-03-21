@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="au run dev" type="NodeJSConfigurationType" node-parameters="--max_old_space_size=102400 ./node_modules/aurelia-cli/bin/aurelia-cli run --env dev --watch" working-dir="$PROJECT_DIR$">
+    <EXTENSION ID="com.jetbrains.nodejs.run.NodeStartBrowserRunConfigurationExtension">
+      <browser start="true" url="http://localhost:8081" />
+    </EXTENSION>
+    <method v="2" />
+  </configuration>
+</component>

@@ -1,0 +1,176 @@
+<template>
+
+    <div class="container">
+
+        <div class="float-right">
+            <i class="fas fa-info-circle fa-2x clickable" click.trigger="viewJobStatus()" style="color: #FFCB4B;" title="View Job Status" aria-hidden="true"></i>
+        </div>
+        <div class="grid-row">
+            <grid-item-box header="Account Name">${job.meta.SourceAccountSummary.name}</grid-item-box>
+            <grid-item-box header="Account Number">${job.meta.SourceAccountSummary.code}</grid-item-box>
+            <grid-item-box header="Beneficiary Nickname">${job.meta.DestinationAccountSummary.nickName}</grid-item-box>
+            <grid-item-box header="Beneficiary Name">${job.meta.DestinationAccountSummary.name}</grid-item-box>
+            <grid-item-box header="Beneficiary Account Name">${job.meta.DestinationAccountSummary.accountName}
+            </grid-item-box>
+            <grid-item-box header="Beneficiary Account Number">${job.meta.DestinationAccountSummary.code}
+            </grid-item-box>
+            <grid-item-box header="Internal Ref">${job.input.InternalReference || job.input.InternalReference2}
+            </grid-item-box>
+            <grid-item-box header="Currency">${job.meta.Currency.code}</grid-item-box>
+            <grid-item-box header="Requested By">${job.requestedBy.userAuthEmail}</grid-item-box>
+            <grid-item-box header="Requested Date / Time">${job.createdDate|epochFormat:'DD-MM-YYYY HH:mm:ss'}
+            </grid-item-box>
+            <grid-item-box header="Scheduled">${job.scheduleDate || job.createdDate |epochFormat}</grid-item-box>
+            <grid-item-box header="Type">${job.input.Scheme || job.input.Scheme2|schemeFormat}</grid-item-box>
+            <grid-item-box header="Error">${job.meta.Exception}</grid-item-box>
+
+        </div>
+        <div class="grid-row" if.bind="job.state === 'Scheduled'">
+
+            <grid-item-box container-style="background: #eaeaea;" excerpt-style="width: 294px;" header="Cancel"
+                           style="margin-left: auto;" title-style="font-weight: 600;"
+                           wrapper-style="padding-right: 0px; ">
+                <select style="display: inline;" value.bind="action">
+                    <option model.bind="null">Select One</option>
+                    <option>Cancel</option>
+                </select>
+                <template if.bind="!!action">
+                    <button click.trigger="cancel()"
+                            style="width: 50px;height: 16px; font-size: 0.9em;line-height: 9px; font-weight: 600; display: inline; margin-left: 10px;">
+                        Submit
+                    </button>
+                </template>
+            </grid-item-box>
+
+        </div>
+    </div>
+
+
+    <style>
+
+        .k-grid tr:not(.k-state-selected):hover {
+            background: transparent;
+        }
+
+        .k-grid tr.k-alt:not(.k-state-selected):hover {
+            background: transparent;
+        }
+
+        .container {
+            max-width: 99%;
+            margin: 0 auto;
+            flex-direction: row-reverse;
+        }
+
+        .grid-row {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+
+        }
+
+        .grid-item {
+            height: 60px;
+            flex-basis: 20%;
+            -ms-flex: auto;
+            width: auto;
+            position: relative;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        .grid-row a {
+            text-decoration: none;
+        }
+
+        .grid-item-wrapper {
+            -webkit-box-sizing: initial;
+            -moz-box-sizing: initial;
+            box-sizing: initial;
+            /*background: #ececec;*/
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 50px 0px 0px;
+        }
+
+        .grid-item-container {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+
+        .grid-image-top .centered {
+            text-align: center;
+            transform: translate(-50%, -50%);
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 54.5%;
+            left: 50%;
+            width: 60%;
+            height: 60%;
+            background-position: center;
+        }
+
+        .grid-item-content {
+            /*padding: 0 20px 20px 20px;*/
+        }
+
+        .item-title {
+            font-size: 14px;
+            line-height: 16px;
+            /*text-decoration: underline;*/
+            font-weight: 600;
+            padding-top: 4px;
+            margin-bottom: 4px;
+            padding-left: 4px;
+            display: block;
+            white-space: nowrap;
+            /*background-color: #d3d3d366;*/
+        }
+
+        .item-excerpt {
+            margin-left: 4px;
+            display: block;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .more-info i {
+            padding-left: 5px;
+            transition-duration: .5s;
+        }
+
+        .more-info i::before {
+            font-size: 16px;
+        }
+
+        @media (max-width: 1333px) {
+            .grid-item {
+                flex-basis: 33.33%;
+            }
+        }
+
+        @media (max-width: 1073px) {
+            .grid-item {
+                flex-basis: 33.33%;
+            }
+        }
+
+        @media (max-width: 815px) {
+            .grid-item {
+                flex-basis: 50%;
+            }
+        }
+
+        @media (max-width: 555px) {
+            .grid-item {
+                flex-basis: 100%;
+            }
+        }
+
+    </style>
+</template>

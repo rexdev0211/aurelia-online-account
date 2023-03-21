@@ -1,0 +1,390 @@
+<template>
+    <require from="./styles/builder.css"></require>
+    <require from="./components/cra-table.html"></require>
+    <require from="aurelia-kendoui-bridge/grid/grid"></require>
+    <require from="aurelia-kendoui-bridge/grid/col"></require>
+    <require from="aurelia-kendoui-bridge/grid/grid-command"></require>
+    <require from="aurelia-kendoui-bridge/grid/grid-toolbar"></require>
+    <require from="aurelia-kendoui-bridge/common/template"></require>
+    <require from="aurelia-kendoui-bridge/button/button"></require>
+
+    <style>
+        /* Style the list */
+        ul.breadcrumb {
+            padding: 10px 16px;
+            list-style: none;
+            background-color: #eee;
+        }
+
+        /* Display list items side by side */
+        ul.breadcrumb li {
+            display: inline;
+            font-size: 18px;
+        }
+
+        /* Add a slash symbol (/) before/behind each list item */
+        ul.breadcrumb li + li:before {
+            padding: 8px;
+            color: black;
+            content: "/\003e";
+        }
+
+        /* Add a color to all links inside the list */
+        ul.breadcrumb li a {
+            color: #0275d8;
+            text-decoration: none;
+        }
+
+        /* Add a color on mouse-over */
+        ul.breadcrumb li a:hover {
+            color: #01447e;
+            text-decoration: underline;
+        }
+
+        button {
+            width: auto !important;;
+        }
+
+        button:hover {
+            width: auto !important;
+        }
+    </style>
+
+    <div class="container-xl">
+
+        <div class="pull-right mb-5" style="margin-top: -8px;">
+            <a class="btn btn-primary" href="#/cra" role="button">Live Mode</a>
+        </div>
+
+        <oi class="breadcrumb mb-5" style="margin-top: 90px;">
+            <li aria-current="page" class="clickable breadcrumb-item ${$index === $last ? 'active' : ''}" repeat.for="level of levels.slice(0, activeLevelIndex)">
+                <a click.trigger="moveToLevel($index + 1)" if.bind="$index !== activeLevelIndex - 1" role="button">
+                    ${level}
+                </a>
+                <span else>${level}</span>
+            </li>
+        </oi>
+
+        <!-- Models Screen -->
+        <ak-grid
+            if.bind="isLoaded && activeLevelIndex === 1"
+            k-data-source.bind="getKendoGridDataSource()"
+            k-editable="inline"
+            k-pageable.bind="pageable"
+            k-toolbar.bind="['create']"
+        >
+            <ak-grid-toolbar>
+                <ak-template>
+                    <button class="k-grid-add k-button k-button-md k-rounded-md k-button-solid k-button-solid-base" type="button">
+                        <span class="k-icon k-i-plus k-button-icon"></span><span class="k-button-text">Add new model</span>
+                    </button>
+                </ak-template>
+            </ak-grid-toolbar>
+            <ak-col k-field="name" k-title="Model Name"></ak-col>
+            <ak-col k-field="id" k-title="Status" k-width="200px">
+                <ak-template>
+                    <span style="color: green">${getProfileStatus(id)}</span>
+                </ak-template>
+            </ak-col>
+            <ak-col k-field="id" k-title="&nbsp;" k-width="54px">
+                <ak-template>
+                    <span ak-button="k-icon: gear" k-on-click.trigger="goToLevelDownById(id)"></span>
+                </ak-template>
+            </ak-col>
+            <ak-col k-command.bind="['edit', 'destroy']" k-title="&nbsp;" k-width="220px"></ak-col>
+        </ak-grid>
+
+        <!-- Categories Screen -->
+        <ak-grid
+            if.bind="activeLevelIndex === 2"
+            k-data-source.bind="getKendoGridDataSource()"
+            k-editable="inline"
+            k-pageable.bind="pageable"
+            k-toolbar.bind="['create']"
+        >
+            <ak-grid-toolbar>
+                <ak-template>
+                    <button class="k-grid-add k-button k-button-md k-rounded-md k-button-solid k-button-solid-base" type="button">
+                        <span class="k-icon k-i-plus k-button-icon"></span><span class="k-button-text">Add new category</span>
+                    </button>
+                </ak-template>
+            </ak-grid-toolbar>
+            <ak-col k-field="name" k-title="Category Name">
+                <ak-template>
+                    <a class="clickable" click.trigger="goToLevelDownByName(name)" role="button">${name}</a>
+                </ak-template>
+            </ak-col>
+            <ak-col k-field="weight" k-title="Weight" k-width="150px"></ak-col>
+            <ak-col k-command.bind="['edit', 'destroy']" k-title="&nbsp;" k-width="220px"></ak-col>
+        </ak-grid>
+
+        <!-- Components Screen -->
+        <ak-grid
+            if.bind="activeLevelIndex === 3"
+            k-data-source.bind="getKendoGridDataSource()"
+            k-editable="inline"
+            k-pageable.bind="pageable"
+            k-toolbar.bind="['create']"
+        >
+            <ak-grid-toolbar>
+                <ak-template>
+                    <button class="k-grid-add k-button k-button-md k-rounded-md k-button-solid k-button-solid-base" type="button">
+                        <span class="k-icon k-i-plus k-button-icon"></span><span class="k-button-text">Add new component</span>
+                    </button>
+                </ak-template>
+            </ak-grid-toolbar>
+            <ak-col k-field="name" k-title="Component Name">
+                <ak-template>
+                    <a class="clickable" click.trigger="goToLevelDownByName(name)" role="button">${name}</a>
+                </ak-template>
+            </ak-col>
+            <ak-col k-field="weight" k-title="Weight" k-width="150px"></ak-col>
+            <ak-col k-command.bind="['edit', 'destroy']" k-title="&nbsp;" k-width="220px"></ak-col>
+        </ak-grid>
+
+        <!-- RiskFactors Screen -->
+        <ak-grid
+            if.bind="activeLevelIndex === 4"
+            k-data-source.bind="getKendoGridDataSource()"
+            k-editable="inline"
+            k-pageable.bind="pageable"
+            k-toolbar.bind="['create']"
+        >
+            <ak-grid-toolbar>
+                <ak-template>
+                    <button class="k-grid-add k-button k-button-md k-rounded-md k-button-solid k-button-solid-base" type="button">
+                        <span class="k-icon k-i-plus k-button-icon"></span><span class="k-button-text">Add new RiskFactor</span>
+                    </button>
+                </ak-template>
+            </ak-grid-toolbar>
+            <ak-col k-field="question" k-title="Question">
+                <ak-template>
+                    <a class="clickable" click.trigger="goToLevelDownByQuestion(question)" role="button">${question}</a>
+                </ak-template>
+            </ak-col>
+            <ak-col k-field="answerType" k-title="Answer Type" k-width="200px"></ak-col>
+            <ak-col k-command.bind="['edit', 'destroy']" k-title="&nbsp;" k-width="220px"></ak-col>
+        </ak-grid>
+
+        <!-- Answers Screen -->
+        <ak-grid
+            if.bind="activeLevelIndex === 5"
+            k-data-source.bind="getKendoGridDataSource()"
+            k-editable="inline"
+            k-pageable.bind="pageable"
+            k-toolbar.bind="['create']"
+        >
+            <ak-grid-toolbar>
+                <ak-template>
+                    <button class="k-grid-add k-button k-button-md k-rounded-md k-button-solid k-button-solid-base" type="button">
+                        <span class="k-icon k-i-plus k-button-icon"></span><span class="k-button-text">Add new Answer</span>
+                    </button>
+                </ak-template>
+            </ak-grid-toolbar>
+            <ak-col k-field="value" k-title="Answer"></ak-col>
+            <ak-col k-field="confidenceScore" k-title="Confidence Score" k-width="250px"></ak-col>
+            <ak-col k-command.bind="['edit', 'destroy']" k-title="&nbsp;" k-width="220px"></ak-col>
+        </ak-grid>
+
+        <!-- Models Screen -->
+        <!-- <div if.bind="activeLevelIndex === 1">
+          <cra-table
+            key.bind="`Model`"
+            title.bind="`CRA Models`"
+            data.bind="profileRecords"
+            labels.bind="profileRecordLabels"
+            properties.bind="profileRecordProperties"
+            current-page.bind="currentPage"
+            page-size.bind="pageSize"
+            get-date.call="getDate($event)"
+            select-item.call="selectItem($event)"
+            remove-item.call="removeItem($event)"
+            go-to-page.call="goToPage($event)"
+            get-page-count.call="getPageCount($event, pageSize)"
+          ></cra-table>
+        </div> -->
+        <!-- Categories Screen -->
+        <!-- <div if.bind="activeLevelIndex === 2">
+          <cra-table
+            key.bind="`Category`"
+            title.bind="`CRA Categories`"
+            data.bind="profileRecords[activeModelIndex].model.categories"
+            labels.bind="categoryLabels"
+            properties.bind="categoryProperties"
+            current-page.bind="currentPage"
+            page-size.bind="pageSize"
+            get-date.call="getDate($event)"
+            select-item.call="selectItem($event)"
+            remove-item.call="removeItem($event)"
+            go-to-page.call="goToPage($event)"
+            get-page-count.call="getPageCount($event, pageSize)"
+          ></cra-table>
+        </div> -->
+        <!-- Components Screen -->
+        <!-- <div if.bind="activeLevelIndex === 3">
+          <cra-table
+            key.bind="`Component`"
+            title.bind="`CRA Components`"
+            data.bind="profileRecords[activeModelIndex].model.categories[activeCategoryIndex].components"
+            labels.bind="componentLabels"
+            properties.bind="componentProperties"
+            current-page.bind="currentPage"
+            page-size.bind="pageSize"
+            get-date.call="getDate($event)"
+            select-item.call="selectItem($event)"
+            remove-item.call="removeItem($event)"
+            go-to-page.call="goToPage($event)"
+            get-page-count.call="getPageCount($event, pageSize)"
+          ></cra-table>
+        </div> -->
+        <!-- RiskFactors Screen -->
+        <!-- <div if.bind="activeLevelIndex === 4">
+          <cra-table
+            key.bind="`RiskFactor`"
+            title.bind="`CRA Risk Factors`"
+            data.bind="profileRecords[activeModelIndex].model.categories[activeCategoryIndex].components[activeComponentIndex].riskFactors"
+            labels.bind="riskFactorLabels"
+            properties.bind="riskFactorProperties"
+            current-page.bind="currentPage"
+            page-size.bind="pageSize"
+            get-date.call="getDate($event)"
+            select-item.call="selectItem($event)"
+            remove-item.call="removeItem($event)"
+            go-to-page.call="goToPage($event)"
+            get-page-count.call="getPageCount($event, pageSize)"
+          ></cra-table>
+        </div> -->
+        <!-- Answers Screen -->
+        <!-- <div if.bind="activeLevelIndex === 5">
+          <cra-table
+            key.bind="`Answer`"
+            title.bind="`CRA Answers`"
+            data.bind="profileRecords[activeModelIndex].model.categories[activeCategoryIndex].components[activeComponentIndex].riskFactors[activeRiskFactorIndex].answers"
+            labels.bind="answerLabels"
+            properties.bind="answerProperties"
+            current-page.bind="currentPage"
+            page-size.bind="pageSize"
+            get-date.call="getDate($event)"
+            select-item.call="selectItem($event)"
+            remove-item.call="removeItem($event)"
+            go-to-page.call="goToPage($event)"
+            get-page-count.call="getPageCount($event, pageSize)"
+          ></cra-table>
+        </div> -->
+        <!-- Add Model Modal -->
+        <div aria-hidden="true" aria-labelledby="addModelModalLabel" class="modal fade" id="addModelModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addModelModalLabel">New Model</h5>
+                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label class="col-form-label" for="model-name">Model Name:</label>
+                                <input class="form-control" id="model-name" type="text" value.bind="newProfileRecord.model.name">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
+                        <button class="btn btn-primary" click.trigger="addNewModel()" type="button">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Category Modal -->
+        <div aria-hidden="true" aria-labelledby="addCategoryModalLabel" class="modal fade" id="addCategoryModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addCategoryModalLabel">New Category</h5>
+                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label class="col-form-label" for="category-name">Category Name:</label>
+                                <input class="form-control" id="category-name" type="text" value.bind="newCategory.name">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
+                        <button class="btn btn-primary" click.trigger="addNewCategory()" type="button">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Component Modal -->
+        <div aria-hidden="true" aria-labelledby="addComponentModalLabel" class="modal fade" id="addComponentModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addComponentModalLabel">New Component</h5>
+                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label class="col-form-label" for="component-name">Component Name:</label>
+                                <input class="form-control" id="component-name" type="text" value.bind="newComponent.name">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
+                        <button class="btn btn-primary" click.trigger="addNewComponent()" type="button">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Risk Factor Modal -->
+        <div aria-hidden="true" aria-labelledby="addRiskFactorModalLabel" class="modal fade" id="addRiskFactorModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addRiskFactorModalLabel">New Risk Factor</h5>
+                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label class="col-form-label" for="riskFactor-name">Risk Factor Name:</label>
+                                <input class="form-control" id="riskFactor-name" type="text" value.bind="newRiskFactor.name">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
+                        <button class="btn btn-primary" click.trigger="addNewRiskFactor()" type="button">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Answer Modal -->
+        <div aria-hidden="true" aria-labelledby="addAnswerModalLabel" class="modal fade" id="addAnswerModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addAnswerModalLabel">New Answer</h5>
+                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label class="col-form-label" for="answer-name">Answer Name:</label>
+                                <input class="form-control" id="answer-name" type="text" value.bind="newAnswer.name">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
+                        <button class="btn btn-primary" click.trigger="addNewAnswer()" type="button">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

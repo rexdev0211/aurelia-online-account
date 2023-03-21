@@ -1,0 +1,69 @@
+<template>
+  <require from="aurelia-kendoui-bridge/grid/grid"></require>
+  <require from="aurelia-kendoui-bridge/grid/col"></require>
+  <require from="aurelia-kendoui-bridge/grid/grid-command"></require>
+  <require from="aurelia-kendoui-bridge/common/template"></require>
+
+  <content-container
+    button-text="Add New"
+    button-icon="fas fa-plus"
+    button-click.call="addNew()"
+    back-button-disabled.bind="false"
+    back-button-click.call="close()"
+    back-button-text="Back"
+    back-button-icon="fa fa-undo"
+    header="Manage Digital Certificates">
+
+    <div if.bind="!state.certificates.length">
+      <h6 class="mb-4">
+        With a certificate-based digital signature, every signer is issued a digital ID in the form of a certificate
+        from a trust service provider (TSP).
+
+        When signing a request, the signer’s identity is re-validated and the signature is cryptographically bound to
+        the request using public key infrastructure (PKI) technology.
+
+        This makes digital signatures, such as cloud signatures, ideal for higher security requirements or where you
+        need higher level of assurance.
+      </h6>
+      <h6 class="mb-4">
+        Click the 'Add New' button to get started!
+      </h6>
+    </div>
+
+    <ak-grid k-data-source.bind="certificates"
+             k-on-ready.delegate="onReady($event.detail)"
+             show.bind="state.certificates.length">
+
+      <ak-col k-title="Name" k-width="200px">
+        <ak-template>${friendlyName}</ak-template>
+      </ak-col>
+
+      <ak-col k-title="Thumbprint" k-width="110px">
+        <ak-template>
+          ${thumbprint}
+        </ak-template>
+      </ak-col>
+
+      <ak-col k-title="Not Before" k-width="30px">
+        <ak-template>
+          ${notBefore | dateFormat}
+        </ak-template>
+      </ak-col>
+
+      <ak-col k-title="Not After" k-width="30px">
+        <ak-template>
+          ${notAfter | dateFormat}
+        </ak-template>
+      </ak-col>
+
+      <ak-col k-width="25px">
+        <ak-grid-command k-click.call="gridCommand($event)" k-icon-class="fas fa-fw fa-trash-alt" k-name="delete"
+                         k-text=""></ak-grid-command>
+      </ak-col>
+
+
+    </ak-grid>
+
+  </content-container>
+
+</template>

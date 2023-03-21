@@ -1,0 +1,45 @@
+<template>
+  <content-container
+      back-button-click.call="back()"
+      back-button-disabled.bind="false"
+      back-button-text="Back"
+      button-text.bind="showDelete ? 'Delete' : ''"
+      button-icon="fas fa-trash-alt"
+      button-click.call="delete()"
+      header="${showDelete ? 'Delete ':''}Beneficiary${showDelete ? '': ' Details'}: ${state.beneficiaries.selectedBeneficiary.nickName}">
+
+    <form-group bold-header="Account:">
+      ${state.beneficiaries.sourceAccount.displayName}
+    </form-group>
+    <form-group bold-header="First Name:" if.bind="state.beneficiaries.selectedBeneficiary.firstName">
+      ${state.beneficiaries.selectedBeneficiary.firstName}
+    </form-group>
+    <form-group bold-header="Last Name:" if.bind="state.beneficiaries.selectedBeneficiary.lastName">
+      ${state.beneficiaries.selectedBeneficiary.lastName}
+    </form-group>
+    <form-group bold-header="Birthdate:" if.bind="state.beneficiaries.selectedBeneficiary.birthDate">
+      ${state.beneficiaries.selectedBeneficiary.birthDate | epochFormat}
+    </form-group>
+    <form-group bold-header="Account Name:" if.bind="state.beneficiaries.selectedBeneficiary.accountName">
+      ${state.beneficiaries.selectedBeneficiary.accountName}
+    </form-group>
+    <form-group bold-header="Bank Name:" if.bind="state.beneficiaries.selectedBeneficiary.bankName">
+      ${state.beneficiaries.selectedBeneficiary.bankName}
+    </form-group>
+    <form-group bold-header="SWIFT:" if.bind="state.beneficiaries.selectedBeneficiary.swift">
+      ${state.beneficiaries.selectedBeneficiary.swift}
+    </form-group>
+    <form-group bold-header="IBAN:" if.bind="state.beneficiaries.selectedBeneficiary.iban">
+      ${state.beneficiaries.selectedBeneficiary.iban}
+    </form-group>
+    <form-group bold-header="Sort Code:" if.bind="state.beneficiaries.selectedBeneficiary.sortCode">
+      ${state.beneficiaries.selectedBeneficiary.sortCode}
+    </form-group>
+    <form-group bold-header="Account Number:" if.bind="state.beneficiaries.selectedBeneficiary.accountNumber">
+      ${state.beneficiaries.selectedBeneficiary.accountNumber}
+    </form-group>
+
+    <view-beneficiary-documents bold-header="Beneficiary Documents:"></view-beneficiary-documents>
+
+  </content-container>
+</template>

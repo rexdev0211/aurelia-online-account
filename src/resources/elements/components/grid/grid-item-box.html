@@ -1,0 +1,14 @@
+<template>
+  <div class="grid-item" show.bind="!!value || !!$slots" style.bind="itemStyle">
+    <div class="grid-item-wrapper" style.bind="wrapperStyle">
+      <div class="grid-item-container" style.bind="containerStyle">
+        <div class="grid-item-content" style.bind="contentStyle">
+          <span class="item-title" style.bind="titleStyle">${header}</span>
+          <span class="item-excerpt" style.bind="excerptStyle">
+            <slot>${value}</slot>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

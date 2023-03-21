@@ -1,0 +1,7 @@
+<template>
+  <div class="form-group ${addClass}">
+    <label if.bind="header">${header}</label>
+    <label if.bind="boldHeader"> <strong>${boldHeader}</strong> </label>
+    <slot></slot>
+  </div>
+</template>

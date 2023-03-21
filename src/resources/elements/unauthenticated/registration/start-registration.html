@@ -1,0 +1,49 @@
+<template>
+  <page-content>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-xl-6 col-lg-8 col-md-10 col-sm-12">
+
+        <content-container button-click.call="submit()" button-icon="icon-arrow-right6" button-text="Continue"
+                           header="Get Started">
+          <form submit.delegate="submit()">
+            <form-group header="Email Address:">
+              <input class="form-control form-control-lg" onCopy="return false" onDrag="return false"
+                     onDrop="return false" onPaste="return false" placeholder="user@domain.com" type="text" value.bind="model.emailAddress & validate">
+            </form-group>
+
+            <form-group header="Confirm Email Address:">
+              <input class="form-control form-control-lg" onCopy="return false" onDrag="return false"
+                     onDrop="return false" onPaste="return false" placeholder="user@domain.com" type="text" value.bind="model.confirmEmailAddress & validate">
+            </form-group>
+
+            <form-group header="Mobile Number:">
+              <input class="form-control form-control-lg" intl-tel.bind="model.mobilePhone" maxlength="16" number-input="+"
+                     onCopy="return false" onDrag="return false" onDrop="return false"
+                     onPaste="return false" placeholder="Enter your mobile number" style="width: 100%" type="tel" value.bind="model.mobilePhone & validateOnChange">
+            </form-group>
+
+            <form-group header="Confirm Mobile Number:">
+              <input class="form-control form-control-lg" intl-tel.bind="model.mobilePhone" maxlength="16"
+                     number-input="+" onCopy="return false" onDrag="return false"
+                     onDrop="return false" onPaste="return false" placeholder="Enter your mobile number" type="tel" value.bind="model.confirmMobilePhone & validate">
+            </form-group>
+
+            <kendo-date-picker format="dd/MM/yyyy" header="Birthdate:" value.bind="model.birthDate">
+              <input type="hidden" value.bind="model.birthDate & validate"/>
+            </kendo-date-picker>
+
+            <form-group header="Account Number:">
+              <input class="form-control form-control-lg" placeholder="Enter your account number" type="text"
+                     value.bind="model.accountCode & validate">
+            </form-group>
+            <form-group header="Access Code:">
+              <input class="form-control form-control-lg" placeholder="Enter your access code" type="text"
+                     value.bind="model.accessCode & validate">
+            </form-group>
+          </form>
+        </content-container>
+
+      </div>
+    </div>
+  </page-content>
+</template>

@@ -1,0 +1,18 @@
+<template>
+  <page-content css="d-flex align-items-center">
+    <div class="card">
+      <div class="row no-gutters" if.bind="!utils.systemMaintenance">
+        <login-panel class="card-body p-4 col-sm-6"></login-panel>
+        <signup-panel class="card-body box-primary p-5 col-sm-6"></signup-panel>
+      </div>
+      <div class="card-body box-primary p-5" else style="box-shadow: 5px 5px 15px grey;">
+        <div class="container">
+          <h1>${state.banners.system[0].header}</h1>
+          <h4>${state.banners.system[0].text}</h4>
+          <h4>Thank you for your understanding!</h4>
+        </div>
+      </div>
+
+    </div>
+  </page-content>
+</template>

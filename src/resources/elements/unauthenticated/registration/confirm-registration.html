@@ -1,0 +1,72 @@
+<template>
+  <page-content>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-xl-6 col-lg-8 col-md-10 col-sm-12">
+
+        <content-container header="Create Account" button-icon="icon-arrow-right6" button-text="Continue" button-click.call="submit()">
+
+          <h6 class="mb-4">
+            Enter the validation code you recieved in your email. 
+            <!-- If you don't see it,
+            <a class="client-link" href="javascript:void(0);" click.delegate="resendConfirmationCode()">click here to resend a new verification code</a>. -->
+          </h6>
+
+          <form submit.delegate="submit()">
+            <form-group header="Email Confirmation Code:">
+              <input value.bind="model.emailVerificationCode & validate" type="text" class="form-control form-control-lg" placeholder="Enter your email verification code">
+              <a class="client-link" href="javascript:void(0);" click.delegate="resendConfirmationCode()">click here to resend a new email verification code</a>
+            </form-group>
+            <form-group header="Mobile Confirmation Code:">
+              <input value.bind="model.smsVerificationCode & validate" type="text" class="form-control form-control-lg" placeholder="Enter your mobile verification code">
+              <a class="client-link" href="javascript:void(0);" click.delegate="resendMobileConfirmationCode()">click here to resend a new mobile verification code</a>
+            </form-group>
+
+            <form-group header="New Password:">
+              <input value.bind="model.newPassword & validate" type="password" class="form-control form-control-lg" placeholder="Enter your new password">
+            </form-group>
+
+            <form-group header="Confirm Password:">
+              <input value.bind="model.confirmPassword & validate" type="password" class="form-control form-control-lg" placeholder="Confirm your new password">
+            </form-group>
+
+            <form-group header="Security Question:">
+              <input value.bind="model.securityQuestion & validate" type="text" class="form-control form-control-lg" placeholder="Enter your security question">
+            </form-group>
+
+            <form-group header="Security Answer:">
+              <input value.bind="model.securityAnswer & validate" type="text" class="form-control form-control-lg" placeholder="Enter your security answer">
+            </form-group>
+
+            <form-group header="Terms &amp; Conditions:">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <div class="uniform-checker">
+                    <span class="${model.agreeTermsConditions?'checked':''}">
+                      <input checked.bind="model.agreeTermsConditions & validate" type="checkbox" class="form-check-input-styled">
+                    </span>
+                  </div>
+                  I agree to the Terms and Conditions, Disclosure and Privacy Policy
+                </label>
+              </div>
+            </form-group>
+
+            <form-group header="Pricing &amp; Fees:">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <div class="uniform-checker">
+                    <span class="${model.agreePricingFees?'checked':''}">
+                      <input checked.bind="model.agreePricingFees & validate" type="checkbox" class="form-check-input-styled">
+                    </span>
+                  </div>
+                  I agree to the Pricing and Fees
+                </label>
+              </div>
+            </form-group>
+          </form>
+
+        </content-container>
+
+      </div>
+    </div>
+  </page-content>
+</template>

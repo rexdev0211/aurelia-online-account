@@ -1,0 +1,41 @@
+<template>
+  <table class="table table-condensed table-striped">
+    <thead>
+    <tr if.bind="useHeader">
+      <th>Line #</th>
+      <th repeat.for="value of header">${value}</th>
+    </tr>
+    <tr else>
+      <td>Line #</td>
+      <td repeat.for="value of header">${value}</td>
+    </tr>
+    </thead>
+    <tbody>
+    <template containerless repeat.for="error of errorLines">
+        <tr>
+            <td>${error.lineNumber}</td>
+            <td repeat.for="value of error.lineValue.split(',')">${value}</td>
+        </tr>
+        <tr class="text-danger">
+            <td>${error.lineNumber}</td>
+            <td colspan.bind="header.length">
+                <span repeat.for="errors of error.lineError"> ${errors} </span>
+            </td>
+        </tr>
+    </template>
+    <template containerless repeat.for="line of lines">
+      <tr>
+        <td>${$index+1}</td>
+        <td repeat.for="value of line.split(',')">${value}</td>
+      </tr>
+      <tr class="text-danger" if.bind="validationErrors[$index+1]">
+        <td>${$index+1}</td>
+        <td colspan.bind="header.length">
+          <span repeat.for="error of validationErrors[$index+1]"> ${error} </span>
+        </td>
+      </tr>
+    </template>
+
+    </tbody>
+  </table>
+</template>

@@ -1,0 +1,23 @@
+<template>
+  <style>
+    .list-group .selected {
+      background-color: #ffcb4b;
+    }
+  </style>
+  <content-column
+      header.bind="header"
+      include-row.bind="includeRow">
+
+    <ul class="list-group list-group-flush">
+      <li
+          class="list-group-item py-1 ${selectable && value.ern == member.ern ? 'selected':''}"
+          repeat.for="member of state.permissions.selectedBusiness.members | sort:'position'">
+        <div class="row ${selectable ? 'clickable':''}" click.trigger="select(member)" style="width: 100%">
+          <div class="col-6"> ${member.position}</div>
+          <div class="col-6"> ${member.name}</div>
+        </div>
+      </li>
+    </ul>
+
+  </content-column>
+</template>

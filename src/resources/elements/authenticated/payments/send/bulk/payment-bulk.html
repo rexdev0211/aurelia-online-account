@@ -1,0 +1,54 @@
+<template>
+  <page-content>
+    <content-container
+        back-button-click.call="back()"
+        back-button-disabled.bind="false"
+        button-click.call="submit()"
+        button-disabled.bind="validated && (model.smsVerificationCode.length !== 6 || model.mfaVerificationCode.length !== 6)"
+        button-icon="icon-loop3"
+        button-text="${validated ? 'Submit' : 'Validate' }"
+        header="${!state.payments.bulk.csvFileName ? 'Bulk Payments' : 'Bulk Upload: '+state.payments.bulk.csvFileName}"
+        show-buttons.bind="state.payments.bulk.csvFileName">
+
+      <template if.bind="!state.payments.bulk.csvFileName">
+        <div class="row">
+          <div class="col">
+            <h1>Step 1.</h1>
+            <label class="btn client-button" click.trigger="download()">Download Sample CSV</label>
+          </div>
+        </div>
+
+        <h1 class="mt-3">Step 2.</h1>
+
+        <div class="row">
+          <div class="col dropzone needsclick dz-clickable text-center" ref="drop_zone">
+            <form ref="upload_form">
+              <p>Upload your .csv file with the file dialog or by dragging and dropping your .csv onto the dashed region</p>
+              <label class="btn client-button mt-3" for="file_upload">
+                Select File
+              </label>
+              <input accept=".csv" files.bind="csvFile" hidden id="file_upload" ref="file_upload" type="file"/>
+            </form>
+          </div>
+        </div>
+      </template>
+
+      <tempalte else>
+        <csv-viewer view-model.ref="csvViewer"></csv-viewer>
+
+        <template if.bind="validated">
+          <div class="grid-row mt-3">
+            <grid-item-box header="SMS Verification Code" style="margin-left: auto;">
+              <input maxlength="6" number-input type="text" value.bind="model.smsVerificationCode & validate">
+              <span click.trigger="resend()" class="clickable"> (resend)</span>
+            </grid-item-box>
+            <grid-item-box header="MFA Verification Code" style="margin-right: 14px;">
+              <input maxlength="6" number-input type="text" value.bind="model.mfaVerificationCode & validate">
+            </grid-item-box>
+          </div>
+        </template>
+      </tempalte>
+
+    </content-container>
+  </page-content>
+</template>

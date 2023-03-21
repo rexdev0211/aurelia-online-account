@@ -1,0 +1,253 @@
+<template>
+    <require from="aurelia-kendoui-bridge/grid/grid"></require>
+    <require from="aurelia-kendoui-bridge/grid/col"></require>
+    <require from="aurelia-kendoui-bridge/grid/grid-command"></require>
+    <require from="aurelia-kendoui-bridge/common/template"></require>
+    <require from="aurelia-kendoui-bridge/switch/switch"></require>
+
+    <style class="cssStyles" type="text/css">
+        .detailtable {
+            font-size: 13px;
+            padding: 4px;
+            max-width: 0;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .e-content {
+            overflow-x: hidden !important;
+        }
+
+        .photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            box-shadow: inset 0 0 1px #e0e0e0, inset 0 0 14px rgba(0, 0, 0, 0.2);
+        }
+
+        .mt-30 {
+            margin-top: 30px;
+        }
+
+        @media screen and (max-width: 800px) and (min-width: 320px) {
+            .photo {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+    </style>
+
+    <content-column header="Transactions">
+
+        <div class="row">
+            <div class="col-6 m-auto">
+                <h3 class="control-label text-nowrap">Search / Filter</h3>
+                <div ref="TransactionDateRangeInput"></div>
+                <input class="k-textbox" placeholder="name" type="text" value.bind="filterName">
+                <input class="k-textbox" placeholder="reference" type="text" value.bind="filterReference">
+                <input class="k-textbox" placeholder="amount" type="text" value.bind="filterAmount">
+
+                <template if.bind="filterDateRange.from || filterName || filterReference || filterAmount">
+                    <button class="btn" click.trigger="clearFilterDateRange()">Clear</button>
+                    <button class="btn" click.trigger="refreshGrid()">Search</button>
+                </template>
+
+            </div>
+            <div class="col-6 align-bottom">
+
+                <template if.bind="state.accounts.sourceAccount.code.length>12">
+                    <div class="row">
+                        <div class="col-6 text-right"><h6 class="client-tile-button-account"><span
+                            class="font-weight-semibold">IBAN:</span></h6></div>
+                        <div class="col-6"><h6 class="client-tile-button-account">
+                            ${state.accounts.sourceAccount.code}</h6></div>
+                    </div>
+
+                </template>
+
+                <template else>
+                    <div class="row">
+                        <div class="col-6 text-right"><h6 class="client-tile-button-account"><span
+                            class="font-weight-semibold">Account:</span></h6></div>
+                        <div class="col-6"><h6 class="client-tile-button-account">
+                            ${state.accounts.sourceAccount.code}</h6></div>
+                    </div>
+
+                </template>
+
+                <div class="row">
+                    <div class="col-6 text-right"><h6 class="client-tile-button-account"><span
+                        class="font-weight-semibold">Account Balance:</span></h6></div>
+                    <div class="col-6"><h6 class="client-tile-button-account">
+                        ${state.accounts.sourceAccount.availableBalance | currencyFormat:
+                        state.accounts.sourceAccount.currencySymbol}</h6></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 text-right"><h6 class="client-tile-button-account"><span
+                        class="font-weight-semibold">Available Balance:</span></h6></div>
+                    <div class="col-6"><h6 class="client-tile-button-account">
+                        ${state.accounts.sourceAccount.presentBalance | currencyFormat:
+                        state.accounts.sourceAccount.currencySymbol}</h6></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <script id="detailTemplate" type="text/x-kendo-tmpl">
+          <div>
+            <gps-transaction-detail ref="GpsTransactionDetail" if.bind="account.code.length == 12" model.bind="transaction" account.bind="account"></gps-transaction-detail>
+            <clearbank-transaction-detail ref="ClearbankTransactionDetail" else model.bind="transaction" account.bind="account"></clearbank-transaction-detail>
+          </div>
+        </script>
+
+        <div>
+
+            <div class="control-section" show.bind="hasBatchPayments">
+                <div class="content-wrapper mt-30">
+                    <h2>Batch Payments</h2>
+                    <ak-grid
+                        k-data-source.bind="dataSourceBatchPayments"
+                        k-widget.bind="batchPaymentsGrid">
+                        <ak-col k-title="Date" k-width="120px">
+                            <ak-template>
+                                ${createdDate | dateFormat:'z'}
+                            </ak-template>
+                        </ak-col>
+                        <ak-col k-title="File">
+                            <ak-template>
+                                ${input.CsvFileName}
+                            </ak-template>
+                        </ak-col>
+                        <ak-col k-title="Amount" k-width="100px">
+                            <ak-template>
+                                ${meta.Currency.symbol}${input.Amount | amountFormat}
+                            </ak-template>
+                        </ak-col>
+                        <ak-col k-title="State" k-width="100px">
+                            <ak-template>
+                                ${state}
+                            </ak-template>
+                        </ak-col>
+                        <ak-col k-title="Progress" k-width="100px">
+                            <ak-template>
+                                ${tasksRemaining-tasksTotal} of ${tasksTotal}
+                            </ak-template>
+                        </ak-col>
+                        <ak-col k-title="Last Updated">
+                            <ak-template>
+                                ${modifiedDate | dateFormat:'ago'}
+                            </ak-template>
+                        </ak-col>
+                        <ak-col k-width="60px">
+                            <ak-template>
+                                <i class="far fa-stop-circle fa-2x clickable" click.trigger="cancelBatchJob($this)"
+                                   hover-css="text-danger"
+                                   title="Cancel Job"></i>
+                            </ak-template>
+                        </ak-col>
+                    </ak-grid>
+                </div>
+            </div>
+
+            <div class="control-section" show.bind="hasPendingPayments">
+                <div class="content-wrapper mt-30">
+                    <h2>Pending Payments</h2>
+                    <ak-grid
+                        k-data-source.bind="dataSourcePendingPayments"
+                        k-widget.bind="pendingPaymentsGrid">
+                        <ak-col k-title="Date" k-width="120px">
+                            <ak-template>
+                                ${createdDate | dateFormat:'z'}
+                            </ak-template>
+                        </ak-col>
+                        <ak-col k-title="Amount" k-width="125px">
+                            <ak-template>
+                                ${meta.Currency.symbol}${input.Amount2 | amountFormat}
+                            </ak-template>
+                        </ak-col>
+                        <ak-col k-title="Reference">
+                            <ak-template>
+                                ${input.PaymentReference2}
+                            </ak-template>
+                        </ak-col>
+                        <ak-col k-title="Beneficiary">
+                            <ak-template>
+                                ${supplementaryData.BeneficiaryNickName}
+                            </ak-template>
+                        </ak-col>
+                        <ak-col k-title="Account">
+                            <ak-template>
+                                ${supplementaryData.BeneficiaryAccountIBAN}
+                            </ak-template>
+                        </ak-col>
+                        <ak-col k-width="60px">
+                            <ak-template>
+                                <div class="text-center" if.bind="meta.EddEvent">
+                                    <i class="shadow-pulse fas fa-info-circle fa-2x clickable"
+                                       click.trigger="openModal(meta.EddEvent)"
+                                       if.bind="!(['Release','Reject'].includes(job.meta.EddEvent.status))"
+                                       style="color: #fccac7;"
+                                       title="Liaise with our Compliance team"></i>
+                                </div>
+                            </ak-template>
+                        </ak-col>
+                    </ak-grid>
+                </div>
+            </div>
+
+
+            <div class="control-section" show.bind="hasPendingTransactions">
+                <div class="content-wrapper mt-30">
+                    <h2>Pending Transactions</h2>
+                    <div ref="PendingTransactionGrid"></div>
+                </div>
+            </div>
+
+            <div class="control-section mt-30">
+                <div class="content-wrapper">
+
+                    <h2>
+                        <div class="float-right">
+                            <div class="form-check"
+                                 show.bind="selectedAccount.isClearBankAccount && selectedAccount.showPending"
+                                 style="font-size:0.75rem; margin-top: 14px;">
+                                <label class="form-check-label">
+                                    <div class="uniform-checker">
+                                <span class="${showPendingOnly?'checked':''}">
+                                  <input checked.bind="showPendingOnly" class="form-check-input-styled"
+                                         type="checkbox"/>
+                                </span>
+                                    </div>
+                                    Pending Transactions Only
+                                </label>
+                            </div>
+                            <div class="form-check"
+                                 show.bind="showGoFast"
+                                 style="font-size:0.75rem; margin-top: 14px;">
+                                <label class="form-check-label">
+                                    <div class="uniform-checker">
+                                <span class="${goFast?'checked':''}">
+                                  <input checked.bind="goFast" class="form-check-input-styled"
+                                         type="checkbox"/>
+                                </span>
+                                    </div>
+                                    Go Fast
+                                </label>
+                            </div>
+                        </div>
+
+                        Transactions
+                    </h2>
+
+                    <div ref="TransactionGrid"></div>
+
+                </div>
+            </div>
+        </div>
+
+    </content-column>
+
+</template>

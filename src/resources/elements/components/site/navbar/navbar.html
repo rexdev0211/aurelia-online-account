@@ -1,0 +1,15 @@
+<template>
+    <require from="aurelia-kendoui-bridge/menu/menu"></require>
+
+    <div class="d-md-none w-100">
+        <button class="navbar-toggler d-flex align-items-center w-100" click.trigger="toggleMenu()"
+                data-target="#navbar-navigation" data-toggle="collapse"
+                type="button"><i class="icon-paragraph-justify3 mr-2"></i> Menu
+        </button>
+    </div>
+    <div class="nav-bar navbar-collapse collapse">
+        <ul
+            ak-menu="k-data-source.one-time: routes" ak-menu.ref="akMenu">
+        </ul>
+    </div>
+</template>

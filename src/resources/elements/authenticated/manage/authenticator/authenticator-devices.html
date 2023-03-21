@@ -1,0 +1,9 @@
+<template>
+  <content-container
+    header="Enumis.Authenticator">
+
+    <h3>Device : ${state.authentication.devices[0].deviceId}</h3>
+    <h4>Registered : ${state.authentication.devices[0].createdDate|dateFormat}</h4>
+
+  </content-container>
+</template>

@@ -1,0 +1,56 @@
+<template>
+    <div class="row row-tile mb-3">
+        <div class="col-12">
+            <a class="client-tile-button ${account.ern == state.accounts.sourceAccount.ern ? 'selected':''}"
+               click.delegate="click()" data-analytics-action="select-account" data-analytics-category="account">
+                <span class="badge badge-warning float-right col-12"
+                      if.bind="account.businessERN">Managed Account</span>
+                <div class="text-left m-1">
+
+                    <i aubs-popover="custom-popover.bind: customPopover;
+                                                        position.bind: spendingActivity.position;
+                                                        trigger: mouseover;" aubs-popover.ref="aubsPopover"
+                       class="fas fa-info-circle fa-2x float-right"
+                       show.bind="showSpending && (state.customerSpending.send[account.ern] || state.customerSpending.transfer[account.ern])"
+                       style="color:#ffcb4b;">
+                    </i>
+
+                    <h5 class="client-tile-button-account mb-1 font-weight-semibold">${account.accountHolder}</h5>
+
+                    <template if.bind="account.code.length>12">
+                        <h6 class="client-tile-button-account mb-1 "><span
+                            class="font-weight-semibold">Sort Code:</span> ${account.code.substr(8,6)}</h6>
+                        <h6 class="client-tile-button-account mb-1 "><span
+                            class="font-weight-semibold">Account Number:</span> ${account.code.substr(14)}</h6>
+                    </template>
+
+                    <template else>
+                        <h5 class="client-tile-button-account mb-1 font-weight-semibold">Account: ${account.code}</h5>
+                    </template>
+
+
+                    <template if.bind="account.holdBalance > 0">
+                        <h6 class="client-tile-button-balance mb-1"><span class="font-weight-semibold">Balance: </span>${account.availableBalance
+                            | currencyFormat: account.currencySymbol }</h6>
+                        <span class="badge table-danger float-right col-12" if.bind="account.showPending">Pending Transactions</span>
+                        <h6 class="client-tile-button-balance mb-1"><span
+                            class="font-weight-semibold">Available: </span>${account.presentBalance | currencyFormat:
+                            account.currencySymbol }</h6>
+                    </template>
+
+                    <template else>
+                        <h6 class="client-tile-button-balance mb-1"><span class="font-weight-semibold">Balance: </span>${account.presentBalance
+                            | currencyFormat: account.currencySymbol }</h6>
+                    </template>
+
+                </div>
+
+                <div ref="customPopover"
+                     show.bind="showSpending && (state.customerSpending.send[account.ern] || state.customerSpending.transfer[account.ern])">
+                    <spending-activity principal.bind="account" view-model.ref="spendingActivity"></spending-activity>
+                </div>
+
+            </a>
+        </div>
+    </div>
+</template>

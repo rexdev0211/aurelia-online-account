@@ -1,0 +1,30 @@
+<template>
+  <div class="col">
+    <div class="row">
+
+      <div class="col" if.bind="send">
+        <table class="table table-xtra-condensed table-striped">
+          <tr>
+            <th class="text-center" colspan="2" nowrap style="background-color: #ffcb4b;">Send Totals</th>
+          </tr>
+          <tr repeat.for="item of send">
+            <td>${item.key}</td>
+            <td>${item.ledger|amountFormat:currencySymbol}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="col" if.bind="transfer">
+        <table class="table table-xtra-condensed table-striped col">
+          <tr>
+            <th class="text-center" colspan="2" nowrap style="background-color: #ffcb4b;">Transfer Totals</th>
+          </tr>
+          <tr repeat.for="item of transfer">
+            <td>${item.key}</td>
+            <td>${item.ledger|amountFormat:currencySymbol}</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</template>

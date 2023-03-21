@@ -1,0 +1,34 @@
+<template>
+    <page-content>
+        <content-container
+            button-click.call="back()"
+            button-text="Back"
+            header="Welcome to the Online Risk Assessment official preview">
+
+            <h3 class="display6 pb-2">
+                <small class="text-muted">This project is currently under active development and functionality may be
+                    missing or limited and/or you may run into the occasional bug.
+                    Please report any issues that you find along with any suggestions.</small>
+            </h3>
+
+            <p class="lead">Use <a href="#/risk/config">Risk Configuration</a> to configure your global risk settings.
+            </p>
+
+            <p class="lead">Use <a href="#/risk/profiles">Risk Model Builder</a> to build and manage your risk profiles.
+            </p>
+
+            <p class="lead">Use <a href="#/risk/lists">Risk List Builder</a> to build and manage your risk lists.</p>
+
+            <p class="lead">Use <a href="#/risk/bwra">Business Wide Risk Assessment</a> to perform business assessment.
+            </p>
+
+            <p class="lead">Use <a href="#/risk/cra">Customer Risk Assessment</a> to perform customer risk assessments
+                against your user risk lists.</p>
+            
+            <p if.bind="riskTemplates.length>0 && riskProfiles.length ===0" class="lead mt-3">
+                <button click.trigger="createProfileFromTemplate()">Create Profile(s) from Template(s)</button>
+            </p>
+
+        </content-container>
+    </page-content>
+</template>

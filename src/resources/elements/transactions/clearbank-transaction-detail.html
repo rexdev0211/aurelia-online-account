@@ -1,0 +1,104 @@
+<template>
+  <div class="panel panel-default">
+    <!--    <div class="panel-body mt-2">-->
+    <div class="row">
+      <table class="table table-sm table-xtra-condensed table-borderless table-striped">
+        <tbody>
+
+        <tr class="thead-light" scope="row">
+          <td class="w-20" nowrap scope="row">Transaction Details:</td>
+          <td>
+            <div class="float-right pr-2" if.bind="model.hold">
+              <i class="shadow-pulse fas fa-info-circle fa-2x clickable" click.trigger="openModal()" style="color: #fccac7;" title="Liaise with our Compliance team"></i>
+            </div>
+            <div class="float-right pr-2" if.bind="sendWebhook">
+              <i class="fas fa-bolt fa-2x clickable" click.trigger="resendWebhook()" style="color: #FFCB4B;" title="Resend Webhook"></i>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="pr-3 text-right text-nowrap align-top" scope="row">Intended Recipient</td>
+          <td>
+            <span if.bind="model.debitCreditCode=='Credit'">${model.accountTransactionOwnerName || 'Not Provided'}</span>
+            <span if.bind="model.debitCreditCode=='Debit'">${model.counterpartAccountTransactionOwnerName || 'Not Provided'}</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="pr-3 text-right text-nowrap align-top" nowrap scope="row">Payment Reference</td>
+          <td>
+            <span if.bind="model.internalReference">[${model.internalReference}] </span>
+            ${model.description}
+          </td>
+        </tr>
+
+        <tr>
+          <td class="pr-3 text-right text-nowrap align-top" scope="row">Transaction Type</td>
+          <td>${model.scheme} / ${model.debitCreditCode}</td>
+        </tr>
+
+        <tr>
+          <td class="pr-3 text-right text-nowrap align-top" scope="row">Currency</td>
+          <td>${model.currencyCode} (${model.currencySymbol})</td>
+        </tr>
+
+        <tr>
+          <td class="pr-3 text-right text-nowrap align-top" scope="row">Date / Time</td>
+          <td>${model.timestamp}</td>
+        </tr>
+
+        <tr class="thead-light">
+          <td colspan="2" nowrap scope="row">
+            <span if.bind="model.debitCreditCode=='Credit'">Sender Details:</span>
+            <span if.bind="model.debitCreditCode=='Debit'">Beneficiary Details:</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="pr-3 text-right text-nowrap align-top" scope="row">Account Name</td>
+          <td> ${model.counterpartAccountTransactionOwnerName || model.counterpartAccountName || 'Not Provided'}</td>
+        </tr>
+
+        <tr>
+          <td class="pr-3 text-right text-nowrap align-top" scope="row">Bank Name</td>
+          <td>${model.counterpartInstitutionName || 'Not Provided'}</td>
+        </tr>
+
+        <tr>
+          <td class="pr-3 text-right text-nowrap align-top" scope="row">Account Number</td>
+          <td>
+            <span if.bind="model.counterpartIban">${model.counterpartIban.substr(14)}</span>
+            <span else>
+            <span if.bind="model.counterpartBban">
+            ${model.counterpartBban.substr(10)}
+            </span>
+            <span else>
+              Not Provided
+            </span>
+          </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="pr-3 text-right text-nowrap align-top" scope="row">Sort Code</td>
+          <td>
+            <span if.bind="model.counterpartIban">${model.counterpartIban.substr(8,6)}</span>
+            <span else>
+            <span if.bind="model.counterpartBban">
+            ${model.counterpartBban.substr(4,6)}
+            </span>
+            <span else>
+              Not Provided
+            </span>
+          </span>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</template>

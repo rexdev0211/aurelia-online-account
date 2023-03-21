@@ -1,0 +1,77 @@
+<template>
+  <require from="aurelia-kendoui-bridge/grid/grid"></require>
+  <require from="aurelia-kendoui-bridge/grid/col"></require>
+  <require from="aurelia-kendoui-bridge/grid/grid-toolbar"></require>
+  <require from="aurelia-kendoui-bridge/common/template"></require>
+  <require from="aurelia-kendoui-bridge/grid/grid-command"></require>
+
+  <style>
+    .form-group {
+      margin-bottom: 1em;
+    }
+  </style>
+
+  <content-container
+      back-button-click.call="link()"
+      back-button-disabled.bind="!canLink"
+      back-button-icon="fas fa-link"
+      back-button-text="Link Beneficiary"
+      button-click.call="create()"
+      button-icon="fas fa-plus"
+      button-text="${canAdd ? 'Add Beneficiary':''}"
+      header="Manage Beneficiaries"
+      show-buttons.bind="state.beneficiaries.sourceAccount.ern">
+
+    <kendo-drop-down-list
+        header="Select Account:"
+        items.bind="accounts"
+        on-change.call="sourceChanged($event)"
+        place-holder="Select Account"
+        value.one-time="state.beneficiaries.sourceAccount.ern"
+        view-model.ref="source">
+    </kendo-drop-down-list>
+
+    <div show.bind="state.beneficiaries.sourceAccount">
+
+      <form-group
+          header="Filter Beneficiaries:"
+          style="margin-bottom: 0px">
+        <a click.trigger="clear()" href="javascript:void(0)" class="pull-right" if.bind="nickName">(clear)</a>
+        <input
+            class="form-control"
+            placeholder="Beneficiary Nick Name Filter"
+            type="text"
+            value.bind="nickName & debounce">
+      </form-group>
+
+
+      <div class="control-section">
+        <div class="content-wrapper">
+
+          <ak-grid
+              k-data-source.bind="dataSource"
+              k-on-data-bound.delegate="onDataBound($event.detail)"
+              k-pageable.bind="pageable"
+              k-on-ready.delegate="onReady($event.detail)">
+            <ak-col k-field="nickName" k-title="Nick Name"></ak-col>
+            <ak-col k-field="accountName" k-title="Account Name"></ak-col>
+            <ak-col k-field="iban" k-title="IBAN"></ak-col>
+            <ak-col k-field="sortCode" k-title="Sort Code"></ak-col>
+            <ak-col k-field="accountNumber" k-title="Account Number"></ak-col>
+            <ak-col k-width="175px">
+              <ak-template>
+                <button class="btn client-button" click.trigger="gridCommand('view',$this)" disable-while-loading title="View"><i class="fas fa-fw fa-eye"></i></button>
+                <button if.bind="canUpdate" class="btn client-button" click.trigger="gridCommand('edit',$this)" disable-while-loading title="Edit"><i class="fas fa-fw fa-pencil-alt"></i></button>
+                <button if.bind="canUnlink" class="btn client-button" click.trigger="gridCommand('delete',$this)" disable-while-loading title="Remove"><i class="fas fa-fw fa-trash-alt"></i></button>
+              </ak-template>
+            </ak-col>
+          </ak-grid>
+
+        </div>
+      </div>
+
+    </div>
+
+
+  </content-container>
+</template>

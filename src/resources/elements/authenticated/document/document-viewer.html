@@ -1,0 +1,32 @@
+<template>
+  <form-group bold-header.bind="boldHeader" header.bind="header" if.bind="state.selectedBeneficiary.documents.length">
+    <div class="dropzone needsclick">
+      <div class="dz-message">
+        <div class="dz-preview dz-file-preview dz-processing dz-success dz-complete"
+             repeat.for="document of documents">
+          <div class="dz-image"><img data-dz-thumbnail=""></div>
+          <div class="dz-details">
+            <div class="dz-size"><span data-dz-size=""><strong>${document.contentLength | fileSize}</strong></span>
+            </div>
+            <div class="dz-filename"><span data-dz-name="">${document.fileName}</span></div>
+            <div if.bind="!removeDocument">
+              <div class="dz-download">
+                <i class="fas fa-download clickable" click.delegate="download(document)"></i>
+              </div>
+            </div>
+            <div else>
+              <div class="dz-download row">
+                <div class="m-auto col-md-6">
+                  <i class="fas fa-download clickable" click.delegate="download(document)"></i>
+                </div>
+                <div class="m-auto col-md-6">
+                  <i class="fas fa-trash-alt clickable" click.delegate="remove(document)"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form-group>
+</template>

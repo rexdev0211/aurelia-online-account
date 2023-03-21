@@ -1,0 +1,5 @@
+{
+  "theme": "fabric",
+  "properties": "{\"$theme-primary\":\"rgba(63,63,63,1)\",\"$theme-primary-font\":\"#fff\"}",
+  "components": "[\"comp-grid\",\"comp-calendar\",\"comp-schedule\",\"comp-button\",\"comp-radio-button\",\"comp-drop-down-button\",\"comp-split-button\",\"comp-button-group\",\"comp-switch\",\"comp-drop-down-list\",\"comp-combo-box\",\"comp-auto-complete\",\"comp-textbox\",\"comp-numerictextbox\",\"comp-maskedtextbox\",\"comp-uploader\",\"comp-multi-select\",\"comp-datepicker\",\"comp-daterangepicker\",\"comp-datetimepicker\",\"comp-timepicker\",\"comp-color-picker\",\"comp-slider\",\"comp-check-box\",\"comp-dialog\",\"comp-listview\",\"comp-tooltip\",\"comp-badge\",\"comp-toast\",\"comp-treeview\",\"comp-toolbar\",\"comp-tab\",\"comp-accordion\",\"comp-context-menu\"]"
+}

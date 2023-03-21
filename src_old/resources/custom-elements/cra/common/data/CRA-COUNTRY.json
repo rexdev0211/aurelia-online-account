@@ -1,0 +1,1994 @@
+[
+  {
+    "Tag": 862,
+    "Value": "Venezuela (Bolivarian Republic of)",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 690,
+    "Value": "Seychelles",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 674,
+    "Value": "San Marino",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 833,
+    "Value": "Isle of Man",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 246,
+    "Value": "Finland",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 356,
+    "Value": "India",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "050",
+    "Value": "Bangladesh",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 729,
+    "Value": "Sudan",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 524,
+    "Value": "Nepal",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 740,
+    "Value": "Suriname",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 454,
+    "Value": "Malawi",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "020",
+    "Value": "Andorra",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 756,
+    "Value": "Switzerland",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 584,
+    "Value": "Marshall Islands",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 222,
+    "Value": "El Salvador",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 604,
+    "Value": "Peru",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 716,
+    "Value": "Zimbabwe",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 440,
+    "Value": "Lithuania",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 144,
+    "Value": "Sri Lanka",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 484,
+    "Value": "Mexico",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 498,
+    "Value": "Moldova (Republic of)",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 654,
+    "Value": "Saint Helena, Ascension and Tristan da Cunha",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 324,
+    "Value": "Guinea",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 499,
+    "Value": "Montenegro",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 702,
+    "Value": "Singapore",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 703,
+    "Value": "Slovakia",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 500,
+    "Value": "Montserrat",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 414,
+    "Value": "Kuwait",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 652,
+    "Value": "Saint Barthélemy",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": 234,
+    "Value": "Faroe Islands",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 442,
+    "Value": "Luxembourg",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 688,
+    "Value": "Serbia",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 426,
+    "Value": "Lesotho",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 466,
+    "Value": "Mali",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 462,
+    "Value": "Maldives",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 795,
+    "Value": "Turkmenistan",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "004",
+    "Value": "Afghanistan",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 732,
+    "Value": "Western Sahara",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 540,
+    "Value": "New Caledonia",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 748,
+    "Value": "Swaziland",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 400,
+    "Value": "Jordan",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 728,
+    "Value": "South Sudan",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "040",
+    "Value": "Austria",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 258,
+    "Value": "French Polynesia",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 666,
+    "Value": "Saint Pierre and Miquelon",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 328,
+    "Value": "Guyana",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 268,
+    "Value": "Georgia",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "096",
+    "Value": "Brunei Darussalam",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 364,
+    "Value": "Iran",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "052",
+    "Value": "Barbados",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 430,
+    "Value": "Liberia",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 566,
+    "Value": "Nigeria",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 548,
+    "Value": "Vanuatu",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 450,
+    "Value": "Madagascar",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 404,
+    "Value": "Kenya",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 887,
+    "Value": "Yemen",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 807,
+    "Value": "Macedonia (the former Yugoslav Republic of)",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 191,
+    "Value": "Croatia",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": 208,
+    "Value": "Denmark",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 188,
+    "Value": "Costa Rica",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 562,
+    "Value": "Niger",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 478,
+    "Value": "Mauritania",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 882,
+    "Value": "Samoa",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 776,
+    "Value": "Tonga",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 136,
+    "Value": "Cayman Islands",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 492,
+    "Value": "Monaco",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": 608,
+    "Value": "Philippines",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 132,
+    "Value": "Cabo Verde",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 108,
+    "Value": "Burundi",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 100,
+    "Value": "Bulgaria",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": 174,
+    "Value": "Comoros",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 156,
+    "Value": "China",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "051",
+    "Value": "Armenia",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 418,
+    "Value": "Lao People's Democratic Republic",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "084",
+    "Value": "Belize",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "064",
+    "Value": "Bhutan",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 239,
+    "Value": "South Georgia and the South Sandwich Islands",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 662,
+    "Value": "Saint Lucia",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 626,
+    "Value": "Timor-Leste",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 304,
+    "Value": "Greenland",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "072",
+    "Value": "Botswana",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "092",
+    "Value": "Virgin Islands (British)",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "086",
+    "Value": "British Indian Ocean Territory",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 831,
+    "Value": "Guernsey",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": 372,
+    "Value": "Ireland",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 232,
+    "Value": "Eritrea",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 428,
+    "Value": "Latvia",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 196,
+    "Value": "Cyprus",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 659,
+    "Value": "Saint Kitts and Nevis",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 826,
+    "Value": "United Kingdom",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 248,
+    "Value": "Åland Islands",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "076",
+    "Value": "Brazil",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": 574,
+    "Value": "Norfolk Island",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 646,
+    "Value": "Rwanda",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 832,
+    "Value": "Jersey",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 516,
+    "Value": "Namibia",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 336,
+    "Value": "Vatican City State",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 384,
+    "Value": "Côte d'Ivoire",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "012",
+    "Value": "Algeria",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 124,
+    "Value": "Canada",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": 214,
+    "Value": "Dominican Republic",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 344,
+    "Value": "Hong Kong",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 858,
+    "Value": "Uruguay",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 175,
+    "Value": "Mayotte",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "032",
+    "Value": "Argentina",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 624,
+    "Value": "Guinea-Bissau",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 148,
+    "Value": "Chad",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 612,
+    "Value": "Pitcairn",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 686,
+    "Value": "Senegal",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 800,
+    "Value": "Uganda",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "008",
+    "Value": "Albania",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 780,
+    "Value": "Trinidad and Tobago",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 788,
+    "Value": "Tunisia",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "016",
+    "Value": "American Samoa",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 638,
+    "Value": "Réunion",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": 292,
+    "Value": "Gibraltar",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": 796,
+    "Value": "Turks and Caicos Islands",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 535,
+    "Value": "Bonaire, Sint Eustatius and Saba",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 438,
+    "Value": "Liechtenstein",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 388,
+    "Value": "Jamaica",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 643,
+    "Value": "Russian Federation",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 616,
+    "Value": "Poland",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 710,
+    "Value": "South Africa",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 192,
+    "Value": "Cuba",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 352,
+    "Value": "Iceland",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": 348,
+    "Value": "Hungary",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 581,
+    "Value": "United States Minor Outlying Islands",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 260,
+    "Value": "French Southern Territories",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 203,
+    "Value": "Czech Republic",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 178,
+    "Value": "Congo (Republic of the)",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "074",
+    "Value": "Bouvet Island",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 772,
+    "Value": "Tokelau",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 340,
+    "Value": "Honduras",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "024",
+    "Value": "Angola",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 670,
+    "Value": "Saint Vincent and the Grenadines",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 792,
+    "Value": "Turkey",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 226,
+    "Value": "Equatorial Guinea",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 184,
+    "Value": "Cook Islands",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 120,
+    "Value": "Cameroon",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 850,
+    "Value": "Virgin Islands (U.S.)",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 158,
+    "Value": "Taiwan, Province of China",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 520,
+    "Value": "Nauru",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 512,
+    "Value": "Oman",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 533,
+    "Value": "Aruba",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 600,
+    "Value": "Paraguay",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 170,
+    "Value": "Colombia",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 112,
+    "Value": "Belarus",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 834,
+    "Value": "Tanzania, United Republic of",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 380,
+    "Value": "Italy",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 762,
+    "Value": "Tajikistan",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": 446,
+    "Value": "Macao",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 474,
+    "Value": "Martinique",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 894,
+    "Value": "Zambia",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 660,
+    "Value": "Anguilla",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 876,
+    "Value": "Wallis and Futuna",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": 634,
+    "Value": "Qatar",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 480,
+    "Value": "Mauritius",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 417,
+    "Value": "Kyrgyzstan",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 580,
+    "Value": "Northern Mariana Islands",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 316,
+    "Value": "Guam",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 663,
+    "Value": "Saint Martin (French part)",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "028",
+    "Value": "Antigua and Barbuda",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 104,
+    "Value": "Myanmar",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 744,
+    "Value": "Svalbard and Jan Mayen",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 275,
+    "Value": "Palestine, State of",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 166,
+    "Value": "Cocos (Keeling) Islands",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 458,
+    "Value": "Malaysia",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 266,
+    "Value": "Gabon",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 276,
+    "Value": "Germany",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 724,
+    "Value": "Spain",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "056",
+    "Value": "Belgium",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 642,
+    "Value": "Romania",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": 360,
+    "Value": "Indonesia",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 760,
+    "Value": "Syrian Arab Republic",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "031",
+    "Value": "Azerbaijan",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": 308,
+    "Value": "Grenada",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 630,
+    "Value": "Puerto Rico",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 376,
+    "Value": "Israel",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 398,
+    "Value": "Kazakhstan",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 392,
+    "Value": "Japan",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 752,
+    "Value": "Sweden",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "060",
+    "Value": "Bermuda",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 860,
+    "Value": "Uzbekistan",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": 583,
+    "Value": "Micronesia (Federated States of)",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 254,
+    "Value": "French Guiana",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 434,
+    "Value": "Libya",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 704,
+    "Value": "Vietnam",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": 408,
+    "Value": "Korea (Democratic People's Republic of)",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 591,
+    "Value": "Panama",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 300,
+    "Value": "Greece",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": 368,
+    "Value": "Iraq",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 410,
+    "Value": "Korea (Republic of)",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 706,
+    "Value": "Somalia",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 554,
+    "Value": "New Zealand",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "036",
+    "Value": "Australia",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": 262,
+    "Value": "Djibouti",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 558,
+    "Value": "Nicaragua",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 840,
+    "Value": "United States of America",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "044",
+    "Value": "Bahamas",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 332,
+    "Value": "Haiti",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 578,
+    "Value": "Norway",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 508,
+    "Value": "Mozambique",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 784,
+    "Value": "United Arab Emirates",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 320,
+    "Value": "Guatemala",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 334,
+    "Value": "Heard Island and McDonald Islands",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 288,
+    "Value": "Ghana",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 570,
+    "Value": "Niue",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 250,
+    "Value": "France",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 233,
+    "Value": "Estonia",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 152,
+    "Value": "Chile",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 682,
+    "Value": "Saudi Arabia",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 231,
+    "Value": "Ethiopia",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 212,
+    "Value": "Dominica",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 854,
+    "Value": "Burkina Faso",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 242,
+    "Value": "Fiji",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "048",
+    "Value": "Bahrain",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": 694,
+    "Value": "Sierra Leone",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 140,
+    "Value": "Central African Republic",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 705,
+    "Value": "Slovenia",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 162,
+    "Value": "Christmas Island",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "070",
+    "Value": "Bosnia and Herzegovina",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 218,
+    "Value": "Ecuador",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 504,
+    "Value": "Morocco",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 470,
+    "Value": "Malta",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 496,
+    "Value": "Mongolia",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 296,
+    "Value": "Kiribati",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 422,
+    "Value": "Lebanon",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 270,
+    "Value": "Gambia",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 531,
+    "Value": "Curaçao",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 768,
+    "Value": "Togo",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 312,
+    "Value": "Guadeloupe",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 528,
+    "Value": "Netherlands",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 585,
+    "Value": "Palau",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 534,
+    "Value": "Sint Maarten (Dutch part)",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": 116,
+    "Value": "Cambodia",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 678,
+    "Value": "Sao Tome and Principe",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 238,
+    "Value": "Falkland Islands (Malvinas)",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 764,
+    "Value": "Thailand",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "090",
+    "Value": "Solomon Islands",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 204,
+    "Value": "Benin",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 818,
+    "Value": "Egypt",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "010",
+    "Value": "Antarctica",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 804,
+    "Value": "Ukraine",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 620,
+    "Value": "Portugal",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": 586,
+    "Value": "Pakistan",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 180,
+    "Value": "Congo (Democratic Republic of the)",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": 798,
+    "Value": "Tuvalu",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "068",
+    "Value": "Bolivia (Plurinational State of)",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": 598,
+    "Value": "Papua New Guinea",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  }
+]

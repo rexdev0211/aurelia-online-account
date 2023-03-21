@@ -1,0 +1,64 @@
+<template>
+    <require from="aurelia-kendoui-bridge/grid/grid"></require>
+    <require from="aurelia-kendoui-bridge/grid/col"></require>
+    <require from="aurelia-kendoui-bridge/grid/grid-command"></require>
+    <require from="aurelia-kendoui-bridge/common/template"></require>
+
+    <page-content>
+        <content-container
+            header="Payment Orders">
+
+            <kendo-drop-down-list
+                header="Select Account:"
+                items.bind="accounts"
+                on-change.call="sourceChanged($event)"
+                place-holder="Select Account"
+                value.one-time="state.payments.orders.sourceAccount.ern">
+            </kendo-drop-down-list>
+
+            <ak-grid k-data-source.bind="dataSource"
+                     k-on-ready.delegate="onReady($event.detail)"
+                     k-pageable.bind="pageable"
+                     show.bind="state.payments.orders.sourceAccount.ern">
+
+                <ak-col k-title="Date" k-width="200px">
+                    <ak-template>${scheduleDate || createdDate |epochFormat}</ak-template>
+                </ak-col>
+
+                <ak-col k-field="state" k-title="State" k-width="105px">
+                    <ak-template>${tasks.slice(-1)[0].meta.hasOwnProperty('ClearBankTransaction') ||
+                        tasks.slice(-1)[0].meta.hasOwnProperty('TransactionSettled') ? 'Succeeded':
+                        state === 'Cancelled' ? 'Cancelled' : requestedBy.approvalState !== 'Approved' ? 'Pending' :
+                        state === 'Scheduled' ? 'Scheduled' : state === 'Running' ? 'Running' :  state === 'New' ? 'New' : 'Failed'}
+                    </ak-template>
+                </ak-col>
+
+                <ak-col k-field="type" k-title="Type" k-width="85px">
+                    <ak-template>
+                        ${type === 'SendFunds' ? 'Send':'Transfer'}
+                    </ak-template>
+                </ak-col>
+
+                <ak-col k-title="Payment Reference" k-width="100%">
+                    <ak-template>
+                        ${input.PaymentReference||input.PaymentReference2}
+                    </ak-template>
+                </ak-col>
+
+                <ak-col k-title="Amount" k-width="200px">
+                    <ak-template>
+                        ${input.Amount||input.Amount2 | amountFormat:meta.Currency.symbol}
+                    </ak-template>
+                </ak-col>
+
+                <ak-template for="detailTemplate">
+                    <payment-detail job.bind="$this"></payment-detail>
+                </ak-template>
+
+            </ak-grid>
+
+
+        </content-container>
+    </page-content>
+
+</template>

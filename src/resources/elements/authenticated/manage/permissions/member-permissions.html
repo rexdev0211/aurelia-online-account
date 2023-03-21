@@ -1,0 +1,37 @@
+<template>
+  <require from="aurelia-kendoui-bridge/grid/grid"></require>
+  <require from="aurelia-kendoui-bridge/grid/col"></require>
+  <require from="aurelia-kendoui-bridge/common/template"></require>
+  <require from="aurelia-kendoui-bridge/grid/grid-command"></require>
+
+  <ak-grid k-on-ready.delegate="gridReady($event.detail)"
+           k-pageable.bind="pageable">
+
+    <ak-col k-field="type" k-title="Claim" k-width="75px">
+      <ak-template>
+        <span class="${isDenied($this) ? 'strike':''}">${type}</span>
+      </ak-template>
+    </ak-col>
+
+    <ak-col k-field="operation" k-title="Operation">
+      <ak-template>
+        <span class="${isDenied($this) ? 'strike':''}">${operation| friendlyACL}</span>
+      </ak-template>
+    </ak-col>
+
+    <ak-col k-field="resource" k-title="Resource">
+      <ak-template>
+        <span class="${isDenied($this) ? 'strike':''}">${resource| friendlyERN}</span>
+      </ak-template>
+    </ak-col>
+
+    <ak-col k-title="Revoke" k-width="75px">
+      <ak-template>
+        <button class="btn client-button" click.trigger="revokeAcl($this)" disable-while-loading if.bind="showRevoke($this)" title="Revoke">
+          <i class="fas fa-fw fa-trash-alt"></i>
+        </button>
+      </ak-template>
+    </ak-col>
+
+  </ak-grid>
+</template>

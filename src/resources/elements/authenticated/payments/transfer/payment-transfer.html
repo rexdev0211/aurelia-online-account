@@ -1,0 +1,39 @@
+<template>
+  <page-content>
+    <content-container button-click.call="submit()" button-icon="icon-loop3" button-text="Continue" header="Transfer Funds">
+      <form submit.delegate="submit()">
+
+        <kendo-drop-down-list
+            items.bind="accounts"
+            header="Transfer From Account:"
+            on-change.call="sourceChanged($event)"
+            place-holder="Source Account"
+            value.two-way="model.accountERN"
+            view-model.ref="source">
+          <input type="hidden" value.bind="model.accountERN & validate"/>
+        </kendo-drop-down-list>
+
+        <kendo-drop-down-list
+            items.bind="accounts"
+            header="Transfer To Account:"
+            on-change.call="destinationChanged($event)"
+            place-holder="Destination Account"
+            value.two-way="model.toAccountERN"
+            view-model.ref="destination">
+          <input type="hidden" value.bind="model.toAccountERN & validate"/>
+        </kendo-drop-down-list>
+
+        <kendo-money-input
+            symbol.bind="symbol"
+            header="Amount To Transfer:"
+            min="0.01"
+            on-change.call="amountChanged($event)"
+            place-holder="Amount to transfer"
+            value.bind="model.amount">
+          <input type="hidden" value.bind="model.amount & validate"/>
+        </kendo-money-input>
+
+      </form>
+    </content-container>
+  </page-content>
+</template>

@@ -1,0 +1,55 @@
+<template>
+  <content-container
+      back-button-click.call="back()"
+      back-button-disabled.bind="false"
+      back-button-text="Back"
+      button-text=""
+      header="${state.webhooks.selectedWebhook.event}">
+
+    <fieldset>
+      <legend>Webhook</legend>
+      <form-group bold-header="ID:">
+        ${state.webhooks.selectedWebhook.ern}
+      </form-group>
+      <form-group bold-header="Name:">
+        ${state.webhooks.selectedWebhook.name}
+      </form-group>
+      <form-group bold-header="IsActive:">
+        ${state.webhooks.selectedWebhook.isActive}
+      </form-group>
+      <form-group bold-header="CreatedDateUtc:">
+        ${state.webhooks.selectedWebhook.createdDateUtc|dateFormat:'iso'}
+      </form-group>
+      <form-group bold-header="LastModifiedDateUtc:">
+        ${state.webhooks.selectedWebhook.lastModifiedDateUtc|dateFormat:'iso'}
+      </form-group>
+    </fieldset>
+
+    <fieldset>
+      <legend>Config</legend>
+      <form-group bold-header="Url:">
+        ${state.webhooks.selectedWebhook.url}
+      </form-group>
+      <form-group bold-header="ContentType:">
+        ${state.webhooks.selectedWebhook.contentType}
+      </form-group>
+      <form-group bold-header="Secret:" if.bind="state.webhooks.selectedWebhook.secret">
+        ${state.webhooks.selectedWebhook.secret}
+      </form-group>
+    </fieldset>
+
+    <fieldset if.bind="state.webhooks.selectedWebhook.statusCode">
+      <legend>Last Result</legend>
+      <form-group bold-header="Attempted Date:">
+        ${state.webhooks.selectedWebhook.attemptedDateUtc|dateFormat:'iso'}
+      </form-group>
+      <form-group bold-header="Status Code:">
+        ${state.webhooks.selectedWebhook.statusCode}
+      </form-group>
+      <form-group bold-header="Status Description:">
+        ${state.webhooks.selectedWebhook.statusDescription}
+      </form-group>
+    </fieldset>
+
+  </content-container>
+</template>

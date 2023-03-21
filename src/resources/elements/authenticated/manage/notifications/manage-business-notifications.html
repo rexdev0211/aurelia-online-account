@@ -1,0 +1,24 @@
+<template>
+    <page-content>
+
+        <content-container
+            button-icon="icon-arrow-right6"
+            button-text="Save"
+            button-click.call="saveProfile()"
+            button-disabled.bind="!_isDirty"
+            header="Business Notifications Profile">
+
+            <kendo-drop-down-list
+                if.bind="principals.length>1"
+                items.bind="principals"
+                on-change.call="principalChanged($event)"
+                place-holder="Select Principal"
+                value.one-time="state.notifications.principal.value">
+            </kendo-drop-down-list>
+
+            <business-notifications-editor></business-notifications-editor>
+
+        </content-container>
+
+    </page-content>
+</template>

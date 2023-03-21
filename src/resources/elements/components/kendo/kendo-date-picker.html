@@ -1,0 +1,12 @@
+<template>
+  <require from="aurelia-kendoui-bridge/datepicker/datepicker"></require>
+  <form-group header.bind="header">
+    <input ak-datepicker="k-widget.two-way:widget; k-value.one-time:initialValue; k-format.bind:format; k-min.bind:min;"
+           k-on-change.delegate="changeEvent($event.detail)"
+           k-on-ready.delegate="readyEvent($event.detail)"
+           placeholder.bind="placeHolder"
+           style="width: 100%;"
+           type="number"/>
+    <slot></slot>
+  </form-group>
+</template>

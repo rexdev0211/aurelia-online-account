@@ -1,0 +1,64 @@
+﻿<template>
+  <style>
+    #progress1 {
+      display: block;
+      width: 108%;
+      top: 60px;
+      position: relative;
+      overflow: hidden;
+      height: 5px;
+      left: -17px;
+    }
+
+    #progress2 {
+      display: block;
+      width: 108%;
+      top: 110px;
+      position: relative;
+      overflow: hidden;
+      height: 5px;
+      left: -17px;
+    }
+
+    ux-dialog-header strong {
+      font-size: larger;
+    }
+
+    ux-dialog-overlay.active {
+      background-color: black;
+      opacity: .5;
+    }
+
+    ux-dialog {
+      height: 220px !important;
+      width: 460px !important;
+    }
+
+    .ux-dialog-footer-button {
+      width: 150px !important;
+    }
+  </style>
+  <ux-dialog>
+
+    <ux-dialog-header>
+      <progress id="progress1" value="0" max.one-time="secondsTotal" value.bind="secondsLeft"></progress>
+      <progress id="progress2" value.one-time="secondsTotal" max.one-time="secondsTotal" value.bind="secondsLeft"></progress>
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-stack-2x fa-spinner fa-spin fa-pulse"></i>
+        <i class="fa fa-stack-1x fa-unlock-alt"></i>
+      </span>&nbsp;&nbsp;
+      <strong>Session Expiring</strong>
+    </ux-dialog-header>
+
+    <ux-dialog-body>
+      Your session will automatically expire after
+      <strong>${secondsLeft}</strong> seconds of inactivity.
+    </ux-dialog-body>
+
+    <ux-dialog-footer>
+      <br>
+      <button disable-while-loading class="ux-dialog-footer-button" click.trigger="controller.ok()">Continue Session</button>
+    </ux-dialog-footer>
+
+  </ux-dialog>
+</template>

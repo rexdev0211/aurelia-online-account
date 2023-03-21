@@ -1,0 +1,15 @@
+<template>
+
+  <page-content>
+
+    <manage-webhooks show.bind="state.webhooks.view === 'Manage'"></manage-webhooks>
+
+    <view-webhook if.bind="state.webhooks.view === 'View'"></view-webhook>
+
+    <add-webhook if.bind="state.webhooks.view === 'Add'"></add-webhook>
+
+    <edit-webhook if.bind="state.webhooks.view === 'Edit'"></edit-webhook>
+
+  </page-content>
+
+</template>

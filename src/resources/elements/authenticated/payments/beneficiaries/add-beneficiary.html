@@ -1,0 +1,76 @@
+<template>
+  <content-container
+      back-button-click.call="back()"
+      back-button-disabled.bind="false"
+      button-click.call="submit()"
+      button-icon="icon-loop3"
+      button-text="Continue"
+      header="Add New Beneficiary">
+
+    <h4 class="mb-3">
+      Account: ${state.beneficiaries.sourceAccount.code}
+    </h4>
+
+    <form-group header="I am paying a:">
+      <br>
+      <label repeat.for="beneficiaryType of beneficiaryTypes">
+        <input change.trigger="processAccountName()" checked.bind="model.beneficiary.beneficiaryType" name="beneficiaryType" type="radio" value.bind="beneficiaryType">
+        ${beneficiaryType}
+        &nbsp&nbsp&nbsp
+      </label>
+      <br>
+      <input type="hidden" value.bind="model.beneficiary.beneficiaryType & validate"/>
+    </form-group>
+
+    <form-group header="Beneficiary First Name:" show.bind="model.beneficiary.beneficiaryType == 'Person'">
+      <input change-case="title" change.trigger="processAccountName()" class="form-control form-control-lg" placeholder="First name" type="text" value.bind="model.beneficiary.firstName & validate">
+    </form-group>
+
+    <form-group header="Beneficiary Last Name:" show.bind="model.beneficiary.beneficiaryType == 'Person'">
+      <input change-case="title" change.trigger="processAccountName()" class="form-control form-control-lg" placeholder="Last name" type="text" value.bind="model.beneficiary.lastName & validate">
+    </form-group>
+
+<!--    <kendo-date-picker header="Beneficiary Birthday:" place-holder="Birthdate (DD/MM/YYYY)" show.bind="model.beneficiary.beneficiaryType == 'Person'" value.bind="model.beneficiary.birthDate">-->
+<!--      <input type="hidden" value.bind="model.beneficiary.birthDate & validate"/>-->
+<!--    </kendo-date-picker>-->
+
+    <form-group header="Beneficiary Business Name:" show.bind="model.beneficiary.beneficiaryType != 'Person'">
+      <input  change.trigger="processAccountName()" class="form-control form-control-lg" placeholder="Business name" type="text" value.bind="model.beneficiary.businessName & validate">
+    </form-group>
+
+    <form-group header="Beneficiary Account Name:">
+      <input change.trigger="processBusinessName()" class="form-control form-control-lg" placeholder="AccountModel name" type="text" value.bind="model.account.accountName & validate">
+    </form-group>
+
+    <form-group header="Beneficiary Nickname:">
+      <input  class="form-control form-control-lg" placeholder="Account nickname" type="text" value.bind="model.account.nickName & validate">
+    </form-group>
+
+    <form-group header="Bank Name:">
+      <input class="form-control form-control-lg" placeholder="Bank name" type="text" value.bind="model.account.bankName & validate">
+    </form-group>
+
+<!--    <form-group header="SWIFT:">-->
+<!--      <input class="form-control form-control-lg" placeholder="SWIFT" type="text" value.bind="model.account.swift & validate">-->
+<!--    </form-group>-->
+
+    <form-group header="IBAN:">
+      <input change.trigger="selectAccountType()" class="form-control form-control-lg" disabled.bind="accountType == 'BBAN'" maxlength="34" minlength="22" placeholder="IBAN" type="text" value.bind="model.account.iban & validate">
+    </form-group>
+
+    <form-group header="Sort Code:">
+      <input change.trigger="selectAccountType()" class="form-control form-control-lg" disabled.bind="accountType == 'IBAN'" maxlength="6" number-input placeholder="Sort code" type="text" value.bind="model.account.sortCode & validate">
+    </form-group>
+
+    <form-group header="Account Number:">
+      <input change.trigger="selectAccountType()" class="form-control form-control-lg" disabled.bind="accountType == 'IBAN'" maxlength="8" number-input placeholder="Account number" type="text" value.bind="model.account.accountNumber & validate">
+    </form-group>
+
+    <button class="btn client-button mb-3" click.trigger="initiateJumio()" if.bind="showJumioButton">Use Jumio</button>
+
+    <document-uploader header="Add Documents" types="Identification Document, Address Verification, Additional Documentation" value.bind="model.beneficiary.documentERNs">
+    </document-uploader>
+
+  </content-container>
+
+</template>

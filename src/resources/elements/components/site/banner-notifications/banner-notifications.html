@@ -1,0 +1,14 @@
+<template>
+  <style>
+    .alert {
+      margin-bottom: unset;
+    }
+  </style>
+
+  <div class="alert ${banner.css} ${!banner.persistent?'alert-dismissible':''} fade show" repeat.for="banner of state.banners.live" role="alert">
+    <strong>${banner.header}</strong> ${banner.text}
+    <button aria-label="Close" class="close" if.bind="!banner.persistent" type="button" click.trigger="dismissBanner(banner)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</template>

@@ -1,0 +1,122 @@
+<template>
+  <!-- Profile Record Form -->
+  <form if.bind="showProfileRecordForm" submit.trigger="handleProfileRecord()">
+    <div class="form-group" validation-errors.bind="ernErrors">
+      <label class="control-label" for="ern">Ern <em>*</em></label>
+      <input type="text" class="form-control" id="ern" placeholder="ERN" value.bind="profileRecord.ern & validateOnChange">
+      <span class="help-block" repeat.for="errorInfo of ernErrors">
+        ${errorInfo.error.message}
+      </span>
+    </div>
+    <div class="form-group" validation-errors.bind="principalERNErrors">
+      <label class="control-label" for="principalERN">Principal ERN<em>*</em></label>
+      <input type="text" class="form-control" id="principalERN" placeholder="principal ERN" value.bind="profileRecord.principalERN & validateOnChange">
+      <span class="help-block" repeat.for="errorInfo of principalERNErrors">
+        ${errorInfo.error.message}
+      </span>
+    </div>
+    <div class="form-group" validation-errors.bind="nameErrors">
+      <label class="control-label" for="name">Profile Name<em>*</em></label>
+      <input type="text" class="form-control" id="name" placeholder="Name" value.bind="profileRecord.name & validateOnChange">
+      <span class="help-block" repeat.for="errorInfo of nameErrors">
+        ${errorInfo.error.message}
+      </span>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="form-control" disabled.bind="!disableProfileRecordButtons">Next to model</button>
+    </div>
+  </form>
+  <!-- Model Form -->
+  <form if.bind="showModelForm" submit.trigger="handleModel()">
+    <div class="form-group" validation-errors.bind="nameErrors">
+      <label class="control-label" for="modelname">Model Name<em>*</em></label>
+      <input type="text" class="form-control" id="modelname" placeholder="Name" value.bind="profileRecord.model.name & validateOnChange">
+      <span class="help-block" repeat.for="errorInfo of nameErrors">
+        ${errorInfo.error.message}
+      </span>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="form-control" disabled.bind="!disableModelButtons">Next to categories</button>
+    </div>
+  </form>
+  <!-- Show Profile and Model Detail -->
+  <div if.bind="!showProfileRecordForm && !showModelForm">
+    <p>Profile Name: ${profileRecord.name}</p>
+    <p>Profile Ern: ${profileRecord.ern}</p>
+    <p>Profile Principal ERN: ${profileRecord.principalERN}</p>
+    <p>Model Name: ${profileRecord.model.name}</p>
+  </div>
+  <!-- Categories Form -->
+  <form if.bind="showCategoriesForm" submit.trigger="handleCategories()">
+    <div class="form-group">
+      <button type="button" class="form-control" click.trigger="addCategory()">Add Category</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Category Name</th>
+          <th>Weight(%)</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr repeat.for="category of profileRecord.model.categories">
+          <td validation-errors.bind="nameErrors">
+            <input type="text" class="form-control" placeholder="Name" value.bind="category.name & validateOnChange:categoryRules">
+            <span class="help-block" repeat.for="errorInfo of nameErrors">
+              ${errorInfo.error.message}
+            </span>
+          </td>
+          <td validation-errors.bind="weightErrors">
+            <input type="text" class="form-control" placeholder="Weight" value.bind="category.weight & validateOnChange:categoryRules">
+            <span class="help-block" repeat.for="errorInfo of weightErrors">
+              ${errorInfo.error.message}
+            </span>
+          </td>
+          <td>
+            <button type="button" class="form-control" click.trigger="removeCategory($index)">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="form-group">
+      <button type="submit" class="form-control">Next to Components</button>
+    </div>
+  </form>
+  <!-- Show Categories List -->
+  <form if.bind="!showProfileRecordForm && !showModelForm && !showCategoriesForm" submit.trigger="handleCategories()">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Category Name</th>
+          <th>Weight(%)</th>
+          <th>
+            Add Component
+          </th>
+          <th>Component</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr repeat.for="category of profileRecord.model.categories">
+          <td>
+            ${category.name}
+          </td>
+          <td>
+            ${category.weight}
+          </td>
+          <td>
+            <button type="button" class="form-control" click.trigger="addComponent($index)">Add</button>
+          </td>
+          <td>
+            <div repeat.for="component of category.components">
+              <input type="text" class="form-control" placeholder="Name" value.bind="component.name & validateOnChange">
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="form-group">
+      <button type="submit" class="form-control">Next to Components</button>
+    </div>
+  </form>
+</template>

@@ -1,0 +1,91 @@
+<template>
+  <page-content>
+    <content-container
+        continue-button-show.bind="false"
+        form-buttons-show.bind="true"
+        header="Permission Editor">
+
+      <kendo-drop-down-list
+          header="Select Business:"
+          items.bind="state.customerSummary.businesses | filterOnBusinessManager"
+          on-change.call="businessChanged($event)"
+          place-holder="Source Business"
+          text-field="businessName"
+          value-field="ern"
+          value.one-time="state.permissions.selectedBusiness.ern">
+      </kendo-drop-down-list>
+
+      <div class="row" show.bind="state.permissions.selectedBusiness">
+
+        <div class="col-4">
+          <corporate-structure
+              header="Select Business Member"
+              selectable.bind="true"
+              value.bind="selectedMember">
+          </corporate-structure>
+        </div>
+
+        <div class="col-8">
+
+          <content-column
+              disabled.bind="!state.permissions.selectedMember"
+              header="Add Permission">
+
+            <div class="row">
+              <div class="col-5">
+
+                <kendo-drop-down-list
+                    filter="contains"
+                    header="Select Resource:"
+                    items.bind="resourceItems"
+                    place-holder="Select Resource"
+                    value.bind="selectedResource"
+                    view-model.ref="resource">
+                </kendo-drop-down-list>
+
+              </div>
+              <div class="col-5">
+
+                <kendo-drop-down-list
+                    filter="contains"
+                    header="Select Permission:"
+                    items.bind="permissionItems"
+                    place-holder="Select Permission"
+                    text-field="description"
+                    value-field=""
+                    value.bind="selectedOperation"
+                    view-model.ref="operation">
+                </kendo-drop-down-list>
+
+                <input class="e-input-group e-input"
+                       if.bind="showLimitValue"
+                       number-input="decimal.bind:false"
+                       min="1"
+                       placeholder="Limit Value"
+                       style="height: 32px;"
+                       type="number"
+                       value.bind="limitValue">
+              </div>
+              <div class="col-2 text-center mt-4">
+                <button class="btn client-button" click.trigger="grantAcl()" disable-while-loading.bind="disableAclAdd" title="Grant">Grant</button>
+                <button class="btn client-button" click.trigger="denyAcl()" disable-while-loading.bind="disableAclAdd || showLimitValue" title="Deny">Deny</button>
+              </div>
+            </div>
+
+          </content-column>
+
+          <content-column header="Current Permissions" if.bind="selectedMember">
+
+            <member-permissions></member-permissions>
+
+          </content-column>
+
+
+        </div>
+
+      </div>
+
+
+    </content-container>
+  </page-content>
+</template>

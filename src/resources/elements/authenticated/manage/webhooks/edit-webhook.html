@@ -1,0 +1,57 @@
+<template>
+  <content-container
+      action-button-disabled.bind="!showSendTestButton"
+      action-button-size="165px"
+      action-button-text="Send Test Webhook"
+      action-button-click.call="sendTestWebhook()"
+      back-button-click.call="back()"
+      back-button-disabled.bind="false"
+      button-click.call="submit()"
+      button-icon="icon-loop3"
+      button-text="Save"
+      header="Edit ${event} Webhook">
+
+    <form-group header="ID:">
+      <h5>
+        ${model.ern}
+      </h5>
+    </form-group>
+
+
+    <kendo-drop-down-list
+        header="Version:"
+        items.bind="webhookUtils.getWebhookVersions()"
+        place-holder="Select Version"
+        text-field="description"
+        value.bind="model.version"
+        view-model.ref="source">
+      <input type="hidden" value.bind="model.version & validate"/>
+    </kendo-drop-down-list>
+
+    <form-group header="Name:">
+      <input class="form-control form-control-lg" placeholder="My Webhook" type="text" value.bind="model.name & validate">
+    </form-group>
+
+    <form-group header="Enabled:">
+      <div class="form-check">
+        <label class="form-check-label">
+          <div class="uniform-checker">
+                    <span class="${model.isActive?'checked':''}">
+                      <input checked.bind="model.isActive" class="form-check-input-styled" type="checkbox">
+                    </span>
+          </div>
+        </label>
+      </div>
+    </form-group>
+
+    <form-group header="Url:">
+      <input class="form-control form-control-lg" placeholder="https://myserver/api/incoming" type="text" value.bind="model.config.url & validateOnBlur">
+    </form-group>
+
+    <form-group header="Secret:">
+      <input class="form-control form-control-lg" placeholder="ASUPERSECRETKEY" type="text" value.bind="model.config.secret & validate">
+    </form-group>
+
+
+  </content-container>
+</template>

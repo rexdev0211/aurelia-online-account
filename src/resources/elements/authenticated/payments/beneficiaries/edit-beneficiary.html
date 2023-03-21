@@ -1,0 +1,20 @@
+<template>
+  <content-container
+      back-button-click.call="back()"
+      back-button-disabled.bind="false"
+      button-click.call="submit()"
+      button-icon="icon-loop3"
+      button-text="Continue"
+      header="Edit ${model.beneficiary.beneficiaryType} Beneficiary">
+
+    <form-group header="Beneficiary Nickname:">
+      <input change-case="title" class="form-control form-control-lg" placeholder="Account nickname" type="text" value.bind="model.nickName & validate">
+    </form-group>
+
+    <view-beneficiary-documents header="Existing Documents:" remove-document.call="removeDocument($event)"></view-beneficiary-documents>
+
+    <document-uploader header="Add Documents" types="Identification Document, Address Verification, Additional Documentation" value.bind="model.documentERNs">
+    </document-uploader>
+
+  </content-container>
+</template>

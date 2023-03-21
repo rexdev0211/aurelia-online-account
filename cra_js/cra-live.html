@@ -1,0 +1,160 @@
+<template>
+    <require from="./components/cra-riskFactor.html"></require>
+    <require from="./styles/live.css"></require>
+    <require from="./styles/client.css"></require>
+    <require from="./styles/kendo.custom.css"></require>
+    <require from="./styles/kendo.custom.navbar.css"></require>
+
+    <style>
+        button {
+            width: auto !important;;
+        }
+
+        button:hover {
+            width: auto !important;
+        }
+    </style>
+
+    <div class="mb-3">
+        <a href="#/cra/builder" class="btn btn-primary" role="button">Builder Mode</a>
+    </div>
+
+    <div id="grad1">
+        <div class="row justify-content-center mt-0">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center mb-2">
+                <div class="card px-0 pt-4 pb-0 mb-3">
+                    <div class="row">
+                        <div class="col-md-12 mx-0">
+                            <div class="header-actions">
+                                <div class="mode-section">
+                                    <label for="mode">Mode:</label>
+                                    <select class="form-select" id="mode" style="width: 200px;" value.bind="mode">
+                                        <option model.bind="item"
+                                                repeat.for="item of modes">
+                                            ${item}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="debug-toggle">
+                                    <div class="form-check form-switch">
+                                        <input checked.bind="debugMode" class="form-check-input" id="debugMode" role="switch" type="checkbox"/>
+                                        <label class="form-check-label" for="debugMode">Debug Mode</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <h2><strong>${model.Name}</strong></h2>
+                            <form id="msform" if.bind="!endAnswering">
+                                <p>Please answer following questions</p>
+                                <!-- Category top bar -->
+                                <ul id="top-bar">
+                                    <li
+                                        class="category-title ${$index === selectedCategoryIndex ? 'active' : ''} ${mode === 'admin' ? 'clickable': ''}"
+                                        click.trigger="mode === 'admin' && $index !== selectedCategoryIndex ? selectCategory($index) : null"
+                                        id="category-${category.Name}"
+                                        repeat.for="category of model.Categories"
+                                    >
+                                        <strong>${category.Name}</strong>
+                                    </li>
+                                </ul>
+                                <div class="container row">
+                                    <div class="col-sm-3 left-side">
+                                        <!-- Components side bar -->
+                                        <ul class="side-bar">
+                                            <li
+                                                class="component-title ${$index === selectedComponentIndex ? 'active' : ''} ${mode === 'admin' ? 'clickable': ''}"
+                                                click.trigger="mode === 'admin' && $index !== selectedComponentIndex ? selectComponent($index) : null"
+                                                id="component-${component.Name}"
+                                                repeat.for="component of model.Categories[selectedCategoryIndex].Components"
+                                            >
+                                                <strong>${component.Name}</strong>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-9" style="text-align: left; padding-top: 40px;">
+                                        <!-- Start Consumer mode -->
+                                        <div if.bind="mode === 'consumer'">
+                                            <cra-riskFactor
+                                                countries.bind="countries"
+                                                industries.bind="industries"
+                                                debug-mode.bind="debugMode"
+                                                risk-factor.bind="activeRiskFactor"
+                                                selected-index.bind="selectedRiskFactorIndex + 1"
+                                            ></cra-riskFactor>
+
+                                            <div class="form-group" style="margin-top: 30px;">
+                                                <button class="btn btn-primary client-button" click.trigger="nextRiskFactor()" type="button">
+                                                    <i class="fa fa-arrow-right"></i> Next
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <!-- End Consumer mode -->
+                                        <!-- Start Admin Mode -->
+                                        <div if.bind="mode === 'admin'">
+                                            <div class="pageSize-section">
+                                                <label for="pageSize">Page Size:</label>
+                                                <input class="form-control" id="pageSize" max="20" min="1" style="width: 100px;" type="number" value.bind="pageSize">
+                                            </div>
+                                            <div repeat.for="riskFactor of model['Categories'][selectedCategoryIndex]['Components'][selectedComponentIndex]['RiskFactors'].slice((currentPage - 1) * pageSize, currentPage * pageSize)" style="text-align: left; padding-top: 40px;">
+                                                <cra-riskFactor
+                                                    countries.bind="countries"
+                                                    debug-mode.bind="debugMode"
+                                                    industries.bind="industries"
+                                                    risk-factor.bind="riskFactor"
+                                                    selected-index.bind="(currentPage - 1) * pageSize + $index + 1"
+                                                ></cra-riskFactor>
+                                            </div>
+                                            <div class="live-footer">
+                                                <ul class="pagination">
+                                                    <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                                                        <a class="page-link" click.trigger="goToPage(currentPage - 1)"><span aria-hidden="true">&laquo;</span></a>
+                                                    </li>
+                                                    <li class="page-item ${currentPage === i + 1 ? 'active' : ''}" repeat.for="i of getPageCount(model['Categories'][selectedCategoryIndex]['Components'][selectedComponentIndex]['RiskFactors'].length, pageSize)">
+                                                        <a class="page-link" click.trigger="goToPage(i + 1)">${i + 1}</a>
+                                                    </li>
+                                                    <li class="page-item ${currentPage === getPageCount(model['Categories'][selectedCategoryIndex]['Components'][selectedComponentIndex]['RiskFactors'].length, pageSize) ? 'disabled' : ''}">
+                                                        <a class="page-link" click.trigger="goToPage(currentPage + 1)"><span aria-hidden="true">&raquo;</span></a>
+                                                    </li>
+                                                </ul>
+                                                <div class="form-group" style="padding-right: 2rem;">
+                                                    <button class="btn btn-primary client-button" click.trigger="nextRiskFactorsForComponent()" type="button">
+                                                        <i class="fa fa-arrow-right"></i> Next Component
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Admin mode -->
+                                    </div>
+                                </div>
+                            </form>
+                            <div if.bind="endAnswering">
+                                <p>Please review all your answers before submitting</p>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div repeat.for="category of model.Categories" style="padding: 0 2rem;">
+                                            <div repeat.for="component of category.Components">
+                                                <div repeat.for="riskFactor of component.RiskFactors" style="text-align: left; padding-top: 40px;">
+                                                    <cra-riskFactor
+                                                        countries.bind="countries"
+                                                        debug-mode.bind="debugMode"
+                                                        industries.bind="industries"
+                                                        risk-factor.bind="riskFactor"
+                                                        selected-index.bind="`${$parent.$parent.$index+1}-${$parent.$index+1}-${$index+1}`"
+                                                    ></cra-riskFactor>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-success client-button" click.trigger="submitAllAnswers()" type="button">
+                                                <i class="fa fa-check"></i> Submit all answers
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

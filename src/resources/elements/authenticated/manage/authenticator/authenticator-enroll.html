@@ -1,0 +1,28 @@
+<template>
+  <content-container
+    button-click.call="submit()"
+    button-icon.bind="(code?'':'icon-arrow-right6')"
+    button-text.bind="(code?'Close':'Register')"
+    header="Enumis.Authenticator">
+
+    <h3>Enroll Your Device</h3>
+    <div show.bind="!code">
+      <form submit.delegate="submit()">
+        <p class="mb-4">Please download the app. Once downloaded, enter your access code and click register to generate
+          your time-sensitive enrollment code.</p>
+        <form-group header="Access Code:">
+          <input autocomplete="off" class="form-control form-control-lg" maxlength="36"
+                 number-input
+                 placeholder="Enter your access code"
+                 type="text"
+                 value.bind="model.securedAccessCode & validate"/>
+        </form-group>
+      </form>
+    </div>
+    <div show.bind="code">
+      <p>Enter the following code into the Enumis Authenticator app</p>
+      <h1 class="display-4">${code}</h1>
+    </div>
+  </content-container>
+</template>
+d

@@ -1,0 +1,30 @@
+<template>
+  <form-group header="${header}">
+    <div class="row">
+      <div class="col-md-4 ">
+        <ej-drop-down-list
+          value.bind="day"
+          items.bind="days"
+          placeholder="Day">
+        </ej-drop-down-list>
+      </div>
+
+      <div class="col-md-4 ">
+        <ej-drop-down-list
+          value.bind="month"
+          items.bind="months"
+          placeholder="Month">
+        </ej-drop-down-list>
+      </div>
+
+      <div class="col-md-4 ">
+        <ej-drop-down-list
+          value.bind="year"
+          items.bind="years"
+          placeholder="Year">
+        </ej-drop-down-list>
+      </div>
+    </div>
+    <slot></slot>
+  </form-group>
+</template>

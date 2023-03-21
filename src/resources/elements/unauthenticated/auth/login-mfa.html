@@ -1,0 +1,18 @@
+<template>
+  <page-content>
+    <form submit.delegate="submit()">
+      <content-container header="Multi-Factor Authentication" button-icon="icon-loop3" button-text="Continue"
+        button-click.call="submit()">
+
+        <p class="mb-4">
+          <strong>Please enter your MFA code to authenticate your account</strong>
+        </p>
+
+        <form-group header="MFA Code:">
+          <input value.bind="model.mfaVerificationCode & validate" number-input attach-focus="true" type="text" maxlength="6"
+            class="form-control">
+        </form-group>
+    </form>
+    </content-container>
+  </page-content>
+</template>

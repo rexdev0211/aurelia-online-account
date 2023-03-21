@@ -1,0 +1,9 @@
+<template>
+  <div class="text-center mb-3">
+    <h1 class="mb-4 font-weight-bold">Sign up</h1>
+    <h5 class="d-block mb-5">Finish your registration by clicking below. All you need is your account number, birthdate and the validation code you should have already received in your email.</h5>
+  </div>
+  <div class="form-group text-center">
+    <button click.delegate="click()" disabled.bind="!utils.isSecureHost" class="btn btn-lg client-button"><i class="icon-user-plus mr-2"></i> Complete Registration</button>
+  </div>
+</template>

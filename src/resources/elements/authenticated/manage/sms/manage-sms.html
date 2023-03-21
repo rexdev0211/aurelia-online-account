@@ -1,0 +1,129 @@
+<template>
+  <page-content>
+
+    <content-container
+        button-click.call="click()"
+        button-icon="icon-arrow-right6"
+        button-text="Continue"
+        header="SMS Authentication"
+        show.bind="!authModel">
+      <h6 class="mb-4">
+        Multi-factor authentication (MFA) combines two or more independent credentials; what you know (password); what you have (security
+        token). The goal is to create a layered defence and make it more difficult
+        for an unauthorised person to access your account. If one factor is compromised the attacker still has at least
+        one more barrier to breach before successfully accessing your account.
+      </h6>
+      <h6 class="mb-4">
+        Relying on just usernames and passwords to secure your online account is no longer considered safe. Data breaches occur daily
+        and hackers are inventing new ways to take over your accounts. Protect yourself by enabling MFA. This blocks
+        anyone using your stolen data by verifying your identity through your device.
+      </h6>
+      <h6 class="mb-4">
+        Click continue to change your SMS mobile phone now.
+      </h6>
+    </content-container>
+
+    <content-container
+        button-click.call="click()"
+        button-icon="icon-arrow-right6"
+        button-text="Start Request"
+        header="SMS Authentication"
+        show.bind="authModel && !authModel.crc">
+
+      <form submit.delegate="click()">
+        <form-group header="New Mobile Number:">
+          <input class="form-control form-control-lg"
+                 intl-tel.bind="authModel.mobilePhone"
+                 maxlength="16"
+                 number-input="+"
+                 onCopy="return false"
+                 onDrag="return false"
+                 onDrop="return false"
+                 onPaste="return false"
+                 placeholder="Enter your mobile number"
+                 type="tel"
+                 value.bind="authModel.mobilePhone & validate">
+        </form-group>
+
+        <form-group header="Confirm Mobile Number:">
+          <input class="form-control form-control-lg"
+                 intl-tel.bind="authModel.confirmMobilePhone"
+                 maxlength="16"
+                 number-input="+"
+                 onCopy="return false"
+                 onDrag="return false"
+                 onDrop="return false"
+                 onPaste="return false"
+                 placeholder="Enter your mobile number"
+                 type="tel"
+                 onchange.call="confirmMobilePhoneChanged()"
+                 value.bind="authModel.confirmMobilePhone & validate">
+        </form-group>
+
+      </form>
+
+    </content-container>
+
+    <content-container
+        back-button-click.call="back()"
+        back-button-disabled.bind="false"
+        button-click.call="submitPreEnroll()"
+        button-icon="icon-arrow-right6"
+        button-text="Validate Request"
+        header="SMS Authentication"
+        show.bind="authModel.crc && !model">
+
+      <form submit.delegate="submitPreEnroll()">
+        <form-group header="Email Verification Code:">
+          <a class="client-link" click.delegate="resendEmailVerificationCode()" href="javascript:void(0);">(click here to resend a new EMAIL verification code)</a>
+          <input autocomplete="off" class="form-control form-control-lg" maxlength="6"
+                 number-input
+                 placeholder="Email Verification Code"
+                 type="text"
+                 value.bind="authModel.emailVerificationCode & validate">
+        </form-group>
+
+        <form-group header="New mobile SMS Verification Code:">
+          <a class="client-link" click.delegate="resendSmsVerificationCode()" href="javascript:void(0);">(click here to resend a new SMS verification code to the new phone number)</a>
+          <input autocomplete="off" class="form-control form-control-lg" maxlength="6"
+                 number-input
+                 placeholder="SMS Verification Code"
+                 type="text"
+                 value.bind="authModel.smsVerificationCode & validate">
+        </form-group>
+
+
+      </form>
+
+    </content-container>
+
+
+    <content-container
+        button-click.call="submit()"
+        button-icon="icon-arrow-right6"
+        button-text="Update Mobile Phone"
+        header="SMS Authentication"
+        show.bind="model">
+
+      <h5>
+        New Mobile Phone: ${model.mobilePhone}
+      </h5>
+
+      <form submit.delegate="submit()">
+        <form-group header="MFA Verification Code:">
+          <input class="form-control" maxlength="6" number-input placeholder="Enter your mfa verification code" type="text" value.bind="model.mfaVerificationCode & validate"/>
+        </form-group>
+
+        <form-group header="Access Code:">
+          <input autocomplete="off" class="form-control form-control-lg" maxlength="36"
+                 number-input
+                 placeholder="Enter your access code"
+                 type="text"
+                 value.bind="model.securedAccessCode & validate" />
+        </form-group>
+      </form>
+
+    </content-container>
+
+  </page-content>
+</template>

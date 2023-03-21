@@ -1,0 +1,5 @@
+<template>
+  <content-column header="Accounts">
+    <account-list-item account.bind="account" class="clickable" repeat.for="account of state.customerSummary.accounts | filterHidden"></account-list-item>
+  </content-column>
+</template>

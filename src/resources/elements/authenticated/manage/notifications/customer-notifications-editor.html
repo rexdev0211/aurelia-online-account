@@ -1,0 +1,213 @@
+<template>
+    <style>
+        li fieldset {
+            display: block;
+            margin-left: 2px;
+            margin-right: 2px;
+            padding-top: 0.35em;
+            padding-bottom: 0.625em;
+            padding-left: 0.75em;
+            padding-right: 0.75em;
+            border: 2px groove;
+        }
+
+        legend {
+            font-size: initial !important;
+            border-bottom: initial;
+            width: auto;
+            padding: 0 5px;
+            margin: inherit;
+        }
+
+        .table-sm td, .table-sm th {
+            padding: .625rem 0.25rem;
+        }
+    </style>
+
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex justify-content-between align-items-center"
+            repeat.for="event of events">
+            <fieldset class="w-100">
+                <legend> ${event.text}</legend>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"
+                        repeat.for="input of getDeliveryTypes(event.name)">
+                        <label class="clickable">
+                            <input
+                                checked.one-time="input.checked"
+                                onchange.call="toggle(event,input)"
+                                type="checkbox">
+                            ${input.name}</label>
+                    </li>
+                    <li class="list-group-item justify-content-between" if.bind="event.name==='TransactionEvent'">
+                        Events:
+                        <button class="btn" click.trigger="add()" disabled.bind="disableAdd"><i class="fas fa-plus"></i>
+                        </button>
+                    </li>
+                    <li class="list-group-item" if.bind="event.name==='TransactionEvent'">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-sm">
+                                <thead>
+                                <tr>
+                                    <th>Account</th>
+                                    <th>Delivery</th>
+                                    <th>Auth</th>
+                                    <th>Cleared</th>
+                                    <th>Intl.</th>
+                                    <th>ATM</th>
+                                    <th>POS</th>
+                                    <th>Load</th>
+                                    <th>Unload</th>
+                                    <th>Payment</th>
+                                    <th>Balance</th>
+                                    <th>Tools</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr repeat.for="event of state.notifications.transaction.events">
+                                    <td if.bind="event.editMode">
+                                        <ul class="list-group">
+                                            <li class="list-group-item"
+                                                repeat.for="account of getAccounts">
+                                                <label class="clickable text-nowrap">
+                                                    <input
+                                                        checked.bind="model.acno.includes(account.code)"
+                                                        onchange.call="toggleAccount(account)"
+                                                        type="checkbox">
+                                                    ${account.name}</label>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td else style="width: 205px !important;" title="Deliver To">
+                                        <span repeat.for="acno of event.acno">${acno==='*'?'All Accounts':acno} </span>
+                                    </td>
+
+                                    <td if.bind="event.editMode">
+                                        <ul class="list-group">
+                                            <li class="list-group-item"
+                                                repeat.for="input of getTransactionDeliveryTypes(event.name)">
+                                                <label class="clickable text-nowrap">
+                                                    <input
+                                                        checked.one-time="event.destination.includes(input.name)"
+                                                        onchange.call="toggleTransaction(input)"
+                                                        type="checkbox">
+                                                    ${input.name}</label>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td else title="Delivery Method">
+                                        <span repeat.for="destination of event.destination">${destination} </span>
+                                    </td>
+
+                                    <td if.bind="event.editMode">
+                                        <input checked.bind="model.onAuthorized | convertToBoolean"
+                                               title="When Authorized" type="checkbox">
+                                    </td>
+                                    <td else>
+                                        <input checked.bind="event.onAuthorized | convertToBoolean"
+                                               disabled title="When Authorized"
+                                               type="checkbox">
+                                    </td>
+
+                                    <td if.bind="event.editMode">
+                                        <input checked.bind="model.onCleared | convertToBoolean" title="When Cleared"
+                                               type="checkbox">
+                                    </td>
+                                    <td else>
+                                        <input checked.bind="event.onCleared | convertToBoolean" disabled
+                                               title="When Cleared"
+                                               type="checkbox">
+                                    </td>
+
+                                    <td if.bind="event.editMode">
+                                        <input checked.bind="model.isInternational | convertToBoolean"
+                                               title="When International" type="checkbox">
+                                    </td>
+                                    <td else>
+                                        <input checked.bind="event.isInternational | convertToBoolean"
+                                               disabled title="When International"
+                                               type="checkbox">
+                                    </td>
+
+                                    <td if.bind="event.editMode">
+                                        <input checked.bind="model.typeAtm | convertToBoolean" title="When ATM"
+                                               type="checkbox">
+                                    </td>
+                                    <td else>
+                                        <input checked.bind="event.typeAtm | convertToBoolean" disabled title="When ATM"
+                                               type="checkbox">
+                                    </td>
+
+                                    <td if.bind="event.editMode">
+                                        <input checked.bind="model.typePos | convertToBoolean" title="When POS"
+                                               type="checkbox">
+                                    </td>
+                                    <td else>
+                                        <input checked.bind="event.typePos | convertToBoolean" disabled title="When POS"
+                                               type="checkbox">
+                                    </td>
+
+                                    <td if.bind="event.editMode">
+                                        <input checked.bind="model.typeLoad | convertToBoolean" title="When Load"
+                                               type="checkbox">
+                                    </td>
+                                    <td else>
+                                        <input checked.bind="event.typeLoad | convertToBoolean" disabled
+                                               title="When Load"
+                                               type="checkbox">
+                                    </td>
+
+                                    <td if.bind="event.editMode">
+                                        <input checked.bind="model.typeUnload | convertToBoolean" title="When Unload"
+                                               type="checkbox">
+                                    </td>
+                                    <td else>
+                                        <input checked.bind="event.typeUnload | convertToBoolean" disabled
+                                               title="When Unload"
+                                               type="checkbox">
+                                    </td>
+
+                                    <td if.bind="event.editMode" title="Payment (ceiling)">
+                                        <input number-input="decimal.bind:false" placeholder="Payment (ceiling)"
+                                               style="width: 100px;"
+                                               type="text" value.bind="model.paymentAmountCeiling">
+                                    </td>
+                                    <td else title="Payment (ceiling)"> ${event.paymentAmountCeiling}</td>
+
+                                    <td if.bind="event.editMode">
+                                        <input number-input="decimal.bind:false" placeholder="Balance (floor)"
+                                               style="width: 100px;"
+                                               title="Balance (floor)"
+                                               type="text" value.bind="model.balanceAmountFloor">
+                                    </td>
+                                    <td else title="Balance (floor)"> ${event.balanceAmountFloor}</td>
+
+                                    <td style="width: 96px !important;">
+                                        <template if.bind="event.editMode">
+                                            <button class="btn clickable" click.trigger="save(event)">
+                                                <i class="fas fa-save"></i>
+                                            </button>
+                                            <button class="btn clickable" click.trigger="cancel(event)">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </template>
+                                        <tempalte else>
+                                            <button class="btn clickable" click.trigger="edit(event)">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </button>
+                                            <button class="btn clickable" click.trigger="del(event)">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                        </tempalte>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                </ul>
+            </fieldset>
+        </li>
+    </ul>
+
+</template>

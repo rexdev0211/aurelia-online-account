@@ -1,0 +1,36 @@
+<template style="z-index: 100;">
+
+    <div class="navbar navbar-expand-md client-footer" style="padding-bottom: 0px;">
+        <div class="text-center d-md-none w-100">
+            <button class="navbar-toggler dropdown-toggle" data-target="#navbar-bottom" data-toggle="collapse"
+                    type="button">
+                Expand
+            </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-bottom">
+
+            <span class="navbar-text"> © ${copyrightYear} <a href="http://www.enumis.co.uk/" target="_blank">Enumis Limited</a>. All rights reserved.&nbsp;</span>
+            <span class="versionLink">${currentBuild}</span>
+            <ul class="navbar-nav ml-md-auto">
+                <li class="nav-item">
+                    <a class="navbar-nav-link" href="#"><i class="icon-help mr-2"></i> Help Desk</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="navbar navbar-expand-md client-footer client-mastercard-verbiage">
+        <div class="navbar-collapse collapse client-mastercard-verbiage-left font-size-xs">
+            <template if.bind="isEquaze">Equaze is a trading style of Enumis Ltd. </template>
+            <tempalte if.bind="isGluu">Gluu is a trading style of Enumis Ltd. </tempalte>
+            Enumis Limited is authorised and regulated by the Financial Conduct Authority as an Electronic Money
+            Institution (FRN 900028) and authorised and regulated by the Financial Conduct Authority for Consumer Credit
+            (FRN 724110). Enumis Mastercard Products are issued by Enumis Limited pursuant to a license from Mastercard
+            International Incorporated.
+        </div>
+        <div class="navbar-collapse collapse client-mastercard-verbiage-center font-size-xs">Mastercard and the
+            Mastercard Brand Mark are registered trademarks of Mastercard International Incorporated.
+        </div>
+    </div>
+
+</template>

@@ -1,0 +1,50 @@
+<template>
+    <div class="card">
+        <div class="card-header client-cardhead header-elements-inline">
+            <slot name="header">
+                <h3 class="card-title">${header}
+                    <small if.bind="subHeader">${subHeader}</small>
+                </h3>
+                <div class="header-elements">
+                    <div class="list-icons">
+                        <a class="list-icons-item" click.delegate="toggleCollapse()" data-action="collapse"
+                           if.bind="isCollapsible"></a>
+                    </div>
+                </div>
+            </slot>
+        </div>
+        <div class="card-body pt-3" ref="collapsiblePanel">
+            <fieldset>
+                <slot></slot>
+            </fieldset>
+
+            <div class="row mt-4" if.bind="showButtons">
+                <div class="col-6">
+
+                    <button class="btn client-button ml-auto" click.delegate="action()"
+                            css="width: ${actionButtonSize || buttonSize};"
+                            disable-while-loading.bind="actionButtonDisabled" if.bind="!actionButtonDisabled"
+                            type="button">
+                        <i class="${actionButtonIcon} mr-2"></i>${actionButtonText}
+                    </button>
+
+                </div>
+                <div class="col-6 text-right">
+
+                    <button class="btn client-button ml-auto" click.delegate="back()" css="width: ${buttonSize};"
+                            disable-while-loading.bind="backButtonDisabled" if.bind="!backButtonDisabled"
+                            type="button">
+                        <i class="${backButtonIcon} mr-2"></i>${backButtonText}
+                    </button>
+
+                    <button class="btn client-button ml-auto" click.delegate="click()" css="width: ${buttonSize};"
+                            disable-while-loading.bind="buttonDisabled" if.bind="buttonText.length"
+                            type="button">
+                        <i class="${buttonIcon} mr-2"></i>${buttonText}
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,29 @@
+<template>
+  <content-container
+      back-button-click.call="back()"
+      back-button-disabled.bind="false"
+      button-click.call="submit()"
+      button-icon="icon-loop3"
+      button-text="Link"
+      header="Link Beneficiary">
+
+    <h5>
+      Account: ${state.beneficiaries.sourceAccount.code}
+    </h5>
+
+    <kendo-drop-down-list
+        class="mt-3"
+        items.bind="beneficiaryDataSource"
+        filter="nickName"
+        header="Link Beneficiary:"
+        on-change.call="beneficiaryChanged($event)"
+        place-holder="Select Beneficiary"
+        text-field="nickName"
+        value-field="ern"
+        value.two-way="model.beneficiaryAccountERN"
+        view-model.ref="beneficiary">
+      <input type="hidden" value.bind="model.beneficiaryAccountERN & validate"/>
+    </kendo-drop-down-list>
+
+  </content-container>
+</template>

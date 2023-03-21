@@ -1,0 +1,213 @@
+<template>
+    <require from="./styles/cra-profile-manager.css"></require>
+    <require from="aurelia-kendoui-bridge/grid/grid"></require>
+    <require from="aurelia-kendoui-bridge/grid/col"></require>
+    <require from="aurelia-kendoui-bridge/grid/grid-command"></require>
+    <require from="aurelia-kendoui-bridge/grid/grid-toolbar"></require>
+    <require from="aurelia-kendoui-bridge/common/template"></require>
+    <require from="aurelia-kendoui-bridge/button/button"></require>
+    <require from="aurelia-kendoui-bridge/slider/slider"></require>
+
+    <page-content>
+        <content-container button-click.call="back()" button-icon="icon-loop3" button-text="Back"
+                           header="Business Wide Risk Assessment">
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li repeat.for="level of levels" class="breadcrumb-item ${$index === $last ? 'active' : ''}" aria-current="page">
+                        <a href="#" role="button" click.trigger="moveToLevel($index + 1)">
+                            ${level}
+                        </a>
+                    </li>
+                </ol>
+            </nav>
+
+            <!-- Business Assessments Grid -->
+            <ak-grid 
+                if.bind="activeLevelIndex === 1 && isLoadedBusinessAssessments" 
+                k-data-source.bind="getKendoGridDataSource()" 
+                k-pageable.bind="pageable" 
+                k-widget.bind="assessmentsGrid"
+            >
+                <ak-col k-field="businessName" k-title="Name">
+                    <ak-template>
+                        <a href="#" role="button" click.trigger="goToLevelDown(businessName)">
+                            ${businessName}
+                        </a>
+                    </ak-template>
+                </ak-col>
+                <ak-col k-field="modelName" k-title="BWRA Model">
+                    <ak-template>
+                        <span>${modelName ? modelName : 'N/A'}</span>
+                    </ak-template>
+                </ak-col>
+                <ak-col k-field="riskScore" k-title="Risk Score">
+                    <ak-template>
+                        <span if.bind="riskScore">${riskScore} as of <span title="${createdDate|dateFormat:'iso'}">${createdDate|dateFormat:'ago'}</span></span>
+                        <span else>N/A</span>
+                    </ak-template>
+                </ak-col>
+            </ak-grid>
+
+            <!-- Detail View Grid -->
+            <ak-grid 
+                if.bind="activeLevelIndex === 2 && isLoadedRiskModelAnswerKeys" 
+                k-data-source.bind="getKendoGridDataSource()" 
+                k-pageable.bind="pageable" 
+                k-toolbar.bind="['create']" 
+                k-editable="popup"
+                k-widget.bind="detailsGrid"
+            >
+                <ak-grid-toolbar>
+                    <ak-template>
+                        <span class="k-grid-add k-button" ak-button="k-icon: add">Add new answer key</span>
+                    </ak-template>
+                </ak-grid-toolbar>  
+                <ak-col k-field="owners" k-title="Risk Model" k-editor.bind="riskModelDropDownEditor">
+                    <ak-template>
+                        <span>${getRiskModelNameByERN(owners[1])}</span>
+                    </ak-template>
+                </ak-col>
+                <ak-col k-field="riskScore" k-title="Risk Score" k-width="160px">
+                    <ak-template>
+                        <span>${answerKeyState === 'Submitted' ? getAssessmentScore(ern) : 'N/A'}</span>
+                    </ak-template>
+                </ak-col>
+                <ak-col k-field="answerKeyState" k-title="State" k-width="160px">
+                    <ak-template>
+                        <span>${answerKeyState ? answerKeyState : 'Draft'}</span><br>
+                        <span if.bind="answerKeyState !== 'Draft'" title="${modifiedDate|dateFormat:'iso'}">${modifiedDate|dateFormat:'ago'}</span>
+                        <span if.bind="answerKeyState === 'Draft'" title="${createdDate|dateFormat:'iso'}">${createdDate|dateFormat:'ago'}</span>
+                    </ak-template>
+                </ak-col>
+                <ak-col k-field="ern" k-title="Configure" k-width="140px">
+                    <ak-template>
+                        <span ak-button="k-icon: gear;k-enable.bind: getContinueEnabled(answerKeyState)" k-on-click.trigger="goToLevelDown('', ern)">Continue</span>
+                    </ak-template>
+                </ak-col>
+            </ak-grid>
+
+            <div if.bind="activeLevelIndex === 3 && isLoadedRiskModel" class="row justify-content-center mt-0">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center mb-2">
+                    <div class="card px-0 pt-4 pb-0 mb-3">
+                        <div class="row">
+                            <div class="col-md-12 mx-0">
+                                <h2><strong>${activeRiskModel.name}</strong></h2>
+                                <form class="cra-form" if.bind="!endAnswering">
+                                <p>Please answer following questions</p>
+                                    <!-- Category top bar -->
+                                    <ul id="top-bar">
+                                        <li
+                                            class="category-title ${$index === selectedCategoryIndex ? 'active' : ''} ${mode === 'admin' ? 'clickable': ''}"
+                                            click.trigger="mode === 'admin' && $index !== selectedCategoryIndex ? selectCategory($index) : null"
+                                            id="category-${category.name}"
+                                            repeat.for="category of riskCategories"
+                                            css="width: ${100 / riskCategories.length}%;"
+                                        >
+                                            <strong>${category.name}</strong>
+                                        </li>
+                                    </ul>
+                                    <div class="row">
+                                        <div class="col-sm-3 left-side">
+                                            <!-- Components side bar -->
+                                            <ul class="side-bar">
+                                                <li
+                                                    class="component-title ${$index === selectedComponentIndex ? 'active' : ''} ${mode === 'admin' ? 'clickable': ''}"
+                                                    click.trigger="mode === 'admin' && $index !== selectedComponentIndex ? selectComponent($index) : null"
+                                                    id="component-${component.name}"
+                                                    repeat.for="component of riskComponentsByCategory"
+                                                >
+                                                    <strong>${component.name}</strong>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-9" style="text-align: left; padding-top: 40px;">
+                                            <!-- Start Consumer mode -->
+                                            <div if.bind="mode === 'consumer'">
+                                                <p># RiskFactor ${selectedIndex} (${riskFactor.answerType})</p>
+                                                <h4>${riskFactor.question}</h4>
+
+                                                <div class="form-group" style="margin-top: 30px;">
+                                                    <button class="btn btn-primary client-button" click.trigger="nextRiskFactor()" type="button">
+                                                        <i class="fa fa-arrow-right"></i> Next
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- End Consumer mode -->
+                                            <!-- Start Admin Mode -->
+                                            <div if.bind="mode === 'admin'">
+                                                <div>
+                                                    <label for="pageSize">Page Size:</label>
+                                                    <input class="form-control-sm ml-1" id="pageSize" max="20" min="1" type="number" value.bind="pageSize">
+                                                </div>
+                                                <div repeat.for="riskFactor of riskFactorsByComponent.slice((currentPage - 1) * pageSize, currentPage * pageSize)" style="text-align: left; padding-top: 40px;">
+                                                    <p># RiskFactor ${(currentPage - 1) * pageSize + $index + 1} (${riskFactor.answerType})</p>
+                                                    <h4>${riskFactor.question}</h4>
+                                                    <div class="bwra-answers mt-3">
+                                                        <div>
+                                                            <label for="riskScore-${(currentPage - 1) * pageSize + $index + 1}-1">${riskConfig.controlMethodLabel[0] || 'Impact'}:</label>
+                                                            <input class="form-control-sm ml-1 bwra-answer-input" id="riskScore-${(currentPage - 1) * pageSize + $index + 1}-1" max.bind="riskConfig.riskMatrix[0]" min="1" type="number" value="${activeRiskModelAnswerKey.bwra[riskFactor.ern] && activeRiskModelAnswerKey.bwra[riskFactor.ern][0] ? activeRiskModelAnswerKey.bwra[riskFactor.ern][0] : ''}" input.trigger="elementBlurred($event, riskFactor.ern, 0)">
+                                                        </div>
+                                                        <div>
+                                                            <label for="riskScore-${(currentPage - 1) * pageSize + $index + 1}-1">${riskConfig.controlMethodLabel[1] || 'Probability'}:</label>
+                                                            <input class="form-control-sm ml-1 bwra-answer-input" id="riskScore-${(currentPage - 1) * pageSize + $index + 1}-2" max.bind="riskConfig.riskMatrix[1]" min="1" type="number" value="${activeRiskModelAnswerKey.bwra[riskFactor.ern] && activeRiskModelAnswerKey.bwra[riskFactor.ern][1] ? activeRiskModelAnswerKey.bwra[riskFactor.ern][1] : ''}" input.trigger="elementBlurred($event, riskFactor.ern, 1)">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="live-footer">
+                                                    <ul class="pagination">
+                                                        <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                                                            <a class="page-link" click.trigger="goToPage(currentPage - 1)"><span aria-hidden="true">&laquo;</span></a>
+                                                        </li>
+                                                        <li class="page-item ${currentPage === i + 1 ? 'active' : ''}" repeat.for="i of getPageCount(riskFactorsByComponent.length, pageSize)">
+                                                            <a class="page-link" click.trigger="goToPage(i + 1)">${i + 1}</a>
+                                                        </li>
+                                                        <li class="page-item ${currentPage === getPageCount(riskFactorsByComponent.length, pageSize) ? 'disabled' : ''}">
+                                                            <a class="page-link" click.trigger="goToPage(currentPage + 1)"><span aria-hidden="true">&raquo;</span></a>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="form-group" style="padding-right: 2rem;">
+                                                        <button class="btn btn-primary client-button" click.trigger="nextRiskFactorsForComponent()" type="button">
+                                                            <i class="fa fa-arrow-right"></i> Next Component
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End Admin mode -->
+                                        </div>
+                                    </div>
+                                </form>
+                                <div if.bind="endAnswering">
+                                    <p>Please review all your answers before submitting</p>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div repeat.for="riskFactor of riskFactors" style="text-align: left; padding: 1rem 2rem;">
+                                                <p># RiskFactor ${(currentPage - 1) * pageSize + $index + 1} (${riskFactor.answerType})</p>
+                                                <h4>${riskFactor.question}</h4>
+                                                <div class="bwra-answers mt-3">
+                                                    <div>
+                                                        <label for="riskScore-${(currentPage - 1) * pageSize + $index + 1}-1">${riskConfig.controlMethodLabel[0] || 'Impact'}:</label>
+                                                        <input class="form-control-sm ml-1 bwra-answer-input" id="riskScore-${(currentPage - 1) * pageSize + $index + 1}-1" max.bind="riskConfig.riskMatrix[0]" min="1" type="number" value="${activeRiskModelAnswerKey.bwra[riskFactor.ern] && activeRiskModelAnswerKey.bwra[riskFactor.ern][0] ? activeRiskModelAnswerKey.bwra[riskFactor.ern][0] : ''}" input.trigger="elementBlurred($event, riskFactor.ern, 0)">
+                                                    </div>
+                                                    <div>
+                                                        <label for="riskScore-${(currentPage - 1) * pageSize + $index + 1}-1">${riskConfig.controlMethodLabel[1] || 'Probability'}:</label>
+                                                        <input class="form-control-sm ml-1 bwra-answer-input" id="riskScore-${(currentPage - 1) * pageSize + $index + 1}-2" max.bind="riskConfig.riskMatrix[0]" min="1" type="number" value="${activeRiskModelAnswerKey.bwra[riskFactor.ern] && activeRiskModelAnswerKey.bwra[riskFactor.ern][1] ? activeRiskModelAnswerKey.bwra[riskFactor.ern][1] : ''}" input.trigger="elementBlurred($event, riskFactor.ern, 1)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group" style="text-align: right;padding-right: 20px;">
+                                                <button class="btn btn-success client-button" click.trigger="submitAllAnswers()" type="button">
+                                                    <i class="fa fa-check"></i> Submit all answers
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </content-container>
+    </page-content>
+</template>

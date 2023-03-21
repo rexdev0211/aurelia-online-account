@@ -1,0 +1,41 @@
+<template>
+
+  <div class="container">
+
+    <div class="grid-row">
+
+      <grid-item-box header="Account Name">${job.meta.SourceAccountSummary.name}</grid-item-box>
+      <grid-item-box header="Account Number">${job.meta.SourceAccountSummary.code}</grid-item-box>
+
+      <grid-item-box header="Beneficiary Nickname">${job.meta.DestinationAccountSummary.nickName}</grid-item-box>
+      <grid-item-box header="Beneficiary Name">${job.meta.DestinationAccountSummary.name}</grid-item-box>
+      <grid-item-box header="Beneficiary Account Name">${job.meta.DestinationAccountSummary.accountName}</grid-item-box>
+      <grid-item-box header="Beneficiary Account Number">${job.meta.DestinationAccountSummary.code}</grid-item-box>
+      <grid-item-box header="Internal Ref">${job.input.InternalReference || job.input.InternalReference2}</grid-item-box>
+      <grid-item-box header="Currency">${job.meta.Currency.code}</grid-item-box>
+      <grid-item-box header="Requested By">${job.requestedBy.userAuthEmail}</grid-item-box>
+      <grid-item-box header="Requested Date / Time">${job.createdDate|epochFormat:'DD-MM-YYYY HH:mm:ss'}</grid-item-box>
+      <grid-item-box header="Scheduled">${job.scheduleDate || job.createdDate |epochFormat}</grid-item-box>
+      <grid-item-box header="Type">${job.input.Scheme || job.input.Scheme2|schemeFormat}</grid-item-box>
+
+    </div>
+    <div class="grid-row">
+
+      <grid-item-box container-style="background: #eaeaea;" excerpt-style="width: 294px;" header="Authorize" style="margin-left: auto;" title-style="font-weight: 600;" wrapper-style="padding-right: 0px; ">
+        <select style="display: inline;" value.bind="action">
+          <option model.bind="null">Select One</option>
+          <option>Authorise</option>
+          <option>Reject</option>
+        </select>
+        <template if.bind="!!action">
+          <input on-enter.call="click()" focus.bind="smsVerificationCodeFocus" maxlength="6" number-input ref.bind="smsVerificationCodeInput" show.bind="action === 'Authorise' && !sendAuthorizationCode" style="width: 103px; height: 16px; display: inline; margin-left: 10px;" type="text" value.bind="smsVerificationCode">
+          <button click.trigger="click()" style="width: 50px;height: 16px; font-size: 0.9em;line-height: 9px; font-weight: 600; display: inline; margin-left: 10px;">Submit</button>
+        </template>
+      </grid-item-box>
+
+    </div>
+  </div>
+
+
+
+</template>

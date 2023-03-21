@@ -1,0 +1,205 @@
+<template>
+    <page-content>
+        <content-container
+            button-click.call="submit()"
+            button-disabled.bind="!sourceAccount"
+            button-icon="icon-loop3"
+            button-text="Continue"
+            header="Send Funds"
+            show.bind="!state.payments.send.paymentRequest">
+            <form submit.delegate="submit()">
+
+                <kendo-drop-down-list
+                    header="Send From Account:"
+                    items.bind="accounts"
+                    on-change.call="sourceChanged($event)"
+                    place-holder="Source Account"
+                    value.two-way="model.accountERN"
+                    view-model.ref="source">
+                    <input type="hidden" value.bind="model.accountERN & validate"/>
+                </kendo-drop-down-list>
+
+                <div
+                    show.bind="state.payments.send.sourceAccount && !state.payments.send.sourceAccount.isClearBankAccount">
+
+                    <kendo-masked-text-box
+                        css="all-caps"
+                        header="Send To Account:"
+                        mask="LLLL00000000"
+                        place-holder="Destination account number"
+                        value.bind="model.toAccountCode">
+                        <input type="hidden" value.bind="model.toAccountCode & validate"/>
+                    </kendo-masked-text-box>
+
+                    <form-group header="Account Holder's Last Name:">
+                        <input class="form-control" placeholder="Destination account holder's last name"
+                               ref="lastNameInput" type="text"
+                               value.bind="model.lastName & validate">
+                    </form-group>
+
+                    <kendo-money-input
+                        header="Amount To Send:"
+                        min="0.01"
+                        on-change.call="amountChanged($event)"
+                        place-holder="Amount to send"
+                        symbol.bind="symbol"
+                        value.bind="model.amount">
+                        <input type="hidden" value.bind="model.amount & validate"/>
+                    </kendo-money-input>
+
+                </div>
+
+                <div
+                    show.bind="state.payments.send.sourceAccount && state.payments.send.sourceAccount.isClearBankAccount">
+
+                    <kendo-drop-down-list
+                        filter="nickName"
+                        header="Send To Beneficiary:"
+                        on-change.call="beneficiaryChanged($event)"
+                        place-holder="Select Beneficiary"
+                        text-field="nickName"
+                        value-field="ern"
+                        value.two-way="model.beneficiaryAccountERN"
+                        view-model.ref="beneficiary">
+                        <input type="hidden" value.bind="model.beneficiaryAccountERN & validate"/>
+                    </kendo-drop-down-list>
+
+                    <div class="text-right" show.bind="!sourceAccount || !beneficiaryAccount.ern">
+                        <button class="btn client-button" click.trigger="linkBeneficiary()"
+                                if.bind="showLinkBeneficiary"><i class="fas fa-link"></i> Link Beneficiary
+                        </button>
+                        <button class="btn client-button" click.trigger="addBeneficiary()" if.bind="showAddBeneficiary">
+                            <i class="fas fa-plus"></i> Add Beneficiary
+                        </button>
+                    </div>
+
+                    <div show.bind="state.payments.send.beneficiaryAccount.ern">
+
+                        <kendo-date-picker
+                            header="Payment Date:"
+                            initial-value.bind="minDate"
+                            min.bind="minDate"
+                            on-change.call="paymentDateChanged($event)"
+                            place-holder="Select payment date (DD/MM/YYYY)"
+                            value.bind="model.paymentDate">
+                            <input type="hidden" value.bind="model.paymentDate & validate"/>
+                        </kendo-date-picker>
+
+                        <form-group header="Payment Scheme:"
+                                    show.bind="!state.payments.send.beneficiaryAccount.isInternalAccount">
+                            <br>
+                            <label repeat.for="paymentScheme of paymentSchemes">
+                                <input checked.bind="scheme" name="paymentSchemes"
+                                       type="radio" value.bind="paymentScheme">
+                                ${paymentScheme}
+                                &nbsp&nbsp&nbsp
+                            </label>
+                            <br>
+                            <input type="hidden" value.bind="model.scheme & validate"/>
+                        </form-group>
+
+                        <kendo-money-input
+                            header="Amount To Send:"
+                            min="0.01"
+                            on-change.call="amountChanged($event)"
+                            place-holder="Amount to send"
+                            symbol.bind="symbol"
+                            value.bind="model.amount">
+                            <input type="hidden" value.bind="model.amount & validate"/>
+                        </kendo-money-input>
+
+                        <form-group header="Payment Reference:">
+                            <input class="form-control" maxlength.bind="model.scheme == 'FPS' ? '18':'35'"
+                                   placeholder="Payment reference"
+                                   ref="paymentReferenceInput"
+                                   type="text"
+                                   value.bind="model.paymentReference & validate">
+                        </form-group>
+
+                        <form-group header="Internal Reference:">
+                            <input class="form-control" placeholder="Internal reference" ref="internalReferenceInput"
+                                   type="text"
+                                   value.bind="model.internalReference & validate">
+                        </form-group>
+
+                        <form-group header="Send Funds Documents:">
+                            <document-dropzone success-callback.call="uploadComplete(response)"
+                                               types="Identification Document, Address Verification, Invoice, Transaction Document, Additional Documentation"></document-dropzone>
+                            <input type="hidden" value.bind="model.documentERNs & validate"/>
+                        </form-group>
+
+                    </div>
+
+                </div>
+
+            </form>
+        </content-container>
+
+        <content-container
+            back-button-click.call="back()"
+            back-button-disabled.bind="false"
+            button-click.call="submit()"
+            button-icon="icon-loop3"
+            button-text="Submit"
+            header="Confirm and Send Payment"
+            show.bind="state.payments.send.paymentRequest">
+
+            <form-group bold-header="Beneficiary Name:">
+                ${state.payments.send.beneficiaryAccount.accountName}
+            </form-group>
+
+            <form-group bold-header="Payment Date:">
+                ${state.payments.send.paymentRequest.paymentDate | epochFormat:'DD-MM-YYYY'}
+            </form-group>
+
+            <form-group bold-header="Payment Amount:">
+                ${(state.payments.send.paymentRequest.amount * 100) | currencyFormat:
+                state.payments.send.sourceAccount.currencySymbol }
+            </form-group>
+
+            <form-group bold-header="Fee Amount:" if.bind="fees.feeFixed">
+                <span>${fees.feeFixed | amountFormat: state.payments.send.sourceAccount.currencySymbol }</span>
+                <span if.bind="fees.feeCredit" class="ml-2 small">(possibly eligible for credit or pre-payment)</span>
+            </form-group>
+
+            <form-group bold-header="SWIFT:" if.bind="state.payments.send.beneficiaryAccount.swift">
+                ${state.payments.send.beneficiaryAccount.swift}
+            </form-group>
+
+            <form-group bold-header="IBAN:" if.bind="state.payments.send.beneficiaryAccount.iban">
+                ${state.payments.send.beneficiaryAccount.iban}
+            </form-group>
+
+            <form-group bold-header="Sort Code:" if.bind="state.payments.send.beneficiaryAccount.sortCode">
+                ${state.payments.send.beneficiaryAccount.sortCode}
+            </form-group>
+
+            <form-group bold-header="Account Number:" if.bind="state.payments.send.beneficiaryAccount.accountNumber">
+                ${state.payments.send.beneficiaryAccount.accountNumber}
+            </form-group>
+
+            <form-group bold-header="Payment Reference:" if.bind="state.payments.send.paymentRequest.paymentReference">
+                ${state.payments.send.paymentRequest.paymentReference}
+            </form-group>
+
+            <form-group bold-header="Internal Reference:"
+                        if.bind="state.payments.send.paymentRequest.internalReference">
+                ${state.payments.send.paymentRequest.internalReference}
+            </form-group>
+
+            <form submit.delegate="submit()">
+
+                <form-group bold-header="Please enter the SMS Verification Code to approve this payment:">
+                    <a class="pull-right" click.delegate="sendSmsCode()" href="javascript:void(0);">(Resend Code)</a>
+                    <input attach-focus="true" class="form-control" maxlength="6" number-input
+                           placeholder="SMS verification code"
+                           type="text"
+                           value.bind="model.smsVerificationCode & validate">
+                </form-group>
+
+            </form>
+
+        </content-container>
+
+    </page-content>
+</template>

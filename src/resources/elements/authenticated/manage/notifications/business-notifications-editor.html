@@ -1,0 +1,94 @@
+<template>
+
+    <style>
+        li fieldset {
+            display: block;
+            margin-left: 2px;
+            margin-right: 2px;
+            padding-top: 0.35em;
+            padding-bottom: 0.625em;
+            padding-left: 0.75em;
+            padding-right: 0.75em;
+            border: 2px groove;
+        }
+
+        legend {
+            font-size: initial !important;
+            border-bottom: initial;
+            width: auto;
+            padding: 0 5px;
+            margin: inherit;
+        }
+
+        .k-state-disabled {
+            border-color: unset !important;
+            background-color: unset !important;
+        }
+    </style>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <kendo-drop-down-list
+                    items.bind="events"
+                    on-change.call="eventChanged($event)"
+                    on-ready.call="eventReady($event)"
+                    place-holder="Notification Event"
+                >
+                </kendo-drop-down-list>
+            </div>
+            <div class="col-5">
+                <kendo-drop-down-list
+                    items.bind="state.notifications.business.members"
+                    on-change.call="principalChanged($event)"
+                    on-ready.call="principalReady($event)"
+                    place-holder="Notification Principal"
+                    text-field="name"
+                    value-field="ern"
+                    value.one-time="state.notifications.add.principal.ern"
+                >
+                </kendo-drop-down-list>
+
+                <form-group header="New Email Address:" if.bind="state.notifications.add.principal.ern =='email::'">
+                    <input class="form-control form-control-lg" placeholder="Enter your email address" type="email"
+                           value.bind="emailAddress">
+                </form-group>
+
+                <form-group header="New Mobile Number:" if.bind="state.notifications.add.principal.ern =='sms::'">
+                    <input class="form-control form-control-lg"
+                           intl-tel.bind="mobilePhone"
+                           maxlength="16"
+                           number-input="+"
+                           onCopy="return false"
+                           onDrag="return false"
+                           onDrop="return false"
+                           onPaste="return false"
+                           placeholder="Enter your mobile number"
+                           type="tel"
+                           value.bind="mobilePhone">
+                </form-group>
+            </div>
+            <div class="col-1 text-center">
+                <button class="btn" click.trigger="add()" disabled.bind="disableAdd"><i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <ul class="list-group list-group-flush">
+
+        <li class="list-group-item d-flex justify-content-between align-items-center"
+            repeat.for="group of subscribers">
+            <fieldset class="w-100">
+                <legend> ${group.key}</legend>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item justify-content-between" repeat.for="subscriber of group.results">
+                        ${subscriber.text}
+                        <button click.trigger="del(group.key,subscriber)"><i class="fas fa-minus"></i></button>
+                    </li>
+                </ul>
+            </fieldset>
+        </li>
+    </ul>
+
+</template>

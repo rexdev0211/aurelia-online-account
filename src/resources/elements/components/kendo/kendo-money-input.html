@@ -1,0 +1,10 @@
+<template>
+  <require from="aurelia-kendoui-bridge/numerictextbox/numerictextbox"></require>
+  <form-group header.bind="header">
+    <input ak-numerictextbox=" k-widget.two-way:widget; k-value.two-way:value; k-min.bind:min; k-decimals.bind:2; k-format.bind:'c';k-placeholder.bind:placeHolder;"
+           k-on-change.delegate="onChange($event.detail)"
+           style="width: 100%;"
+           type="number"/>
+    <slot></slot>
+  </form-group>
+</template>

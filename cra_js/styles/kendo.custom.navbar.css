@@ -1,0 +1,62 @@
+
+.nav-bar .k-menu {
+  background-color: transparent;
+}
+
+.nav-bar .k-menu.k-header, .k-menu .k-item {
+  border-color: transparent;
+}
+
+.nav-bar .k-item .k-state-default {
+  background-color: #f2eff9;
+  color: #3f3f3f;
+}
+
+.nav-bar li.k-item.k-state-default.k-last.k-state-border-down.k-state-hover {
+  color: red;
+}
+
+.nav-bar span.k-menu-link,
+.nav-bar li.k-item a.k-link:first-child,
+.nav-bar ul > li.k-item .k-state-default .k-first,
+.nav-bar .k-state-hover span.k-state-active,
+.nav-bar .k-state-border-down span.k-state-active,
+.nav-bar .k-menu-horizontal {
+  background-color: #3f3f3f !important;
+  color: #f2eff9 !important;
+}
+
+.nav-bar ul > li.k-item.k-state-hover {
+  background-color: #3f3f3f !important;
+  color: #f2eff9 !important;
+}
+/*
+.nav-bar [data-role=popup] li a {
+  background-color: red !important;;
+  color: red !important;;
+}
+
+.nav-bar li.k-item.k-state-border-down > div > ul > li.k-item.k-state-default {
+  background-color: #ffffff !important;
+  color: blue !important;
+}*/
+
+.nav-bar ul > li.k-item.k-state-default.k-state-border-down > div > ul > li > a {
+  color: #656565 !important;
+  background-color: #f9f9f9 !important;
+}
+
+.nav-bar ul > li.k-item.k-state-default.k-state-border-down > div > ul > li > a:hover {
+  color: #656565 !important;
+  background-color: #ededed !important;
+}
+
+.nav-bar .k-sprite {
+  font-size: 1.5em;
+  padding-top: 18px;
+  width: 35px;
+}
+
+.nav-bar .k-menu-expand-arrow {
+  margin-top: 3px !important;
+}

@@ -1,0 +1,111 @@
+<template>
+  <require from="aurelia-kendoui-bridge/grid/grid"></require>
+  <require from="aurelia-kendoui-bridge/grid/col"></require>
+  <require from="aurelia-kendoui-bridge/common/template"></require>
+
+  <page-content>
+    <div class="jumbotron" if.bind="!dataSource.length && progressService.progressTracker">
+      <h1 class="display-3">Loading... Please Wait!</h1>
+    </div>
+    <template if.bind="!dataSource.length && !progressService.progressTracker">
+      <div class="jumbotron">
+        <h1 class="display-3">No Pending Payments Found</h1>
+      </div>
+    </template>
+    <template else>
+      <content-container header="${business.businessERN|friendlyERN}"
+                         repeat.for="business of dataSource">
+
+        <div class="control-section mt-30">
+          <div class="content-wrapper">
+            <ak-grid k-auto-bind="true" k-data-bound="gridDataBound" k-data-source.bind="business.results" k-pageable.bind="pageable">
+
+              <ak-col k-title="Date" k-width="200px">
+                <ak-template>${scheduleDate||createdDate|epochFormat}</ak-template>
+              </ak-col>
+
+              <ak-col k-title="Payment Reference" k-width="100%">
+                <ak-template>
+                  ${input.PaymentReference||input.PaymentReference2}
+                </ak-template>
+              </ak-col>
+
+              <ak-col k-title="Amount" k-width="200px">
+                <ak-template>
+                  ${input.Amount||input.Amount2 | amountFormat:meta.Currency.symbol}
+                </ak-template>
+              </ak-col>
+
+              <ak-template for="detailTemplate">
+                <authorize-payment-detail if.bind="$this.type !== 'BatchSendFunds'" job.bind="$this"></authorize-payment-detail>
+                <authorize-bulk-payment-detail else job.bind="$this"></authorize-bulk-payment-detail>
+              </ak-template>
+
+            </ak-grid>
+          </div>
+        </div>
+
+        <!--        <ak-grid k-data-source.bind="business.results"-->
+        <!--                 k-pageable.bind="pageable">-->
+
+        <!--          <ak-col k-field="state" k-title="State" k-width="85px"></ak-col>-->
+
+        <!--          <ak-col k-field="type" k-title="Type" k-width="85px">-->
+        <!--            <ak-template>-->
+        <!--              ${type === 'SendFunds' ? 'Send':'Transfer'}-->
+        <!--            </ak-template>-->
+        <!--          </ak-col>-->
+
+        <!--          <ak-col k-field="amount" k-title="Amount" k-width="100px">-->
+        <!--            <ak-template>-->
+        <!--              ${(input['Amount'] || input['Amount2'])|amountFormat}-->
+        <!--            </ak-template>-->
+        <!--          </ak-col>-->
+
+        <!--          <ak-col k-field="beneficiary" k-title="Source">-->
+        <!--            <ak-template>-->
+        <!--              ${meta['SourceAccountSummary'].name}<br>-->
+        <!--              ${meta['SourceAccountSummary'].code}-->
+        <!--            </ak-template>-->
+        <!--          </ak-col>-->
+
+        <!--          <ak-col k-field="beneficiary" k-title="Beneficiary">-->
+        <!--            <ak-template>-->
+        <!--              ${meta['DestinationAccountSummary'].name}<br>-->
+        <!--              ${meta['DestinationAccountSummary'].code}-->
+        <!--            </ak-template>-->
+        <!--          </ak-col>-->
+
+        <!--          <ak-col k-field="requestedBy.userAuthEmail" k-title="Requested By"></ak-col>-->
+
+        <!--          <ak-col k-field="requestedBy.approvalState" k-title="Approval" k-width="100px"></ak-col>-->
+
+        <!--          <ak-col k-field="createdDate" k-title="Created" k-width="120px">-->
+        <!--            <ak-template>-->
+        <!--              ${createdDate|dateFormat}-->
+        <!--            </ak-template>-->
+        <!--          </ak-col>-->
+
+        <!--          <ak-col k-field="scheduleDate" k-title="Pay On" k-width="120px">-->
+        <!--            <ak-template>-->
+        <!--              ${(scheduleDate||createdDate)|dateFormat}-->
+        <!--            </ak-template>-->
+        <!--          </ak-col>-->
+
+        <!--          <ak-col k-width="125px">-->
+        <!--            <ak-template>-->
+        <!--              <button class="btn client-button" click.trigger="approve($this)" disable-while-loading title="Approve">-->
+        <!--                <i class="fas fa-lg fa-check-double"></i>-->
+        <!--              </button>-->
+        <!--              <button class="btn client-button" click.trigger="reject($this)" disable-while-loading title="Reject">-->
+        <!--                <i class="fas fa-lg fa-ban"></i>-->
+        <!--              </button>-->
+        <!--            </ak-template>-->
+        <!--          </ak-col>-->
+
+        <!--        </ak-grid>-->
+
+      </content-container>
+    </template>
+  </page-content>
+</template>

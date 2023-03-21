@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+/*Background color*/
+#grad1 {
+  /* background-color: #9C27B0; */
+  /* background-image: linear-gradient(120deg, #FF4081, #81D4FA); */
+}
+
+/*form styles*/
+
+/*Dropdown List Exp Date*/
+select.list-dt {
+  border: none;
+  outline: 0;
+  border-bottom: 1px solid #ccc;
+  padding: 2px 5px 3px 5px;
+  margin: 2px;
+}
+
+select.list-dt:focus {
+  border-bottom: 2px solid #ffcb4b;
+}
+
+/*The background card*/
+.card {
+  z-index: 0;
+  border: none;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+/*FieldSet headings*/
+.fs-title {
+  font-size: 25px;
+  color: #2C3E50;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/*top-bar*/
+#top-bar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  color: lightgrey;
+  padding-right: 2rem;
+}
+
+#top-bar .active {
+  color: #000000;
+}
+
+#top-bar li {
+  list-style-type: none;
+  font-size: 14px;
+  width: 25%;
+  float: left;
+  position: relative;
+}
+
+/*Icons in the top-bar*/
+#top-bar .category-title:before {
+  font-family: FontAwesome;
+  content: "\f023";
+}
+
+#top-bar .category-title:before {
+  font-family: FontAwesome;
+  content: "\f007";
+}
+
+#top-bar .category-title:before {
+  font-family: FontAwesome;
+  content: "\f09d";
+}
+
+#top-bar .category-title:before {
+  font-family: FontAwesome;
+  content: "\f00c";
+}
+
+/*top-bar before any progress*/
+#top-bar li:before {
+  width: 50px;
+  height: 50px;
+  line-height: 45px;
+  display: block;
+  font-size: 18px;
+  color: #ffffff;
+  background: lightgray;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  padding: 2px;
+}
+
+/*top-bar connectors*/
+#top-bar li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: lightgray;
+  position: absolute;
+  left: 0;
+  top: 25px;
+  z-index: -1;
+}
+
+/*Color number of the step and the connector before it*/
+#top-bar li.active:before, #top-bar li.active:after {
+  background: #ffcb4b;
+}
+
+/*Imaged Radio Buttons*/
+.radio-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.radio {
+  display:inline-block;
+  width: 204;
+  height: 104;
+  border-radius: 0;
+  background: lightblue;
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  cursor:pointer;
+  margin: 8px 2px; 
+}
+
+.radio:hover {
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.radio.selected {
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+/*Fit image in bootstrap div*/
+.fit-image{
+  width: 100%;
+  object-fit: cover;
+}
+
+
+/* 
+ *** Side steps 
+*/
+.left-side{
+  height:100%;
+  box-sizing:border-box;
+}
+.left-heading{
+  color:#fff;
+}
+.steps-content{
+  margin-top:30px;
+  /* color:#fff; */
+}
+.steps-content p{
+  font-size:12px;
+  margin-top:15px;
+}
+.side-bar{
+  list-style:none;
+  /*color:#fff;*/
+  /* margin-top:30px; */
+  font-size:13px;
+  font-weight:700;
+  counter-reset:container 0;
+}
+.side-bar li{
+  position:relative;
+  margin-left:40px;
+  margin-top:50px;
+  counter-increment:container 1;
+  color: lightgrey;
+  text-align: left;
+}
+.side-bar li::before{
+  content:counter(container);
+  line-height:25px;
+  text-align:center;
+  position:absolute;
+  height:25px;
+  width:25px;
+  border:1px solid lightgrey;
+  border-radius:50%;
+  left:-40px;
+  top:-5px;
+  z-index:10;
+  background-color: lightgrey;
+  color: white;
+}
+.side-bar li::after{
+  content: '';
+  position: absolute;
+  height: 90px;
+  width: 2px;
+  background-color: lightgrey;
+  z-index: 1;
+  left: -27px;
+  top: -70px;
+}
+.side-bar li:first-child:after{
+  display:none;  
+}
+.side-bar li.active::after {
+  background-color: #ffcb4b;
+}
+.side-bar li.active::before{
+  color:#fff;
+  border:1px solid #ffcb4b;
+  background-color: #ffcb4b;
+}
+.side-bar li.active{
+  color:#000000;
+}
+.d-none{
+ display:none;   
+}
+
+.live-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+ul.pagination .page-link {
+  cursor: pointer;
+}
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.mode-section, .pageSize-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.mode-section {
+  padding-left: 2rem;
+}
+.debug-toggle {
+  display: flex;
+  align-items: center;
+  padding-right: 2rem;
+}
+.clickable {
+  cursor: pointer;
+}
+.form-check-input:checked {
+  background-color: #ffcb4b;
+    border-color: #f8bd2d;
+}
+.form-switch .form-check-input:focus {
+  /* background-image: none !important; */
+}
+.form-check-input:focus {
+  border-color: none !important;
+  box-shadow: none !important;
+}

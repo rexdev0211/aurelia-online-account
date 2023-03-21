@@ -1,0 +1,6 @@
+<template>
+  <grid-item-box header.bind="item.key" repeat.for="item of items">
+    <span if.bind="item.key.endsWith('ERN')">${item.value}</span>
+    <span else>${item.value}</span>
+  </grid-item-box>
+</template>

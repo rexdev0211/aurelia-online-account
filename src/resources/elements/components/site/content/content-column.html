@@ -1,0 +1,25 @@
+<template>
+  <div class="${widthClasses}">
+    <div class="card">
+      <div class="card-header client-cardhead header-elements-inline">
+        <h3 class="card-title">${header}</h3>
+        <div class="header-elements">
+          <div class="list-icons">
+            <a click.delegate="toggleCollapse()" if.bind="isCollapsible" class="list-icons-item"
+               data-action="collapse"></a>
+          </div>
+        </div>
+      </div>
+      <div class="card-body pt-3" ref="collapsiblePanel">
+        <fieldset>
+          <slot></slot>
+        </fieldset>
+        <div class="text-center mt-4" if.bind="buttonText.length">
+          <button click.delegate="click()" type="button" class="btn client-button ml-auto">
+            <i class="${buttonIcon} mr-2"></i>${buttonText}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

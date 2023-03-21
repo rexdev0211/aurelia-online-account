@@ -1,0 +1,13 @@
+<template>
+    <div class="navbar navbar-expand-md client-footer fixed-bottom">
+        <div class="text-center d-md-none w-100">
+            <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-third"> Expand </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-third">
+            <slot name="footer-copyright"></slot>
+            <ul class="navbar-nav ml-md-auto">
+                <slot name="footer-items"></slot>
+            </ul>
+        </div>
+    </div>
+</template>

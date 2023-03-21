@@ -1,0 +1,19 @@
+<template>
+
+  <page-content>
+
+    <div class="row" if.bind="state.customerSummary.accounts.length">
+
+      <account-list class="col-md-3"></account-list>
+
+      <account-transactions class="col-md-9"></account-transactions>
+
+    </div>
+
+    <div class="jumbotron" else>
+      <h1 class="display-3">No Accounts Found</h1>
+    </div>
+
+  </page-content>
+
+</template>

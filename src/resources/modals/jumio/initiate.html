@@ -1,0 +1,33 @@
+<template>
+  <style>
+    ux-dialog-header strong {
+      font-size: larger;
+    }
+
+    ux-dialog-overlay.active {
+      background-color: black;
+      opacity: .5;
+    }
+
+    /*ux-dialog {*/
+    /*  width: 80% !important;*/
+    /*}*/
+  </style>
+  <ux-dialog>
+
+<!--    <ux-dialog-header>-->
+<!--      <strong>Jumio Session: ${initiateResponse.result.transactionReference}</strong>-->
+<!--    </ux-dialog-header>-->
+
+    <ux-dialog-body if.bind="initiateResponse">
+      <iframe width="${frameWidth}px" height="${frameHeight}px" frameborder="0" src.bind="initiateResponse.result.redirectUrl" ref="iframe"></iframe>
+    </ux-dialog-body>
+
+<!--    <ux-dialog-footer>-->
+<!--      <br>-->
+<!--      <button click.trigger="dialogController.ok()">OK</button>-->
+<!--      <button click.trigger="dialogController.cancel()">CANCEL</button>-->
+<!--    </ux-dialog-footer>-->
+
+  </ux-dialog>
+</template>

@@ -1,0 +1,81 @@
+<template>
+    <page-content>
+        <content-container
+            back-button-click.call="back()"
+            back-button-disabled.bind="false"
+            button-click.call="submit()"
+            button-disabled.bind="validate && !validated && !skipErrors"
+            button-icon="icon-loop3"
+            button-text="${validated || skipErrors ? 'Submit' : 'Validate' }"
+            header="${!state.beneficiaries.bulk.csvFileName ? 'Bulk Beneficiaries' : 'Bulk Upload: '+state.beneficiaries.bulk.csvFileName}"
+            show-buttons.bind="state.beneficiaries.bulk.csvFileName">
+
+            <template if.bind="!state.beneficiaries.bulk.csvFileName">
+                <div class="row">
+                    <div class="col">
+                        <h1>Step 1.</h1>
+                        <label class="btn client-button" click.trigger="download()">Download Sample CSV</label>
+                    </div>
+                </div>
+
+                <h1 class="mt-3">Step 2.</h1>
+
+                <div class="row">
+                    <div class="col dropzone needsclick dz-clickable text-center" ref="drop_zone">
+                        <form ref="upload_form">
+                            <p>Upload your .csv file with the file dialog or by dragging and dropping your .csv onto the
+                                dashed region</p>
+                            <label class="btn client-button mt-3" for="file_upload">
+                                Select File
+                            </label>
+                            <input accept=".csv" files.bind="csvFile" hidden id="file_upload" ref="file_upload"
+                                   type="file"/>
+                        </form>
+                    </div>
+                </div>
+            </template>
+
+            <tempalte else>
+                <csv-viewer view-model.ref="csvViewer"></csv-viewer>
+
+                <div if.bind="validate && csvViewer.errorCount !== csvViewer.lineCount" class="float-right">
+
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <div class="uniform-checker">
+                                <span class="${skipErrors?'checked':''}">
+                                  <input checked.bind="skipErrors" class="form-check-input-styled" type="checkbox"/>
+                                </span>
+                            </div>
+                            Skip invalid lines and proceed
+                        </label>
+                    </div>
+
+                    <div class="form-check" if.bind="skipErrors">
+                        <label class="form-check-label">
+                            <div class="uniform-checker">
+                                <span class="${downloadInvalidated?'checked':''}">
+                                  <input checked.bind="downloadInvalidated" class="form-check-input-styled" type="checkbox"/>
+                                </span>
+                            </div>
+                            Download Invalidated
+                        </label>
+                    </div>
+
+                    <div class="form-check" if.bind="skipErrors">
+                        <label class="form-check-label">
+                            <div class="uniform-checker">
+                                <span class="${downloadValidated?'checked':''}">
+                                  <input checked.bind="downloadValidated" class="form-check-input-styled" type="checkbox"/>
+                                </span>
+                            </div>
+                            Download Validated
+                        </label>
+                    </div>
+
+                </div>
+            </tempalte>
+
+        </content-container>
+    </page-content>
+</template>

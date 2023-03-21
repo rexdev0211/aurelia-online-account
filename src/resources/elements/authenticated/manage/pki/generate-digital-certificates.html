@@ -1,0 +1,60 @@
+<template>
+  <style>
+    textarea {
+      font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+    }
+  </style>
+  <page-content>
+    <content-container
+      button-click.call="submit()"
+      button-icon.bind="('icon-arrow-right6')"
+      button-text.bind="(cert?'Done':'Generate')"
+      back-button-disabled.bind="false"
+      back-button-text.bind="(cert?'Download':'Back')"
+      back-button-icon="${cert?'fas fa-file-download':'fa fa-undo'}"
+      back-button-disabled.bind="false"
+      back-button-click.call="copy()"
+      header="Generate Digital Certificate">
+
+      <div>
+        <h3>Certificate Signing Request (CSR)</h3>
+        <h5>Please use the Common Name: <strong>${commonName}</strong>
+          <button class="btn client-button" click.delegate="copyCommonNameToClipboard()" title="Copy Common Name to Clipboard"><i class="far fa-clipboard"></i></button>
+        </h5>
+        <form submit.delegate="submit()">
+          <form-group>
+          <textarea autocomplete="off" class="form-control form-control-lg" rows="10" cols="40"
+                    placeholder="-----BEGIN CERTIFICATE REQUEST-----
+MIIC2TCCAcECAQAwgZMxCzAJBgNVBAYTAlVTMRAwDgYDVQQIDAdBbGFiYW1hMRMw
+EQYDVQQHDApNb250Z29tZXJ5MRAwDgYDVQQKDAdDb21wYW55MREwDwYDVQQLDAhE
+aXZpc2lvbjEUMBIGA1UEAwwLZXhhbXBsZS5jb20xIjAgBgkqhkiG9w0BCQEWE2V4
+YW1wbGVAZXhhbXBsZS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIB
+AQCg1v9sHFr/PFvsfmihDjEGLLj2i565QcP6SfTYMbBvIVzBxggPiR1MsayYSBNV
+XN0w0brl5tACvf3i0FLJRzbwC+DntJw5SrcruEtvKWhmtbVOD1ySgMneyN9deIGq
+32zhYHLRNTcIBWH/eaeB28U2NS8Kjes64K0sChC/CvhxjCRWlMbYQz4DgoYwIVW4
+i6oC+mqJHp5alY8PALw2d06nfXyNZ6sZVO6Kvjdl3BnouC1Ara4TrzQ0/ZIdmpMN
+oC7sfUr2q78bVLL8aL9SLGzj1D8iL6WV4puTbsCGqHreDKEp/lM1XQxVcHR5CaAC
+GqwzevcDgduNiSLJ90L/4t8DAgMBAAGgADANBgkqhkiG9w0BAQUFAAOCAQEAPsRj
+9mwveYhZ11yIGwZQJEMhghaYsVFZMTbpIF+xjRQdltA0BibxJ+gU2m3wGCjxek0g
+cf8vxGvv/ySSoUKn6eGLaq4/86bb8JAXjtWZ9O6hWuDUlllDFvomFf1W7nRh2qem
+X933/qtG+fTaaX+vTsWQCs9bHUyQKYwmNlBMcHLuZNJa4t5M8ecpg/pNZ4ox3r4D
++wLvoyw68JhqudKrV4wGs26xl2J6Cv86AIVq5mtKbFi9+QfhgCiMeULib7vqbk9O
+iUO21+OccR+8B9/X1iRSrNbPPXdVhsPQx2hdZebZRedRSObpPWtIogSpr5pN4x0m
+vCT/jPzbb7OjF+XVhw==
+-----END CERTIFICATE REQUEST-----"
+                    value.bind="model.csr & validate">
+          </textarea>
+          </form-group>
+        </form>
+      </div>
+      <div show.bind="cert">
+        <h3>Certificate
+          <button class="btn client-button" click.delegate="copyCertificateToClipboard()" title="Copy Certificate to Clipboard"><i class="far fa-clipboard"></i></button>
+        </h3>
+        <textarea autocomplete="off" class="form-control form-control-lg" rows="10" cols="40" value.bind="cert">
+      </textarea>
+      </div>
+    </content-container>
+  </page-content>
+</template>
+

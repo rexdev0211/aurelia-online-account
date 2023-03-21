@@ -1,0 +1,107 @@
+<template>
+  <style>
+    ux-dialog-header strong {
+      font-size: larger;
+    }
+
+    ux-dialog-overlay.active {
+      background-color: black;
+      opacity: .5;
+    }
+
+    ux-dialog {
+      width: 100% !important;
+      max-width: 1000px;
+    }
+
+    ux-dialog > ux-dialog-body {
+      min-height: 290px;
+      overflow-y: scroll;
+    }
+
+    ux-dialog > ux-dialog-header {
+      border: none;
+    }
+
+    .ux-dialog-footer-button {
+      width: 150px !important;
+    }
+    .ux-dialog-footer-button:hover {
+      width: 150px !important;
+    }
+
+    .form-control-value {
+      word-break: break-all;
+    }
+
+    .form-group-value {
+      word-break: break-all;
+    }
+
+    .text-capitalize {
+      text-transform: capitalize !important;
+    }
+
+    @media screen and (min-width: 1200px) {
+      ux-dialog {
+        width: 1150px !important;
+      }
+    }
+
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+      ux-dialog {
+        width: 950 !important;
+      }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      ux-dialog {
+        width: 100% !important;
+      }
+    }
+
+    .fl {
+      float: left;
+    }
+
+    .fr {
+      float: right;
+    }
+  </style>
+
+  <ux-dialog>
+
+    <ux-dialog-header show-close-button.bind="false">
+            <span class="fr">
+                <i class="fas fa-times fa-2x clickable" click.trigger="dialogController.ok()"></i>
+            </span>
+      <h3>${display == 'MessageIn' ? 'New Message' : display}</h3>
+    </ux-dialog-header>
+
+    <ux-dialog-body css="max-height: ${innerHeight}px;">
+      <pending-transaction-messages if.bind="display === 'Messages'" parent.bind="$this" source.bind="source"></pending-transaction-messages>
+      <pending-transaction-message if.bind="display === 'MessageIn'" outgoing.bind="false" parent.bind="$this" view-model.ref="messageIn"></pending-transaction-message>
+    </ux-dialog-body>
+
+    <ux-dialog-footer>
+
+      <template if.bind="display === 'Messages'">
+        <div class="fl">
+          <span>&nbsp;</span>
+          <!--          <button class="ux-dialog-footer-button" click.trigger="setDisplay('MessageIn')" disable-while-loading if.bind="!source.resolveDate">Messages</button>-->
+        </div>
+      </template>
+
+      <template if.bind="display === 'MessageIn'">
+        <div class="fl">
+          <button class="ux-dialog-footer-button" click.trigger="setDisplay('Messages')" disable-while-loading>Cancel</button>
+        </div>
+        <div>
+          <button class="ux-dialog-footer-button" click.trigger="saveResponse()" disable-while-loading>Save</button>
+        </div>
+      </template>
+
+    </ux-dialog-footer>
+
+  </ux-dialog>
+</template>

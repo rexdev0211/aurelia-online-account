@@ -1,0 +1,19 @@
+<template>
+  <page-content>
+
+    <manage-beneficiaries show.bind="state.beneficiaries.view === 'Manage'"></manage-beneficiaries>
+
+    <view-beneficiary if.bind="state.beneficiaries.view === 'View'"></view-beneficiary>
+
+    <view-beneficiary if.bind="state.beneficiaries.view === 'Delete'" show-delete.bind="true"></view-beneficiary>
+
+    <edit-beneficiary if.bind="state.beneficiaries.view === 'Edit'"></edit-beneficiary>
+
+    <link-beneficiary if.bind="state.beneficiaries.view === 'Link'"></link-beneficiary>
+
+    <add-beneficiary if.bind="state.beneficiaries.view === 'Add'"></add-beneficiary>
+
+
+
+  </page-content>
+</template>

@@ -1,0 +1,31 @@
+<template>
+  <div class="container">
+    <div id="timeline">
+      <div class="row timeline-movement">
+
+        <div class="col-sm-12  timeline-item">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="timeline-panel ${outgoing?'credits':'debits'}">
+                <ul class="timeline-panel-ul">
+                  <li>
+                    <span class="importo">${outgoing?'Enumis':parent.source.principalName}</span>
+                  </li>
+                  <li>
+                    <span class="causale">
+                        <div class="form-group">
+                            <textarea class="e-input" rows="10" style="width: 100%" value.bind="model.message & validate"></textarea>
+                        </div>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>

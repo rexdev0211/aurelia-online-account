@@ -1,0 +1,46 @@
+<template>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="">
+                    <strong>Transaction Detail</strong>
+                    <hr>
+                </div>
+                <div class="float-right pr-2" if.bind="sendWebhook">
+                    <i class="fas fa-bolt fa-2x clickable" click.trigger="resendWebhook()" style="color: #FFCB4B;"
+                       title="Resend Webhook"></i>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <!-- <div class="col-md-12"> -->
+            <div class="col-md-6">
+                <div>
+                    <strong>Description:</strong>
+                    ${model.description}
+                </div>
+                <div>
+                    <strong> Country:</strong>
+                    ${model.country}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <strong> Date & Time:</strong>
+                    ${model.timestamp}
+                </div>
+                <div>
+                    <strong> Currency:</strong>
+                    ${model.currencyCode} (${model.currencySymbol})
+                </div>
+                <div>
+                    <strong> Amount:</strong>
+                    ${model.formattedAmount}
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+</template>

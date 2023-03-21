@@ -1,0 +1,97 @@
+<template>
+    <require from="./styles/risk-profile-manager.css"></require>
+    <require from="aurelia-kendoui-bridge/grid/grid"></require>
+    <require from="aurelia-kendoui-bridge/grid/col"></require>
+    <require from="aurelia-kendoui-bridge/grid/grid-command"></require>
+    <require from="aurelia-kendoui-bridge/grid/grid-toolbar"></require>
+    <require from="aurelia-kendoui-bridge/common/template"></require>
+    <require from="aurelia-kendoui-bridge/button/button"></require>
+    <require from="aurelia-kendoui-bridge/slider/slider"></require>
+
+    <page-content>
+        <content-container button-click.call="back()" button-icon="icon-loop3" button-text="Back"
+                           header="Risk List Builder">
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li repeat.for="level of levels" class="breadcrumb-item ${$index === $last ? 'active' : ''}" aria-current="page">
+                        <a href="#" role="button" click.trigger="moveToLevel($index + 1)">
+                            ${level}
+                        </a>
+                    </li>
+                </ol>
+            </nav>
+
+            <!-- Tabs Grid -->
+            <ak-grid 
+                if.bind="activeLevelIndex === 1" 
+                k-data-source.bind="getKendoGridDataSource()" 
+            >
+                <ak-col k-field="name" k-title="Category">
+                    <ak-template>
+                        <a href="#" role="button" click.trigger="goToLevelDown(ern, name)">
+                            ${name}
+                        </a>
+                    </ak-template>
+                </ak-col>
+            </ak-grid>
+
+            <!-- Types Grid for Lists -->
+            <ak-grid 
+                if.bind="activeLevelIndex === 2" 
+                k-data-source.bind="getKendoGridDataSource()" 
+            > 
+                <ak-col k-field="value" k-title="Type">
+                    <ak-template>
+                        <a href="#" role="button" click.trigger="goToLevelDown(key, value)">
+                            ${value}
+                        </a>
+                    </ak-template>
+                </ak-col>
+            </ak-grid>
+
+            <!-- System Lists Grid -->
+            <ak-grid 
+                if.bind="activeLevelIndex === 3 && activeCategoryERN === 'SystemLists'" 
+                k-data-source.bind="getKendoGridDataSource()" 
+                k-pageable.bind="pageable" 
+                k-toolbar.bind="['create']" 
+                k-editable="inline"
+                k-widget.bind="systemListsGrid"
+            >
+                <ak-grid-toolbar>
+                    <ak-template>
+                        <span if.bind="activeType !== 'Country'" class="k-grid-add k-button" ak-button="k-icon: add">Add new answer</span>
+                        <div else style="height: 40px;"></div>
+                    </ak-template>
+                </ak-grid-toolbar>  
+                <ak-col k-field="answer" k-title="Answer" k-editor.bind="textareaEditor"></ak-col>
+                <ak-col k-field="riskScore" k-title="Risk Score" k-width="120px" k-format="{n}">
+                    <ak-template>
+                        <span>${riskScore}</span>
+                    </ak-template>
+                </ak-col>
+                <ak-col k-command.bind="['edit', 'destroy']" k-title="Actions" k-width="220px"></ak-col>
+            </ak-grid>
+
+            <!-- Risk Lists Grid -->
+            <ak-grid 
+                if.bind="activeLevelIndex === 3 && activeCategoryERN === 'UserLists'" 
+                k-data-source.bind="getKendoGridDataSource()" 
+                k-pageable.bind="pageable" 
+                k-toolbar.bind="['create']" 
+                k-editable="inline"
+                k-widget.bind="riskListsGrid"
+            >
+                <ak-grid-toolbar>
+                    <ak-template>
+                        <span class="k-grid-add k-button" ak-button="k-icon: add">Add new entity</span>
+                    </ak-template>
+                </ak-grid-toolbar>  
+                <ak-col k-field="name" k-title="Name"></ak-col>
+                <ak-col k-field="externalId" k-title="External ID" k-width="120px"></ak-col></ak-col>
+                <ak-col k-command.bind="['edit', 'destroy']" k-title="Actions" k-width="220px"></ak-col>
+            </ak-grid>
+        </content-container>
+    </page-content>
+</template>

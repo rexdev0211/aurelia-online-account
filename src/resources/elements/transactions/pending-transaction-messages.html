@@ -1,0 +1,104 @@
+<template>
+    <div class="container">
+        <div id="timeline">
+
+            <div class="row timeline-movement" if.bind="!source.resolveDate">
+
+                <div class="col-sm-6  timeline-item">
+                    <div class="row" if.bind="allowReject">
+                        <div class="col-sm-11 clickable" click.trigger="rejectTransaction()">
+                            <div class="timeline-panel credits">
+                                <ul class="timeline-panel-ul">
+                                    <li><span class="importo" style="color:#e2001a;">Reject Transaction</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6  timeline-item">
+                    <div class="row">
+                        <div class="col-sm-offset-1 col-sm-12 clickable" click.trigger="addResponse()">
+                            <div class="timeline-panel debits">
+                                <ul class="timeline-panel-ul">
+                                    <li><span class="importo" style="color: #468c1f;">Create New Message</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row timeline-movement timeline-movement-top">
+
+
+                <div class="timeline-badge timeline-future-movement" if.bind="!source.resolveDate">
+                    <a href="javascript:void(0)">
+                        <span class="fas fa-plus"></span>
+                    </a>
+                </div>
+
+                <div class="timeline-badge timeline-filter-movement">
+                    <a class="clickable" click.trigger="toggleSort()">
+                        <span class="far fa-clock ${ascending?'fa-flip-horizontal':''}"></span>
+                    </a>
+                </div>
+
+            </div>
+
+            <template repeat.for="year of years">
+
+                <div class="row timeline-movement timeline-movement-year" if.bind="year != currentYear">
+                    <div class="timeline-badge">
+                        <span class="timeline-balloon-date-year">${year}</span>
+                    </div>
+                </div>
+
+                <div class="row timeline-movement" repeat.for="key of keys(year,ascending)">
+
+                    <div class="timeline-badge">
+                        <div class="timeline-balloon-date-day">${key.split(' ')[1]}</div>
+                        <div class="timeline-balloon-date-month">${key.split(' ')[0]}</div>
+                    </div>
+
+                    <template repeat.for="item of messages.get(year).get(key)">
+
+                        <div class="col-sm-6  timeline-item">
+                            <div class="row" if.bind="item.flags.includes('Enumis')">
+                                <div class="col-sm-11">
+                                    <div class="timeline-panel credits">
+                                        <ul class="timeline-panel-ul">
+                                            <li><span class="importo">Enumis</span></li>
+                                            <li><span class="causale">${item.message}</span></li>
+                                            <li><p><small class="text-muted"><i class="far fa-clock"></i> ${item.date|dateFormat:'LTS'}</small>
+                                            </p></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6  timeline-item">
+                            <div class="row" if.bind="item.flags.includes('Client')">
+                                <div class="col-sm-offset-1 col-sm-12">
+                                    <div class="timeline-panel debits">
+                                        <ul class="timeline-panel-ul">
+                                            <li><span class="importo">${item.from.name}</span></li>
+                                            <li><span class="causale">${item.message}</span></li>
+                                            <li><p><small class="text-muted"><i class="far fa-clock"></i> ${item.date|dateFormat:'LTS'}</small>
+                                            </p></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </template>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

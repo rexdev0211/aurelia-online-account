@@ -1,0 +1,2242 @@
+[
+  {
+    "Tag": "Utilities",
+    "Value": "Utilities",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Billiard Pool Establishments",
+    "Value": "Billiard/Pool Establishments",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Cemetery",
+    "Value": "Cemetery",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Consulting Management",
+    "Value": "Consulting- Management",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Insurance",
+    "Value": "Insurance",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Recreational Arcades And Amusement Centre",
+    "Value": "Recreational Arcades and Amusement Centre",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Oil Gas Green Fuels",
+    "Value": "Oil/Gas/Green Fuels",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Alcohol Tobacco Production",
+    "Value": "Alcohol/Tobacco Production",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Football Club",
+    "Value": "Football Club",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Textiles",
+    "Value": "Textiles",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Hospital",
+    "Value": "Hospital",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Credit Reporting Agency",
+    "Value": "Credit Reporting Agency",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Massage Therapy",
+    "Value": "Massage Therapy",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Household Appliances",
+    "Value": "Household Appliances",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Payroll Processing Services",
+    "Value": "Payroll Processing Services",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Security System Sales",
+    "Value": "Security System Sales",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Msb Money Transfer Bureau De Change",
+    "Value": "MSB-Money Transfer/Bureau De Change",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Child Care Services",
+    "Value": "Child Care Services",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Consumer L2",
+    "Value": "Consumer L2",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Office And Commercial Furniture",
+    "Value": "Office and Commercial Furniture",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Boat Rentals And Leases",
+    "Value": "Boat Rentals and Leases",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Glass Ceramics Concrete",
+    "Value": "Glass/Ceramics/Concrete",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Mortgage Provider",
+    "Value": "Mortgage Provider",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Motor Vehicle Sales Used",
+    "Value": "Motor Vehicle Sales (Used)",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Notary Public",
+    "Value": "Notary Public",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Motor Vehicle Repair",
+    "Value": "Motor Vehicle Repair",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Supermarkets",
+    "Value": "Supermarkets",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Cryptocurrency Exchange",
+    "Value": "Cryptocurrency Exchange",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Accountant Auditor Qualified",
+    "Value": "Accountant/Auditor (Qualified)",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Specialty Foods",
+    "Value": "Specialty Foods",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Osteopaths",
+    "Value": "Osteopaths",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Air Transportation",
+    "Value": "Air Transportation",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Motor Vehicle Sales New And Used",
+    "Value": "Motor Vehicle Sales (New and Used)",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Luxury Goods",
+    "Value": "Luxury Goods",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Caterer",
+    "Value": "Caterer",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Warehouse And Storage",
+    "Value": "Warehouse and Storage",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Motor Vehicle Rental",
+    "Value": "Motor Vehicle Rental",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Tourist Attractions Other",
+    "Value": "Tourist Attractions Other",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Investment Management",
+    "Value": "Investment Management",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Antique Others",
+    "Value": "Antique Others",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Recruitment And Staff",
+    "Value": "Recruitment and Staff",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Other Business Type Not Listed",
+    "Value": "Other(Business Type Not Listed)",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Personal Services",
+    "Value": "Personal Services",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Cryptocurrency Atm",
+    "Value": "Cryptocurrency ATM",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Boat Manufacturers",
+    "Value": "Boat Manufacturers",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Oil Gas Green Fuels Logistics",
+    "Value": "Oil/Gas/Green Fuels Logistics",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Personal Assistant",
+    "Value": "Personal Assistant",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Extermination Pest Control",
+    "Value": "Extermination/Pest Control",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Housing Association",
+    "Value": "Housing Association",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Boat Sales",
+    "Value": "Boat Sales",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Electrical Electronic Repairs And Servicing",
+    "Value": "Electrical/Electronic Repairs and Servicing",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Payroll Or Umbrella Company Services",
+    "Value": "Payroll or Umbrella Company Services",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Art Dealers And Galleries",
+    "Value": "Art Dealers and Galleries",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Optometry",
+    "Value": "Optometry",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Short Term Credit Provider",
+    "Value": "Short Term Credit Provider",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Cooling Heating And Plumbing",
+    "Value": "Cooling, Heating and Plumbing",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Taxi Limousine Services",
+    "Value": "Taxi/Limousine Services",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Restaurants And Bars",
+    "Value": "Restaurants and Bars",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Railroad Manufacture",
+    "Value": "Railroad Manufacture",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Counseling Services",
+    "Value": "Counseling Services",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Collection Agency",
+    "Value": "Collection Agency",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Furniture",
+    "Value": "Furniture",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Uniforms Commercial Clothing",
+    "Value": "Uniforms, Commercial Clothing",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Cryptocurrency Lending",
+    "Value": "Cryptocurrency Lending",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Agriculture",
+    "Value": "Agriculture",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Religious Organisations",
+    "Value": "Religious Organisations",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Solicitor And Law Firms",
+    "Value": "Solicitor and Law Firms",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Nursing And Retirement Homes",
+    "Value": "Nursing and Retirement Homes",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Drug Distribution",
+    "Value": "Drug Distribution",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Leisure Travel Other",
+    "Value": "Leisure/Travel Other",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Internet Service Provider",
+    "Value": "Internet Service Provider",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Residential Care Facility",
+    "Value": "Residential Care Facility",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Hospitality Other",
+    "Value": "Hospitality Other",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Cosmetics",
+    "Value": "Cosmetics",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Pawn Brokeres",
+    "Value": "Pawn Brokeres",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Consulting Public Relations",
+    "Value": "Consulting, Public Relations",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Mechanical Or Industrial Engineering",
+    "Value": "Mechanical or Industrial Engineering",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Health And Fitness",
+    "Value": "Health and Fitness",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Department Stores",
+    "Value": "Department Stores",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Cryptocurrency Broker",
+    "Value": "Cryptocurrency Broker",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Real Estate",
+    "Value": "Real Estate",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Credit Broker",
+    "Value": "Credit Broker",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Private Investigator",
+    "Value": "Private Investigator",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Electrolysis",
+    "Value": "Electrolysis",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Investment And Securities Brokers",
+    "Value": "Investment and Securities Brokers",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Small Electronic Money Institution",
+    "Value": "Small Electronic Money Institution",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Computer Games",
+    "Value": "Computer Games",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Media Production",
+    "Value": "Media Production",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Pharmaceuticals",
+    "Value": "Pharmaceuticals",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Wrecking And Salvage Yards",
+    "Value": "Wrecking and Salvage Yards",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Dairy",
+    "Value": "Dairy",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Engineering Services",
+    "Value": "Engineering Services",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Chiropractors",
+    "Value": "Chiropractors",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Museum",
+    "Value": "Museum",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Locksmith",
+    "Value": "Locksmith",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Country Clubs",
+    "Value": "Country Clubs",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Security Services",
+    "Value": "Security Services",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Medical Practitioners Other",
+    "Value": "Medical Practitioners Other",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Civil Engineering",
+    "Value": "Civil Engineering",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Fundraising",
+    "Value": "Fundraising",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Printers",
+    "Value": "Printers",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Law Enforcement",
+    "Value": "Law Enforcement",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Real Estate Other",
+    "Value": "Real Estate Other",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Gambling Physical Casinos",
+    "Value": "Gambling-Physical Casinos",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Real Estate Development",
+    "Value": "Real Estate Development",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Plastics Manufacturer",
+    "Value": "Plastics Manufacturer",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Music Producer",
+    "Value": "Music Producer",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Msb Small Payment Institution",
+    "Value": "MSB-Small Payment Institution",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Gambling Remote",
+    "Value": "Gambling-Remote",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Apparel Fashion",
+    "Value": "Apparel/Fashion",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Gambling Affiliate",
+    "Value": "Gambling Affiliate",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Vending Machine",
+    "Value": "Vending Machine",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Veterinary",
+    "Value": "Veterinary",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Gift Card Novelty And Souvenir Shops",
+    "Value": "Gift, Card, Novelty, and Souvenir Shops",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Convenience Store",
+    "Value": "Convenience Store",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Logistics",
+    "Value": "Logistics",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Consumer Services",
+    "Value": "Consumer Services",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Gambling Bingo Hall",
+    "Value": "Gambling Bingo Hall",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Small Payment Institution",
+    "Value": "Small Payment Institution",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Packaging Containers",
+    "Value": "Packaging/Containers",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Military",
+    "Value": "Military",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Publishing Services",
+    "Value": "Publishing Services",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Consumer Goods",
+    "Value": "Consumer Goods",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Paper Forest Products",
+    "Value": "Paper/Forest Products",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Florist",
+    "Value": "Florist",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Concrete Manufacturing",
+    "Value": "Concrete Manufacturing",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Ship And Maritime",
+    "Value": "Ship and Maritime",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Competitions And Prize Draws Non Regulated",
+    "Value": "Competitions and Prize draws (non regulated)",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Translation Services",
+    "Value": "Translation Services",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Airport",
+    "Value": "Airport",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Alcohol Tobacco Sales",
+    "Value": "Alcohol/Tobacco Sales",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Recycling Services",
+    "Value": "Recycling Services",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Wholesale Clubs",
+    "Value": "Wholesale Clubs",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Farming",
+    "Value": "Farming",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Dance Hall Studios Schools",
+    "Value": "Dance Hall, Studios, Schools",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Pest Control",
+    "Value": "Pest Control",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Authorised Electronic Money Institution",
+    "Value": "Authorised Electronic Money Institution",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Equipment Rental",
+    "Value": "Equipment Rental",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Newspapers Journalism",
+    "Value": "Newspapers/Journalism",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Lottery",
+    "Value": "Lottery",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Ticket Agents Entertainment",
+    "Value": "Ticket Agents (Entertainment)",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Real Estate Management",
+    "Value": "Real Estate Management",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Sports Agent",
+    "Value": "Sports Agent",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Remote Gambling",
+    "Value": "Remote Gambling",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Fine Art",
+    "Value": "Fine Art",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Charity",
+    "Value": "Charity",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Emergency Medical Services",
+    "Value": "Emergency Medical Services",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Upholstery Cleaning And Repair",
+    "Value": "Upholstery Cleaning and Repair",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Car Parks",
+    "Value": "Car Parks",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Gaming",
+    "Value": "Gaming",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Gymasiums And Sports Clubs",
+    "Value": "Gymasiums and Sports Clubs",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Hair And Beauty",
+    "Value": "Hair and Beauty",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Antique Furniture",
+    "Value": "Antique Furniture",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Cannabidiol Providers",
+    "Value": "Cannabidiol Providers",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Political Organisation",
+    "Value": "Political Organisation",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Watches And Jewellery",
+    "Value": "Watches and Jewellery",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Employment Temp Agencies",
+    "Value": "Employment/Temp Agencies",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Rugby Club",
+    "Value": "Rugby Club",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Hobby Toy And Game Shops",
+    "Value": "Hobby, Toy, and Game Shops",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Mobile Food Services",
+    "Value": "Mobile Food Services",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Adult Webcam",
+    "Value": "Adult Webcam",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Timeshares",
+    "Value": "Timeshares",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Security System Services",
+    "Value": "Security System Services",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Museums Institutions",
+    "Value": "Museums/Institutions",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Educational Facilities Schools Colleges Universities",
+    "Value": "Educational Facilities-Schools, Colleges, Universities",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Local Council Lottery",
+    "Value": "Local Council Lottery",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Other Waste Management",
+    "Value": "Other Waste Management",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Civic Social Fraternal Associations",
+    "Value": "Civic, Social, Fraternal Associations",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Motor Vehicle Sales",
+    "Value": "Motor Vehicle Sales",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Hair And Beauty Other",
+    "Value": "Hair and Beauty (Other)",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Cruise Lines",
+    "Value": "Cruise Lines",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Information Technology",
+    "Value": "Information Technology",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Mental Health Care",
+    "Value": "Mental Health Care",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Arts Crafts",
+    "Value": "Arts/Crafts",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Legal Services",
+    "Value": "Legal Services",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Precious Stones And Metals Not Jewellery",
+    "Value": "Precious Stones and Metals (Not Jewellery)",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Automation Systems And Services",
+    "Value": "Automation Systems and Services",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Retail Industry",
+    "Value": "Retail Industry",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Dentistry",
+    "Value": "Dentistry",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Consumer Electronics",
+    "Value": "Consumer Electronics",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Cryptocurrency Investment",
+    "Value": "Cryptocurrency Investment",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Cryptocurrency Technology Not Seller",
+    "Value": "Cryptocurrency Technology (not seller)",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Waste Collection",
+    "Value": "Waste Collection",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Bowling Alleys",
+    "Value": "Bowling Alleys",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Education Services",
+    "Value": "Education Services",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Transportation Services Other",
+    "Value": "Transportation Services Other",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Courier And Delivery Services",
+    "Value": "Courier and delivery services",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Lenders",
+    "Value": "Lenders",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Watches And Jewellry",
+    "Value": "Watches and Jewellry",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Gambling Casinos",
+    "Value": "Gambling/Casinos",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Computer Network Services",
+    "Value": "Computer Network Services",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Garden Centres",
+    "Value": "Garden Centres",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Sporting Goods",
+    "Value": "Sporting Goods",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Architecture Planning",
+    "Value": "Architecture/Planning",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Computer Hardware",
+    "Value": "Computer Hardware",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Interior Design",
+    "Value": "Interior Design",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Environmental Services",
+    "Value": "Environmental Services",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Record And Music Business",
+    "Value": "Record and Music Business",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Philanthropy",
+    "Value": "Philanthropy",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Business Supplies Equipment",
+    "Value": "Business Supplies/Equipment",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Detective Agency",
+    "Value": "Detective Agency",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Janitorial Cleaning Services",
+    "Value": "Janitorial/Cleaning Services",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Retail Industry Other",
+    "Value": "Retail Industry Other",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Mining Metals",
+    "Value": "Mining/Metals",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Carpets And Floorcoverings",
+    "Value": "Carpets and Floorcoverings",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Music Industry Other",
+    "Value": "Music Industry Other",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Petrol Stations",
+    "Value": "Petrol Stations",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Motor Vehicle Sales New",
+    "Value": "Motor Vehicle Sales (New)",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Dating Services",
+    "Value": "Dating Services",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Msb Pawn Shops Brokers",
+    "Value": "MSB-Pawn Shops/Brokers",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Bakery",
+    "Value": "Bakery",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "College Universities",
+    "Value": "College/Universities",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Creditor Broker",
+    "Value": "Creditor Broker",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Event Planning",
+    "Value": "Event Planning",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Motor Vehicle Parts",
+    "Value": "Motor Vehicle Parts",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Renewables Environment",
+    "Value": "Renewables/Environment",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Sports And Entertainment",
+    "Value": "Sports and Entertainment",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Authorised Payment Institution",
+    "Value": "Authorised Payment Institution",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Broadcasters And Publications",
+    "Value": "Broadcasters and Publications",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Investment Private Equity Venture Capital",
+    "Value": "Investment/Private Equity/Venture Capital",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Bookkeeping Accounting Services",
+    "Value": "Bookkeeping/Accounting Services",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Gaming And Competitions",
+    "Value": "Gaming and Competitions",
+    "ConfidenceScore": 0.86,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.86
+  },
+  {
+    "Tag": "Government Services Not Elsewhere Classified",
+    "Value": "Government Services (Not Elsewhere Classified)",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Photography",
+    "Value": "Photography",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Defence And Military",
+    "Value": "Defence and Military",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Travel Agency",
+    "Value": "Travel Agency",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Medical Equipment",
+    "Value": "Medical Equipment",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Food Beverage Manufacturer",
+    "Value": "Food/Beverage Manufacturer",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Bicycles And Related",
+    "Value": "Bicycles and Related",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Music Store",
+    "Value": "Music Store",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Electrical Electronic Manufacturing",
+    "Value": "Electrical/Electronic Manufacturing",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Tolls Bridge Fees",
+    "Value": "Tolls/Bridge Fees",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Dry Cleaning Laundry",
+    "Value": "Dry cleaning/Laundry",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Laboratory",
+    "Value": "Laboratory",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Boat And Motor Yacht Ownership",
+    "Value": "Boat and Motor Yacht Ownership",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Pets And Animals",
+    "Value": "Pets and Animals",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Funeral Services",
+    "Value": "Funeral Services",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Pool Betting",
+    "Value": "Pool Betting",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Remote And E Learning",
+    "Value": "Remote and E-learning",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Adult Services Other",
+    "Value": "Adult Services Other",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Pharmacy",
+    "Value": "Pharmacy",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Fishery",
+    "Value": "Fishery",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Consumer L1",
+    "Value": "Consumer L1",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Land Surveying",
+    "Value": "Land Surveying",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Consumer Hnw",
+    "Value": "Consumer HNW",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Chemicals",
+    "Value": "Chemicals",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Motor Vehicle Tyres",
+    "Value": "Motor Vehicle Tyres",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Research",
+    "Value": "Research",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Artwork And Design",
+    "Value": "Artwork and Design",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Hotels And Motels",
+    "Value": "Hotels and Motels",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Book Stores",
+    "Value": "Book Stores",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Real Estate Agent",
+    "Value": "Real Estate Agent",
+    "ConfidenceScore": 0.25,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.25
+  },
+  {
+    "Tag": "Library",
+    "Value": "Library",
+    "ConfidenceScore": 0.94,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.94
+  },
+  {
+    "Tag": "Building Materials",
+    "Value": "Building Materials",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Hardware Equipment And Supplies",
+    "Value": "Hardware, Equipment, and Supplies",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Real Estate Services",
+    "Value": "Real Estate Services",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Computer Software Engineering",
+    "Value": "Computer Software/Engineering",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Doctors",
+    "Value": "Doctors",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Telecommunications",
+    "Value": "Telecommunications",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Foot Wear",
+    "Value": "Foot Wear",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Auctioneers And Sales Coordinators",
+    "Value": "Auctioneers and Sales Coordinators",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Adult Services Dating And Escorting",
+    "Value": "Adult Services - Dating and Escorting",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Car Wash Detailing",
+    "Value": "Car Wash/Detailing",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Management Consulting",
+    "Value": "Management Consulting",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Judiciary",
+    "Value": "Judiciary",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Racetrack",
+    "Value": "Racetrack",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Marketing Advertising",
+    "Value": "Marketing/Advertising",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Non Profit Organisation",
+    "Value": "Non-Profit Organisation",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Gambling Software",
+    "Value": "Gambling Software",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Stationary Office Supplies Printing And Writing Paper",
+    "Value": "Stationary, Office Supplies, Printing and Writing Paper",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Sports Betting Remote",
+    "Value": "Sports Betting (remote)",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Shoes",
+    "Value": "Shoes",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Physical Casinos",
+    "Value": "Physical Casinos",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Financial Services Other",
+    "Value": "Financial Services Other",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Bank",
+    "Value": "Bank",
+    "ConfidenceScore": 0.6,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.6
+  },
+  {
+    "Tag": "Tailors Alterations",
+    "Value": "Tailors/Alterations",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Amusement Parks Carnivals",
+    "Value": "Amusement Parks/Carnivals",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Trailer Parks Campgrounds",
+    "Value": "Trailer Parks, Campgrounds",
+    "ConfidenceScore": 0.49,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.49
+  },
+  {
+    "Tag": "Movie Production",
+    "Value": "Movie Production",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  },
+  {
+    "Tag": "Electrical Electronic Retailing",
+    "Value": "Electrical/Electronic Retailing",
+    "ConfidenceScore": 0.75,
+    "RiskWeight": 0.0,
+    "OverrideScore": null,
+    "CalculatedScore": 0.75
+  }
+]

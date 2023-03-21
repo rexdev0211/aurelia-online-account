@@ -1,0 +1,15 @@
+<template>
+  <require from="aurelia-kendoui-bridge/maskedtextbox/maskedtextbox"></require>
+  <form-group header.bind="header">
+    <input ak-maskedtextbox="k-widget.two-way:widget; k-value.two-way:value; k-mask.bind:mask"
+           class="${(value || hasFocus) ? css : ''}"
+           k-on-change.delegate="onChange($event.detail)"
+           onblur.call="onBlur()"
+           onfocus.call="onFocus()"
+           placeholder.bind="placeHolder"
+           style="width: 100%;"
+           type="text"
+    />
+    <slot></slot>
+  </form-group>
+</template>

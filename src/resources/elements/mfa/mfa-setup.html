@@ -1,0 +1,4 @@
+<template>
+  <mfa-sms if.bind="state.mfaSetup.setupType == 'sms'"></mfa-sms>
+  <mfa-totp if.bind="state.mfaSetup.setupType == 'totp'"></mfa-totp>
+</template>

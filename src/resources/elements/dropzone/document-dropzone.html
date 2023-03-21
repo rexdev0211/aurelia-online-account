@@ -1,0 +1,46 @@
+<template>
+  <style>
+    .dropzone .dz-preview .dz-error-mark span, .dropzone .dz-preview .dz-error-mark svg, .dropzone .dz-preview .dz-success-mark span, .dropzone .dz-preview .dz-success-mark svg, .dropzone-previews .dz-preview .dz-error-mark span, .dropzone-previews .dz-preview .dz-error-mark svg, .dropzone-previews .dz-preview .dz-success-mark span, .dropzone-previews .dz-preview .dz-success-mark svg {
+      display: block;
+    }
+
+    .dropzone .dz-preview.dz-success .dz-success-mark {
+      margin-top: -50px;
+    }
+
+    .dropzone .dz-preview.dz-error .dz-error-mark {
+      margin-top: -50px;
+    }
+
+    .dropzone .dz-preview.dz-processing .dz-progress, .dropzone-previews .dz-preview.dz-processing .dz-progress {
+      margin-left: auto;
+      margin-right: auto;
+      height: 20px;
+      width: 80%;
+      margin-top: -100px;
+    }
+    .dropzone .dz-preview {
+      margin-top: 25px;
+    }
+    .dropzone .dz-preview .dz-details {
+      position: absolute !important;
+    }
+  </style>
+  <kendo-drop-down-list css-class="mb-2"
+                        if.bind="docTypes.length"
+                        items.bind="docTypes"
+                        place-holder="Select Document Type"
+                        show.bind="!dropDownHidden"
+                        text-field="description"
+                        value-field="value"
+                        value.bind="type">
+  </kendo-drop-down-list>
+  <form action.bind="url" class="dropzone needsclick dz-clickable" enctype="multipart/form-data" ref="dropZone">
+    <div class="form-group">
+      <div class="dz-message needsclick" ref="dzMessage">
+        <span if.bind="type" innerhtml.bind="body"></span>
+        <span else>Select a document type to upload.</span>
+      </div>
+    </div>
+  </form>
+</template>

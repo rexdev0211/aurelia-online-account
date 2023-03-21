@@ -1,0 +1,69 @@
+<template>
+    <ul class="list-group">
+
+        <li class="mb-4 list-group-item d-flex justify-content-between align-items-center list-group-item-action active-gold">
+            <div>
+                <i class="clickable pr-2 fas fa-times" click.trigger="mailboxService.clearConversation()"></i>
+                ${state.messaging.selectedConversation.owner.name | humanize:true}
+            </div>
+            <span class="badge ${state.messaging.selectedConversation.unread===0?'badge-secondary':'badge-warning'}">${state.messaging.selectedConversation.unread}</span>
+        </li>
+
+        <li class="mb-4 list-group-item d-flex justify-content-between align-items-center list-group-item-action active-gold">
+            <div>
+                <i class="clickable pr-2 fas fa-times" click.trigger="mailboxService.clearSubject()"></i>
+                ${state.messaging.selectedSubject.subject | filterMailboxSubject | humanize:false}
+            </div>
+            <i class="far fa-file-pdf fa-2x clickable" click.trigger="mailboxService.downloadPdf()" title="Download PDF"></i>
+        </li>
+
+        <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+            <div class="col-12">
+                <div class="row">
+                    <form-group class="w-100">
+                    <textarea placeholder="New Message" rows="4" style="width: 100%"
+                              value.bind="model.message & validate"></textarea>
+                    </form-group>
+                </div>
+                <div class="row justify-content-between">
+                    <button class="btn" click.trigger="refresh(state.messaging.selectedSubject.subject)">Refresh
+                    </button>
+                    <div>
+                        <button class="ml-2 btn" click.trigger="save()">Save</button>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <li class="list-group-item d-flex">
+            <table class="table table-sm table-striped">
+                <thead>
+                <tr>
+                    <th class="text-nowrap">From / When</th>
+                    <th>
+                        Message
+                        <div class="float-right">
+                            <i click.trigger="toggleSort()" class="clickable fa-solid ${newestFirst ? 'fa-arrow-up-wide-short' : 'fa-arrow-down-short-wide'}"></i>
+                        </div>
+                    </th>
+                </tr>
+                </thead>
+                <tr repeat.for="item of state.messaging.mailboxMessages | filterMailboxMessages:state.messaging.mailboxFilter | sort:sortOrder">
+                    <td>
+                        <span if.bind="item.author.name">${item.author.name}</span>
+                        <br if.bind="item.author.name && item.author.email">
+                        <small if.bind="item.author.email">
+                            ${item.author.email}
+                        </small>
+                        <small>
+                            <br if.bind="item.author.name || item.author.email">
+                            <i aria-hidden="true" class="far fa-clock"></i> ${item.date|dateFormat:'ago'}
+                        </small>
+                    </td>
+                    <td innerhtml.bind="item.message | filterMailboxMessage" style="width: 100%"></td>
+                </tr>
+            </table>
+        </li>
+
+    </ul>
+</template>
